@@ -5,14 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Elloverde Paisagismo & Flora | Fortaleza, Ceará</title>
 <meta name="description" content="Paisagismo sofisticado criado para o clima e a estética do Ceará. Elegância natural, com raízes no território." />
-
-<!-- SEO -->
 <meta name="robots" content="index, follow" />
 <meta name="author" content="Elloverde Paisagismo & Flora" />
 <meta name="keywords" content="paisagismo Fortaleza, paisagismo Ceará, jardim Fortaleza, flora Ceará, projeto paisagístico, manutenção jardim, plantas Fortaleza, Elloverde" />
 <link rel="canonical" href="https://www.elloverdepaisagismo.com.br/" />
-
-<!-- OPEN GRAPH -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.elloverdepaisagismo.com.br/" />
 <meta property="og:title" content="Elloverde Paisagismo & Flora | Fortaleza, Ceará" />
@@ -22,13 +18,10 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:locale" content="pt_BR" />
 <meta property="og:site_name" content="Elloverde Paisagismo & Flora" />
-
-<!-- TWITTER CARD -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Elloverde Paisagismo & Flora | Fortaleza, Ceará" />
 <meta name="twitter:description" content="Paisagismo sofisticado criado para o clima e a estética do Ceará. Elegância natural, com raízes no território." />
 <meta name="twitter:image" content="https://www.elloverdepaisagismo.com.br/og-image.png" />
-
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
 <link rel="apple-touch-icon" href="/favicon-192.png" />
@@ -56,7 +49,7 @@ fbq('track', 'PageView');
   body { font-family: 'Jost', sans-serif; background: #F5F0E8; color: #2C2820; overflow-x: hidden; }
 
   /* NAV */
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(245,240,232,0.92); backdrop-filter: blur(10px); border-bottom: 0.5px solid rgba(44,40,32,0.12); padding: 18px 48px; display: flex; align-items: center; justify-content: space-between; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(245,240,232,0.92); backdrop-filter: blur(10px); border-bottom: 0.5px solid rgba(44,40,32,0.12); padding: 12px 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
   .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; letter-spacing: 0.05em; color: #2C5F2E; text-decoration: none; }
   .nav-logo span { color: #2C2820; font-weight: 300; }
   .nav-links { display: flex; gap: 32px; list-style: none; }
@@ -65,11 +58,47 @@ fbq('track', 'PageView');
   .nav-btn { background: #2C5F2E; color: #F5F0E8; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; padding: 10px 24px; text-decoration: none; font-family: 'Jost', sans-serif; font-weight: 400; transition: background 0.3s; }
   .nav-btn:hover { background: #1F4820; }
 
+  /* LANGUAGE TOGGLE — dentro da nav, canto superior esquerdo */
+  .lang-toggle {
+    display: flex;
+    align-items: center;
+    border: 0.5px solid rgba(44,40,32,0.18);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .lang-toggle button {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 7px 13px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.25s, color 0.25s;
+    background: transparent;
+    color: #8B7355;
+    line-height: 1;
+  }
+  .lang-toggle button.active {
+    background: #2C5F2E;
+    color: #F5F0E8;
+  }
+  .lang-toggle button:not(.active):hover {
+    background: rgba(44,95,46,0.08);
+    color: #2C5F2E;
+  }
+  .lang-toggle .lang-sep {
+    width: 0.5px;
+    height: 18px;
+    background: rgba(44,40,32,0.15);
+    flex-shrink: 0;
+  }
+
   /* HERO */
   .hero { position: relative; height: 100vh; min-height: 600px; display: flex; align-items: flex-end; background: linear-gradient(170deg, #3A5C3A 0%, #2C4A2C 40%, #1A3020 100%); overflow: hidden; }
   .hero-bg { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1585320806297-9794b3e4aaae?w=1600&q=80') center/cover no-repeat; }
   .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,30,22,0.82) 0%, rgba(44,60,40,0.30) 60%, transparent 100%); }
-
   .hero-content { position: relative; z-index: 2; padding: 0 48px 72px; max-width: 1200px; width: 100%; animation: heroFadeUp 1.1s cubic-bezier(0.22, 1, 0.36, 1) both; }
 
   @keyframes heroFadeUp {
@@ -78,24 +107,19 @@ fbq('track', 'PageView');
   }
 
   .hero-eyebrow { font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; color: #C9B99A; margin-bottom: 16px; animation: heroFadeUp 1.1s 0.1s cubic-bezier(0.22, 1, 0.36, 1) both; }
-
   .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(38px, 6vw, 72px); font-weight: 300; line-height: 1.08; color: #F0EBE0; max-width: 600px; animation: heroFadeUp 1.1s 0.18s cubic-bezier(0.22, 1, 0.36, 1) both; }
   .hero h1 em { font-style: italic; color: #A8C5A0; }
-
   .hero-sub { font-size: 14px; color: rgba(240,235,224,0.6); margin-top: 18px; max-width: 400px; line-height: 1.75; font-weight: 300; animation: heroFadeUp 1.1s 0.26s cubic-bezier(0.22, 1, 0.36, 1) both; }
 
   /* CTA */
   .hero-cta { display: flex; align-items: center; gap: 20px; margin-top: 36px; animation: heroFadeUp 1.1s 0.36s cubic-bezier(0.22, 1, 0.36, 1) both; }
-
   .hero-cta-primary { display: inline-flex; align-items: center; gap: 10px; background: #2C5F2E; color: #F5F0E8; font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.25em; text-transform: uppercase; text-decoration: none; padding: 14px 28px; transition: background 0.3s, transform 0.2s; position: relative; overflow: hidden; }
   .hero-cta-primary::after { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,0.06); opacity: 0; transition: opacity 0.3s; }
   .hero-cta-primary:hover { background: #1F4820; transform: translateY(-1px); }
   .hero-cta-primary:hover::after { opacity: 1; }
   .hero-cta-primary svg { width: 14px; height: 14px; transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1); }
   .hero-cta-primary:hover svg { transform: translateX(4px); }
-
   .hero-cta-divider { width: 0.5px; height: 32px; background: rgba(240,235,224,0.2); }
-
   .hero-cta-secondary { display: inline-flex; align-items: center; gap: 8px; color: rgba(240,235,224,0.55); font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; text-decoration: none; transition: color 0.3s, border-color 0.3s; padding: 4px 0; border-bottom: 0.5px solid rgba(240,235,224,0.15); }
   .hero-cta-secondary:hover { color: rgba(240,235,224,0.9); border-bottom-color: rgba(240,235,224,0.4); }
 
@@ -200,7 +224,7 @@ fbq('track', 'PageView');
 
   /* RESPONSIVE */
   @media (max-width: 768px) {
-    nav { padding: 16px 24px; }
+    nav { padding: 12px 24px; }
     .nav-links { display: none; }
     section, .pilares, .orcamento { padding: 64px 24px; }
     .hero-content { padding: 0 24px 56px; }
@@ -219,15 +243,20 @@ fbq('track', 'PageView');
 
 <!-- NAV -->
 <nav>
+  <div class="lang-toggle" id="langToggle">
+    <button id="btnPT" class="active" onclick="setLang('pt')">PT</button>
+    <div class="lang-sep"></div>
+    <button id="btnEN" onclick="setLang('en')">EN</button>
+  </div>
   <a href="#" class="nav-logo">Ello<span>verde</span></a>
   <ul class="nav-links">
-    <li><a href="#manifesto">Manifesto</a></li>
-    <li><a href="#servicos">Serviços</a></li>
-    <li><a href="#pilares">Pilares</a></li>
-    <li><a href="#orcamento">Orçamento</a></li>
-    <li><a href="#contato">Contato</a></li>
+    <li><a href="#manifesto" data-i18n="nav.manifesto">Manifesto</a></li>
+    <li><a href="#servicos" data-i18n="nav.services">Serviços</a></li>
+    <li><a href="#pilares" data-i18n="nav.pillars">Pilares</a></li>
+    <li><a href="#orcamento" data-i18n="nav.quote">Orçamento</a></li>
+    <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
   </ul>
-  <a href="https://wa.me/5585992252253" target="_blank" class="nav-btn" onclick="trackWhatsApp('nav')">Fale Conosco</a>
+  <a href="https://wa.me/5585992252253" target="_blank" class="nav-btn" onclick="trackWhatsApp('nav')" data-i18n="nav.cta">Fale Conosco</a>
 </nav>
 
 <!-- HERO -->
@@ -235,24 +264,20 @@ fbq('track', 'PageView');
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Paisagismo &amp; Flora — Ceará</p>
-    <h1>Elegância natural,<br><em>com raízes no território.</em></h1>
-    <p class="hero-sub">Criamos jardins que pertencem ao lugar. Paisagismo sofisticado, criado para o clima e a estética do Ceará.</p>
-
-    <!-- CTA -->
+    <p class="hero-eyebrow" data-i18n="hero.eyebrow">Paisagismo &amp; Flora — Ceará</p>
+    <h1 data-i18n-html="hero.h1">Elegância natural,<br><em>com raízes no território.</em></h1>
+    <p class="hero-sub" data-i18n="hero.sub">Criamos jardins que pertencem ao lugar. Paisagismo sofisticado, criado para o clima e a estética do Ceará.</p>
     <div class="hero-cta">
-      <a href="#orcamento" class="hero-cta-primary" onclick="if(typeof fbq!=='undefined'){fbq('trackCustom','HeroCTA')}">
+      <a href="#orcamento" class="hero-cta-primary" onclick="if(typeof fbq!=='undefined'){fbq('trackCustom','HeroCTA')}" data-i18n="hero.ctaPrimary">
         Solicitar visita técnica
         <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </a>
       <div class="hero-cta-divider"></div>
-      <a href="#servicos" class="hero-cta-secondary">Ver serviços</a>
+      <a href="#servicos" class="hero-cta-secondary" data-i18n="hero.ctaSecondary">Ver serviços</a>
     </div>
   </div>
-
-  <!-- Scroll indicator -->
   <div class="hero-scroll">
     <div class="hero-scroll-line"></div>
     <span>scroll</span>
@@ -263,18 +288,18 @@ fbq('track', 'PageView');
 <section class="manifesto" id="manifesto">
   <div class="container">
     <div class="manifesto-header">
-      <p class="section-label">Manifesto</p>
-      <h2 class="section-h2">A Elloverde nasce de um olhar que sempre <em>reconheceu valor no natural.</em></h2>
+      <p class="section-label" data-i18n="manifesto.label">Manifesto</p>
+      <h2 class="section-h2" data-i18n-html="manifesto.h2">A Elloverde nasce de um olhar que sempre <em>reconheceu valor no natural.</em></h2>
     </div>
     <div class="manifesto-grid">
       <div>
-        <p class="body-text">Um olhar moldado pela luz intensa do Ceará, pelo vento que movimenta as folhas ao longo do dia e por lembranças difusas da simplicidade do interior — memórias discretas, mas que permanecem.</p>
-        <p class="body-text">É desse território, dessa sensação e dessa estética que vem a nossa forma de criar áreas externas: com respeito ao clima, com atenção às texturas locais, com harmonia entre natureza e arquitetura.</p>
+        <p class="body-text" data-i18n="manifesto.p1">Um olhar moldado pela luz intensa do Ceará, pelo vento que movimenta as folhas ao longo do dia e por lembranças difusas da simplicidade do interior — memórias discretas, mas que permanecem.</p>
+        <p class="body-text" data-i18n="manifesto.p2">É desse território, dessa sensação e dessa estética que vem a nossa forma de criar áreas externas: com respeito ao clima, com atenção às texturas locais, com harmonia entre natureza e arquitetura.</p>
       </div>
       <div>
-        <p class="body-text">Não buscamos excessos. Buscamos coerência, equilíbrio e permanência. Criamos jardins que pertencem ao lugar, que ampliam a experiência de viver do lado de fora, que conversam com o jeito brasileiro — e especialmente cearense — de morar.</p>
+        <p class="body-text" data-i18n="manifesto.p3">Não buscamos excessos. Buscamos coerência, equilíbrio e permanência. Criamos jardins que pertencem ao lugar, que ampliam a experiência de viver do lado de fora, que conversam com o jeito brasileiro — e especialmente cearense — de morar.</p>
         <div class="quote-block">
-          <p class="quote-text">"Elegância natural, com raízes no território."</p>
+          <p class="quote-text" data-i18n="manifesto.quote">"Elegância natural, com raízes no território."</p>
         </div>
       </div>
     </div>
@@ -283,36 +308,36 @@ fbq('track', 'PageView');
 
 <!-- DIVIDER -->
 <div class="divider">
-  <p class="divider-text">O exterior como experiência.</p>
+  <p class="divider-text" data-i18n="divider.text">O exterior como experiência.</p>
 </div>
 
 <!-- SERVIÇOS -->
 <section class="services" id="servicos">
   <div class="container">
     <div class="services-header">
-      <p class="section-label">Serviços</p>
-      <h2 class="section-h2">Natureza sofisticada,<br><em>criada para o nosso clima.</em></h2>
+      <p class="section-label" data-i18n="services.label">Serviços</p>
+      <h2 class="section-h2" data-i18n-html="services.h2">Natureza sofisticada,<br><em>criada para o nosso clima.</em></h2>
     </div>
     <div class="services-grid">
       <div class="service-card">
         <div class="service-card-img-placeholder"></div>
         <div class="service-card-body">
-          <h3>Projeto Paisagístico</h3>
-          <p>Concepção completa do jardim: levantamento, proposta criativa, detalhamento técnico e acompanhamento de obra.</p>
+          <h3 data-i18n="services.card1.title">Projeto Paisagístico</h3>
+          <p data-i18n="services.card1.desc">Concepção completa do jardim: levantamento, proposta criativa, detalhamento técnico e acompanhamento de obra.</p>
         </div>
       </div>
       <div class="service-card">
         <div class="service-card-img-placeholder" style="background: linear-gradient(135deg, #D8C8B0, #C0A880);"></div>
         <div class="service-card-body">
-          <h3>Flora &amp; Espécies</h3>
-          <p>Curadoria de espécies adaptadas ao clima quente. Plantas que pertencem ao território e florescem com naturalidade.</p>
+          <h3 data-i18n="services.card2.title">Flora &amp; Espécies</h3>
+          <p data-i18n="services.card2.desc">Curadoria de espécies adaptadas ao clima quente. Plantas que pertencem ao território e florescem com naturalidade.</p>
         </div>
       </div>
       <div class="service-card">
         <div class="service-card-img-placeholder" style="background: linear-gradient(135deg, #B8C8B0, #809878);"></div>
         <div class="service-card-body">
-          <h3>Execução &amp; Manutenção</h3>
-          <p>Implantação detalhista e manutenção inteligente. A técnica não aparece — o resultado, sim.</p>
+          <h3 data-i18n="services.card3.title">Execução &amp; Manutenção</h3>
+          <p data-i18n="services.card3.desc">Implantação detalhista e manutenção inteligente. A técnica não aparece — o resultado, sim.</p>
         </div>
       </div>
     </div>
@@ -323,16 +348,16 @@ fbq('track', 'PageView');
 <section class="pilares" id="pilares">
   <div class="container">
     <div class="pilares-header">
-      <p class="section-label">Pilares Criativos</p>
-      <h2 class="section-h2">O que nos <em>move.</em></h2>
+      <p class="section-label" data-i18n="pillars.label">Pilares Criativos</p>
+      <h2 class="section-h2" data-i18n-html="pillars.h2">O que nos <em>move.</em></h2>
     </div>
     <div class="pilares-grid">
-      <div class="pilar"><p class="pilar-num">01</p><p class="pilar-title">Brasilidade Contemporânea</p><p class="pilar-desc">Uma visão moderna do Brasil: textura, luz, clima, naturalidade. A brasilidade aqui é sofisticada.</p></div>
-      <div class="pilar"><p class="pilar-num">02</p><p class="pilar-title">Ceará Arquitetônico</p><p class="pilar-desc">O paisagismo acompanha a estética da região: linhas limpas, brises, sombra, ventilação, integração.</p></div>
-      <div class="pilar"><p class="pilar-num">03</p><p class="pilar-title">Técnica Invisível</p><p class="pilar-desc">Execução impecável, detalhista e silenciosa. A técnica não aparece — o resultado, sim.</p></div>
-      <div class="pilar"><p class="pilar-num">04</p><p class="pilar-title">Elegância Sustentável</p><p class="pilar-desc">Plantas adaptadas ao clima quente. Manutenção inteligente. Beleza que dura.</p></div>
-      <div class="pilar"><p class="pilar-num">05</p><p class="pilar-title">Exterior Como Estilo de Vida</p><p class="pilar-desc">No Ceará, a vida acontece ao ar livre. Os jardins precisam convidar, abrigar, respirar.</p></div>
-      <div class="pilar"><p class="pilar-num">06</p><p class="pilar-title">Raízes do Interior</p><p class="pilar-desc">Uma sensibilidade que vem de memórias espalhadas pelo interior nordestino. Discreta. Afetiva. Presente.</p></div>
+      <div class="pilar"><p class="pilar-num">01</p><p class="pilar-title" data-i18n="pillars.p1.title">Brasilidade Contemporânea</p><p class="pilar-desc" data-i18n="pillars.p1.desc">Uma visão moderna do Brasil: textura, luz, clima, naturalidade. A brasilidade aqui é sofisticada.</p></div>
+      <div class="pilar"><p class="pilar-num">02</p><p class="pilar-title" data-i18n="pillars.p2.title">Ceará Arquitetônico</p><p class="pilar-desc" data-i18n="pillars.p2.desc">O paisagismo acompanha a estética da região: linhas limpas, brises, sombra, ventilação, integração.</p></div>
+      <div class="pilar"><p class="pilar-num">03</p><p class="pilar-title" data-i18n="pillars.p3.title">Técnica Invisível</p><p class="pilar-desc" data-i18n="pillars.p3.desc">Execução impecável, detalhista e silenciosa. A técnica não aparece — o resultado, sim.</p></div>
+      <div class="pilar"><p class="pilar-num">04</p><p class="pilar-title" data-i18n="pillars.p4.title">Elegância Sustentável</p><p class="pilar-desc" data-i18n="pillars.p4.desc">Plantas adaptadas ao clima quente. Manutenção inteligente. Beleza que dura.</p></div>
+      <div class="pilar"><p class="pilar-num">05</p><p class="pilar-title" data-i18n="pillars.p5.title">Exterior Como Estilo de Vida</p><p class="pilar-desc" data-i18n="pillars.p5.desc">No Ceará, a vida acontece ao ar livre. Os jardins precisam convidar, abrigar, respirar.</p></div>
+      <div class="pilar"><p class="pilar-num">06</p><p class="pilar-title" data-i18n="pillars.p6.title">Raízes do Interior</p><p class="pilar-desc" data-i18n="pillars.p6.desc">Uma sensibilidade que vem de memórias espalhadas pelo interior nordestino. Discreta. Afetiva. Presente.</p></div>
     </div>
   </div>
 </section>
@@ -341,54 +366,54 @@ fbq('track', 'PageView');
 <section class="signature">
   <div class="container">
     <div class="sig-line"></div>
-    <p class="sig-quote">"Paisagismo que pertence ao lugar."</p>
-    <p class="sig-sub">Elloverde — Fortaleza, Ceará</p>
+    <p class="sig-quote" data-i18n="signature.quote">"Paisagismo que pertence ao lugar."</p>
+    <p class="sig-sub" data-i18n="signature.sub">Elloverde — Fortaleza, Ceará</p>
   </div>
 </section>
 
-<!-- FORMULÁRIO DE ORÇAMENTO -->
+<!-- FORMULÁRIO -->
 <section class="orcamento" id="orcamento">
   <div class="container">
     <div class="orcamento-header">
-      <p class="section-label">Orçamento</p>
-      <h2 class="section-h2">Conte-nos sobre o seu <em>projeto.</em></h2>
-      <p>Preencha o formulário e entraremos em contato via WhatsApp para agendar uma visita técnica.</p>
+      <p class="section-label" data-i18n="form.label">Orçamento</p>
+      <h2 class="section-h2" data-i18n-html="form.h2">Conte-nos sobre o seu <em>projeto.</em></h2>
+      <p data-i18n="form.intro">Preencha o formulário e entraremos em contato via WhatsApp para agendar uma visita técnica.</p>
     </div>
     <form id="orcamentoForm" onsubmit="submitForm(event)">
       <div class="form-grid">
         <div class="form-group">
-          <label>Nome</label>
-          <input type="text" name="nome" placeholder="Seu nome completo" required />
+          <label data-i18n="form.name">Nome</label>
+          <input type="text" name="nome" data-i18n-placeholder="form.namePh" placeholder="Seu nome completo" required />
         </div>
         <div class="form-group">
-          <label>Telefone / WhatsApp</label>
+          <label data-i18n="form.phone">Telefone / WhatsApp</label>
           <input type="tel" name="telefone" placeholder="(85) 9 0000-0000" required />
         </div>
         <div class="form-group">
-          <label>E-mail</label>
+          <label data-i18n="form.email">E-mail</label>
           <input type="email" name="email" placeholder="seu@email.com" required />
         </div>
         <div class="form-group">
-          <label>Tipo de projeto</label>
+          <label data-i18n="form.type">Tipo de projeto</label>
           <select name="tipo" required>
-            <option value="" disabled selected>Selecione</option>
-            <option value="Projeto Paisagístico">Projeto Paisagístico</option>
-            <option value="Flora & Espécies">Flora &amp; Espécies</option>
-            <option value="Execução & Manutenção">Execução &amp; Manutenção</option>
-            <option value="Outro">Outro</option>
+            <option value="" disabled selected data-i18n="form.typeSelect">Selecione</option>
+            <option value="Projeto Paisagístico" data-i18n="form.opt1">Projeto Paisagístico</option>
+            <option value="Flora & Espécies" data-i18n="form.opt2">Flora &amp; Espécies</option>
+            <option value="Execução & Manutenção" data-i18n="form.opt3">Execução &amp; Manutenção</option>
+            <option value="Outro" data-i18n="form.opt4">Outro</option>
           </select>
         </div>
         <div class="form-group form-full">
-          <label>Mensagem</label>
-          <textarea name="mensagem" placeholder="Descreva brevemente o seu espaço e o que imagina para ele..."></textarea>
+          <label data-i18n="form.message">Mensagem</label>
+          <textarea name="mensagem" data-i18n-placeholder="form.messagePh" placeholder="Descreva brevemente o seu espaço e o que imagina para ele..."></textarea>
         </div>
       </div>
       <div class="form-submit">
-        <button type="submit">Solicitar orçamento via WhatsApp</button>
+        <button type="submit" data-i18n="form.submit">Solicitar orçamento via WhatsApp</button>
       </div>
     </form>
     <div class="form-success" id="formSuccess">
-      <p>Obrigado! Abrindo o WhatsApp agora… 🌿</p>
+      <p data-i18n="form.success">Obrigado! Abrindo o WhatsApp agora… 🌿</p>
     </div>
   </div>
 </section>
@@ -398,9 +423,9 @@ fbq('track', 'PageView');
   <div class="container">
     <div class="contact-grid">
       <div>
-        <p class="section-label">Contato</p>
-        <h2 class="section-h2" style="margin-bottom: 20px;">Vamos criar o seu<br><em>jardim ideal.</em></h2>
-        <p class="body-text" style="max-width: 360px;">Entre em contato e agende uma visita técnica. Cada projeto começa com uma conversa sobre o seu espaço, o seu clima e a sua forma de viver ao ar livre.</p>
+        <p class="section-label" data-i18n="contact.label">Contato</p>
+        <h2 class="section-h2" style="margin-bottom: 20px;" data-i18n-html="contact.h2">Vamos criar o seu<br><em>jardim ideal.</em></h2>
+        <p class="body-text" style="max-width: 360px;" data-i18n="contact.desc">Entre em contato e agende uma visita técnica. Cada projeto começa com uma conversa sobre o seu espaço, o seu clima e a sua forma de viver ao ar livre.</p>
       </div>
       <div style="padding-top: 40px;">
         <a href="https://wa.me/5585992252253" target="_blank" class="contact-item" onclick="trackWhatsApp('contato')">
@@ -425,7 +450,7 @@ fbq('track', 'PageView');
           <div class="contact-icon">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2C6 2 4 4.5 4 7c0 4 5 9 5 9s5-5 5-9c0-2.5-2-5-5-5z" stroke="currentColor" stroke-width="1" fill="none"/><circle cx="9" cy="7" r="2" stroke="currentColor" stroke-width="1" fill="none"/></svg>
           </div>
-          <div><p class="contact-lbl">Localização</p><p class="contact-val">Fortaleza, Ceará — Brasil</p></div>
+          <div><p class="contact-lbl" data-i18n="contact.locLabel">Localização</p><p class="contact-val">Fortaleza, Ceará — Brasil</p></div>
         </div>
       </div>
     </div>
@@ -435,11 +460,11 @@ fbq('track', 'PageView');
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Elloverde</div>
-  <p class="footer-copy">© 2026 Elloverde Paisagismo &amp; Flora. Todos os direitos reservados.</p>
-  <p class="footer-tag">Elegância natural, com raízes no território.</p>
+  <p class="footer-copy" data-i18n="footer.copy">© 2026 Elloverde Paisagismo &amp; Flora. Todos os direitos reservados.</p>
+  <p class="footer-tag" data-i18n="footer.tag">Elegância natural, com raízes no território.</p>
 </footer>
 
-<!-- BOTÃO FLUTUANTE WHATSAPP -->
+<!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/5585992252253" target="_blank" class="whatsapp-float" onclick="trackWhatsApp('float')" aria-label="Fale pelo WhatsApp">
   <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
     <path d="M16 2C8.268 2 2 8.268 2 16c0 2.482.676 4.805 1.854 6.797L2 30l7.418-1.818A13.94 13.94 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.56 11.56 0 0 1-5.89-1.608l-.422-.252-4.402 1.08 1.114-4.28-.276-.44A11.56 11.56 0 0 1 4.4 16C4.4 9.59 9.59 4.4 16 4.4S27.6 9.59 27.6 16 22.41 27.6 16 27.6zm6.34-8.64c-.348-.174-2.06-1.016-2.38-1.132-.318-.116-.55-.174-.78.174-.23.348-.894 1.132-1.096 1.364-.202.232-.404.26-.752.086-.348-.174-1.47-.542-2.8-1.726-1.034-.922-1.732-2.06-1.936-2.408-.202-.348-.022-.536.152-.71.156-.154.348-.404.522-.606.174-.202.232-.348.348-.58.116-.232.058-.436-.03-.61-.086-.174-.78-1.878-1.07-2.572-.282-.676-.568-.584-.78-.594l-.664-.012c-.232 0-.61.086-.928.434-.318.348-1.214 1.186-1.214 2.892s1.242 3.354 1.416 3.586c.174.232 2.444 3.732 5.922 5.234.828.358 1.474.572 1.978.732.832.264 1.588.226 2.186.138.668-.1 2.06-.842 2.35-1.656.29-.814.29-1.512.202-1.656-.086-.144-.318-.232-.666-.406z"/>
@@ -447,55 +472,180 @@ fbq('track', 'PageView');
 </a>
 
 <script>
-  // TRACKING META PIXEL
-  function trackWhatsApp(origem) {
-    if (typeof fbq !== 'undefined') fbq('track', 'Contact', { content_name: 'WhatsApp', origem: origem });
+// ── DICIONÁRIO DE TRADUÇÕES ───────────────────────────────────────────────────
+const i18n = {
+  pt: {
+    'nav.manifesto':'Manifesto','nav.services':'Serviços','nav.pillars':'Pilares',
+    'nav.quote':'Orçamento','nav.contact':'Contato','nav.cta':'Fale Conosco',
+    'hero.eyebrow':'Paisagismo & Flora — Ceará',
+    'hero.h1':'Elegância natural,<br><em>com raízes no território.</em>',
+    'hero.sub':'Criamos jardins que pertencem ao lugar. Paisagismo sofisticado, criado para o clima e a estética do Ceará.',
+    'hero.ctaPrimary':'Solicitar visita técnica','hero.ctaSecondary':'Ver serviços',
+    'manifesto.label':'Manifesto',
+    'manifesto.h2':'A Elloverde nasce de um olhar que sempre <em>reconheceu valor no natural.</em>',
+    'manifesto.p1':'Um olhar moldado pela luz intensa do Ceará, pelo vento que movimenta as folhas ao longo do dia e por lembranças difusas da simplicidade do interior — memórias discretas, mas que permanecem.',
+    'manifesto.p2':'É desse território, dessa sensação e dessa estética que vem a nossa forma de criar áreas externas: com respeito ao clima, com atenção às texturas locais, com harmonia entre natureza e arquitetura.',
+    'manifesto.p3':'Não buscamos excessos. Buscamos coerência, equilíbrio e permanência. Criamos jardins que pertencem ao lugar, que ampliam a experiência de viver do lado de fora, que conversam com o jeito brasileiro — e especialmente cearense — de morar.',
+    'manifesto.quote':'"Elegância natural, com raízes no território."',
+    'divider.text':'O exterior como experiência.',
+    'services.label':'Serviços',
+    'services.h2':'Natureza sofisticada,<br><em>criada para o nosso clima.</em>',
+    'services.card1.title':'Projeto Paisagístico',
+    'services.card1.desc':'Concepção completa do jardim: levantamento, proposta criativa, detalhamento técnico e acompanhamento de obra.',
+    'services.card2.title':'Flora & Espécies',
+    'services.card2.desc':'Curadoria de espécies adaptadas ao clima quente. Plantas que pertencem ao território e florescem com naturalidade.',
+    'services.card3.title':'Execução & Manutenção',
+    'services.card3.desc':'Implantação detalhista e manutenção inteligente. A técnica não aparece — o resultado, sim.',
+    'pillars.label':'Pilares Criativos','pillars.h2':'O que nos <em>move.</em>',
+    'pillars.p1.title':'Brasilidade Contemporânea','pillars.p1.desc':'Uma visão moderna do Brasil: textura, luz, clima, naturalidade. A brasilidade aqui é sofisticada.',
+    'pillars.p2.title':'Ceará Arquitetônico','pillars.p2.desc':'O paisagismo acompanha a estética da região: linhas limpas, brises, sombra, ventilação, integração.',
+    'pillars.p3.title':'Técnica Invisível','pillars.p3.desc':'Execução impecável, detalhista e silenciosa. A técnica não aparece — o resultado, sim.',
+    'pillars.p4.title':'Elegância Sustentável','pillars.p4.desc':'Plantas adaptadas ao clima quente. Manutenção inteligente. Beleza que dura.',
+    'pillars.p5.title':'Exterior Como Estilo de Vida','pillars.p5.desc':'No Ceará, a vida acontece ao ar livre. Os jardins precisam convidar, abrigar, respirar.',
+    'pillars.p6.title':'Raízes do Interior','pillars.p6.desc':'Uma sensibilidade que vem de memórias espalhadas pelo interior nordestino. Discreta. Afetiva. Presente.',
+    'signature.quote':'"Paisagismo que pertence ao lugar."','signature.sub':'Elloverde — Fortaleza, Ceará',
+    'form.label':'Orçamento','form.h2':'Conte-nos sobre o seu <em>projeto.</em>',
+    'form.intro':'Preencha o formulário e entraremos em contato via WhatsApp para agendar uma visita técnica.',
+    'form.name':'Nome','form.namePh':'Seu nome completo',
+    'form.phone':'Telefone / WhatsApp','form.email':'E-mail',
+    'form.type':'Tipo de projeto','form.typeSelect':'Selecione',
+    'form.opt1':'Projeto Paisagístico','form.opt2':'Flora & Espécies',
+    'form.opt3':'Execução & Manutenção','form.opt4':'Outro',
+    'form.message':'Mensagem','form.messagePh':'Descreva brevemente o seu espaço e o que imagina para ele...',
+    'form.submit':'Solicitar orçamento via WhatsApp',
+    'form.success':'Obrigado! Abrindo o WhatsApp agora… 🌿',
+    'contact.label':'Contato','contact.h2':'Vamos criar o seu<br><em>jardim ideal.</em>',
+    'contact.desc':'Entre em contato e agende uma visita técnica. Cada projeto começa com uma conversa sobre o seu espaço, o seu clima e a sua forma de viver ao ar livre.',
+    'contact.locLabel':'Localização',
+    'footer.copy':'© 2026 Elloverde Paisagismo & Flora. Todos os direitos reservados.',
+    'footer.tag':'Elegância natural, com raízes no território.',
+  },
+  en: {
+    'nav.manifesto':'Manifesto','nav.services':'Services','nav.pillars':'Pillars',
+    'nav.quote':'Get a Quote','nav.contact':'Contact','nav.cta':'Talk to Us',
+    'hero.eyebrow':'Landscaping & Flora — Ceará',
+    'hero.h1':'Natural elegance,<br><em>rooted in the territory.</em>',
+    'hero.sub':'We create gardens that belong to their place. Sophisticated landscaping designed for the climate and aesthetics of Ceará.',
+    'hero.ctaPrimary':'Request a site visit','hero.ctaSecondary':'Our services',
+    'manifesto.label':'Manifesto',
+    'manifesto.h2':'Elloverde is born from a gaze that always <em>recognized value in nature.</em>',
+    'manifesto.p1':'A perspective shaped by the intense light of Ceará, by the wind that stirs the leaves throughout the day, and by faint memories of the simplicity of the interior — quiet memories, yet enduring.',
+    'manifesto.p2':'From this territory, this feeling, and this aesthetic comes our way of creating outdoor spaces: with respect for the climate, attention to local textures, and harmony between nature and architecture.',
+    'manifesto.p3':'We do not seek excess. We seek coherence, balance, and permanence. We create gardens that belong to their place, that expand the experience of living outdoors, that speak to the Brazilian — and especially the Cearense — way of living.',
+    'manifesto.quote':'"Natural elegance, rooted in the territory."',
+    'divider.text':'The outdoors as an experience.',
+    'services.label':'Services',
+    'services.h2':'Sophisticated nature,<br><em>designed for our climate.</em>',
+    'services.card1.title':'Landscape Design',
+    'services.card1.desc':'Full garden conception: site survey, creative proposal, technical detailing, and construction supervision.',
+    'services.card2.title':'Flora & Species',
+    'services.card2.desc':'Curation of species adapted to the warm climate. Plants that belong to the territory and flourish naturally.',
+    'services.card3.title':'Installation & Maintenance',
+    'services.card3.desc':'Detailed installation and intelligent maintenance. The technique stays invisible — the result does not.',
+    'pillars.label':'Creative Pillars','pillars.h2':'What <em>drives us.</em>',
+    'pillars.p1.title':'Contemporary Brazilianness','pillars.p1.desc':'A modern vision of Brazil: texture, light, climate, naturality. Brazilianness here is sophisticated.',
+    'pillars.p2.title':'Architectural Ceará','pillars.p2.desc':'Landscaping follows the regional aesthetic: clean lines, brise-soleils, shade, ventilation, integration.',
+    'pillars.p3.title':'Invisible Technique','pillars.p3.desc':'Impeccable, detailed, and silent execution. The technique stays invisible — the result does not.',
+    'pillars.p4.title':'Sustainable Elegance','pillars.p4.desc':'Plants adapted to the warm climate. Intelligent maintenance. Beauty that lasts.',
+    'pillars.p5.title':'Outdoors as a Lifestyle','pillars.p5.desc':'In Ceará, life happens outside. Gardens need to invite, shelter, and breathe.',
+    'pillars.p6.title':'Roots of the Interior','pillars.p6.desc':'A sensibility drawn from memories scattered across the northeastern hinterland. Quiet. Affectionate. Present.',
+    'signature.quote':'"Landscaping that belongs to its place."','signature.sub':'Elloverde — Fortaleza, Ceará',
+    'form.label':'Get a Quote','form.h2':'Tell us about your <em>project.</em>',
+    'form.intro':'Fill out the form and we will reach out via WhatsApp to schedule a site visit.',
+    'form.name':'Name','form.namePh':'Your full name',
+    'form.phone':'Phone / WhatsApp','form.email':'E-mail',
+    'form.type':'Project type','form.typeSelect':'Select',
+    'form.opt1':'Landscape Design','form.opt2':'Flora & Species',
+    'form.opt3':'Installation & Maintenance','form.opt4':'Other',
+    'form.message':'Message','form.messagePh':'Briefly describe your space and what you envision for it...',
+    'form.submit':'Request a quote via WhatsApp',
+    'form.success':'Thank you! Opening WhatsApp now… 🌿',
+    'contact.label':'Contact','contact.h2':'Let\'s create your<br><em>ideal garden.</em>',
+    'contact.desc':'Get in touch and schedule a site visit. Every project begins with a conversation about your space, your climate, and your way of living outdoors.',
+    'contact.locLabel':'Location',
+    'footer.copy':'© 2026 Elloverde Paisagismo & Flora. All rights reserved.',
+    'footer.tag':'Natural elegance, rooted in the territory.',
   }
-  function trackInstagram() {
-    if (typeof fbq !== 'undefined') fbq('track', 'Contact', { content_name: 'Instagram' });
-  }
-  function trackEmail() {
-    if (typeof fbq !== 'undefined') fbq('track', 'Contact', { content_name: 'Email' });
-  }
+};
 
-  // TRACKING DE SCROLL POR SEÇÃO
-  const sections = ['manifesto','servicos','pilares','orcamento','contato'];
-  const tracked = {};
-  const scrollObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting && !tracked[e.target.id]) {
-        tracked[e.target.id] = true;
-        if (typeof fbq !== 'undefined') fbq('trackCustom', 'SectionView', { section: e.target.id });
-      }
-    });
-  }, { threshold: 0.4 });
-  sections.forEach(id => { const el = document.getElementById(id); if (el) scrollObserver.observe(el); });
+let currentLang = 'pt';
 
-  // FORMULÁRIO DE ORÇAMENTO
-  function submitForm(e) {
-    e.preventDefault();
-    const form = e.target;
-    const data = new FormData(form);
-    const nome  = data.get('nome');
-    const tipo  = data.get('tipo');
-    const tel   = data.get('telefone');
-    const email = data.get('email');
-    const msg   = data.get('mensagem') || '';
+function setLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+  document.getElementById('btnPT').classList.toggle('active', lang === 'pt');
+  document.getElementById('btnEN').classList.toggle('active', lang === 'en');
 
-    if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: tipo, content_category: 'Orçamento' });
+  const dict = i18n[lang];
 
-    const texto = encodeURIComponent(
-      `Olá! Meu nome é ${nome}.\n` +
-      `Interesse: ${tipo}\n` +
-      `Telefone: ${tel}\n` +
-      `E-mail: ${email}\n` +
-      (msg ? `Mensagem: ${msg}` : '')
-    );
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = dict[el.getAttribute('data-i18n')];
+    if (v !== undefined) el.textContent = v;
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const v = dict[el.getAttribute('data-i18n-html')];
+    if (v !== undefined) el.innerHTML = v;
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const v = dict[el.getAttribute('data-i18n-placeholder')];
+    if (v !== undefined) el.placeholder = v;
+  });
+  document.querySelectorAll('option[data-i18n]').forEach(el => {
+    const v = dict[el.getAttribute('data-i18n')];
+    if (v !== undefined) el.textContent = v;
+  });
+}
 
-    form.style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
-    window.open(`https://wa.me/5585992252253?text=${texto}`, '_blank');
-  }
+// ── TRACKING ──────────────────────────────────────────────────────────────────
+function trackWhatsApp(origem) {
+  if (typeof fbq !== 'undefined') fbq('track', 'Contact', { content_name: 'WhatsApp', origem });
+}
+function trackInstagram() {
+  if (typeof fbq !== 'undefined') fbq('track', 'Contact', { content_name: 'Instagram' });
+}
+function trackEmail() {
+  if (typeof fbq !== 'undefined') fbq('track', 'Contact', { content_name: 'Email' });
+}
+
+// ── SCROLL TRACKING ───────────────────────────────────────────────────────────
+const tracked = {};
+const scrollObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting && !tracked[e.target.id]) {
+      tracked[e.target.id] = true;
+      if (typeof fbq !== 'undefined') fbq('trackCustom', 'SectionView', { section: e.target.id });
+    }
+  });
+}, { threshold: 0.4 });
+['manifesto','servicos','pilares','orcamento','contato'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) scrollObserver.observe(el);
+});
+
+// ── FORMULÁRIO ────────────────────────────────────────────────────────────────
+function submitForm(e) {
+  e.preventDefault();
+  const data = new FormData(e.target);
+  const nome  = data.get('nome');
+  const tipo  = data.get('tipo');
+  const tel   = data.get('telefone');
+  const email = data.get('email');
+  const msg   = data.get('mensagem') || '';
+
+  if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: tipo, content_category: 'Orçamento' });
+
+  const isEN = currentLang === 'en';
+  const texto = encodeURIComponent(
+    (isEN
+      ? `Hello! My name is ${nome}.\nInterest: ${tipo}\nPhone: ${tel}\nEmail: ${email}\n`
+      : `Olá! Meu nome é ${nome}.\nInteresse: ${tipo}\nTelefone: ${tel}\nE-mail: ${email}\n`)
+    + (msg ? (isEN ? `Message: ${msg}` : `Mensagem: ${msg}`) : '')
+  );
+
+  e.target.style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+  window.open(`https://wa.me/5585992252253?text=${texto}`, '_blank');
+}
 </script>
 </body>
 </html>
