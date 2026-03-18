@@ -136,7 +136,7 @@ section { padding: 88px 48px; }
 .services-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
 .service-card { background:#F5F0E8; border:0.5px solid rgba(44,40,32,0.1); overflow:hidden; transition:transform 0.3s, box-shadow 0.3s; }
 .service-card:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(44,40,32,0.08); }
-.service-card-img-placeholder { width:100%; height:200px; }
+.service-card-img-placeholder { width:100%; height:200px; background-size:cover; background-position:center; }
 .service-card-body { padding:24px 24px 28px; }
 .service-card h3 { font-family:'Cormorant Garamond',serif; font-size:19px; font-weight:400; color:#2C2820; margin-bottom:10px; }
 .service-card p { font-size:13px; line-height:1.8; color:#7A6F5E; font-weight:300; }
@@ -364,34 +364,43 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
       <h2 class="section-h2" data-i18n-html="services.h2">Natureza sofisticada,<br><em>criada para o nosso clima.</em></h2>
     </div>
     <div class="services-grid">
+
+      <!-- CARD 1: Criação e Execução -->
       <div class="service-card">
-        <div class="service-card-img-placeholder" style="background:linear-gradient(135deg,#C8D8C0,#98B890);"></div>
+        <div class="service-card-img-placeholder" style="background-image:url('servico-criacao.jpg');"></div>
         <div class="service-card-body">
           <h3 data-i18n="services.card1.title">Criação e Execução de Paisagismo</h3>
           <p data-i18n="services.card1.desc">Projetos personalizados residenciais e corporativos. Do levantamento à obra, com profissionais qualificados, insumos selecionados e acompanhamento próximo.</p>
         </div>
       </div>
+
+      <!-- CARD 2: Condominial -->
       <div class="service-card">
-        <div class="service-card-img-placeholder" style="background:linear-gradient(135deg,#B8C8D8,#7890A8);"></div>
+        <div class="service-card-img-placeholder" style="background-image:url('servico-condominial.jpg');"></div>
         <div class="service-card-body">
           <h3 data-i18n="services.card2.title">Paisagismo Condominial</h3>
           <p data-i18n="services.card2.desc">Valorização dos espaços compartilhados e da fachada. Jardins, entradas e áreas comuns que transmitem organização e identidade ao condomínio.</p>
         </div>
       </div>
+
+      <!-- CARD 3: Manutenção -->
       <div class="service-card">
-        <div class="service-card-img-placeholder" style="background:linear-gradient(135deg,#D8C8B0,#C0A880);"></div>
+        <div class="service-card-img-placeholder" style="background-image:url('servico-manutencao.jpg');"></div>
         <div class="service-card-body">
           <h3 data-i18n="services.card3.title">Manutenção Periódica</h3>
           <p data-i18n="services.card3.desc">Visitas regulares para manter o jardim sempre bonito e saudável — poda, preservação de espécies e cuidado com cada detalhe ao longo do tempo.</p>
         </div>
       </div>
+
+      <!-- CARD 4: Poda -->
       <div class="service-card">
-        <div class="service-card-img-placeholder" style="background:linear-gradient(135deg,#C8D0B0,#909870);"></div>
+        <div class="service-card-img-placeholder" style="background-image:url('servico-poda.jpg');"></div>
         <div class="service-card-body">
           <h3 data-i18n="services.card4.title">Poda, Extração e Insumos</h3>
           <p data-i18n="services.card4.desc">Poda e extração de árvores de grande porte com equipamentos adequados. Fornecimento de plantas e insumos selecionados para cada ambiente.</p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
