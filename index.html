@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="img-src * data: blob:;" />
   <title>Elloverde Paisagismo & Flora — Fortaleza, Ceará</title>
   <meta name="description" content="Paisagismo sofisticado criado para o clima e a estética do Ceará. Elegância natural, com raízes no território." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -77,12 +78,15 @@
 
     /* ── HERO ── */
     #hero {
-      position: relative; height: 100vh;
+      position: relative;
+      height: 100vh; min-height: 600px;
       display: flex; align-items: flex-end;
+      background: #2e4a2e;
     }
     #hero img.hero-bg {
       position: absolute; inset: 0;
       width: 100%; height: 100%; object-fit: cover;
+      display: block;
     }
     #hero .overlay {
       position: absolute; inset: 0;
@@ -358,7 +362,7 @@
   <!-- HERO -->
   <section id="hero">
     <!-- Substitua o src pela foto real do hero -->
-    <img class="hero-bg" src="hero.jpg" alt="Paisagismo premium em Fortaleza" />
+    <img class="hero-bg" src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1800&q=80" alt="Paisagismo premium em Fortaleza" crossorigin="anonymous" />
     <div class="overlay"></div>
     <div class="hero-text">
       <p class="hero-eyebrow fade-up">Paisagismo &amp; Flora — Ceará</p>
@@ -411,7 +415,7 @@
   <!-- DIVIDER IMAGE -->
   <div class="divider-img">
     <!-- Substitua pelo src da foto lifestyle -->
-    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1600&auto=format&fit=crop&q=80" alt="Vida ao ar livre" />
+    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1600&q=80" alt="Vida ao ar livre" crossorigin="anonymous" />
     <div class="overlay"></div>
     <div class="caption">
       <p class="fade-up"><em>O exterior como experiência.</em></p>
@@ -433,7 +437,7 @@
         <div class="service-card fade-up d1">
           <div class="img-wrap">
             <!-- Substitua pelo src da foto de Projeto Paisagístico -->
-            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop&q=80" alt="Projeto Paisagístico" />
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Projeto Paisagístico" crossorigin="anonymous" />
           </div>
           <h3>Projeto Paisagístico</h3>
           <p>Concepção completa do jardim: levantamento, proposta criativa, detalhamento técnico e acompanhamento de obra.</p>
@@ -442,7 +446,7 @@
         <div class="service-card fade-up d2">
           <div class="img-wrap">
             <!-- Substitua pelo src da foto de Flora & Espécies -->
-            <img src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=800&auto=format&fit=crop&q=80" alt="Flora & Espécies" />
+            <img src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=800&q=80" alt="Flora & Espécies" crossorigin="anonymous" />
           </div>
           <h3>Flora &amp; Espécies</h3>
           <p>Curadoria de espécies adaptadas ao clima quente. Plantas que pertencem ao território e florescem com naturalidade.</p>
@@ -451,7 +455,7 @@
         <div class="service-card fade-up d3">
           <div class="img-wrap">
             <!-- Substitua pelo src da foto de Execução & Manutenção -->
-            <img src="https://images.unsplash.com/photo-1599598425947-5202edd56fdc?w=800&auto=format&fit=crop&q=80" alt="Execução & Manutenção" />
+            <img src="https://images.unsplash.com/photo-1599598425947-5202edd56fdc?w=800&q=80" alt="Execução & Manutenção" crossorigin="anonymous" />
           </div>
           <h3>Execução &amp; Manutenção</h3>
           <p>Implantação detalhista e manutenção inteligente. A técnica não aparece — o resultado, sim.</p>
