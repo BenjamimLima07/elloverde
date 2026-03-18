@@ -4,7 +4,22 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Elloverde Paisagismo & Flora</title>
+<meta name="description" content="Paisagismo sofisticado criado para o clima e a estética do Ceará. Elegância natural, com raízes no território." />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+<!-- META PIXEL -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1222074994976228');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1222074994976228&ev=PageView&noscript=1"/></noscript>
+<!-- FIM META PIXEL -->
+
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -56,9 +71,8 @@
   .services { background: #EFEBE1; }
   .services-header { text-align: center; margin-bottom: 52px; }
   .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .service-card { background: #F5F0E8; border: 0.5px solid rgba(44,40,32,0.1); padding: 0; overflow: hidden; }
-  .service-card-img { width: 100%; height: 220px; object-fit: cover; display: block; }
-  .service-card-img-placeholder { width: 100%; height: 220px; background: linear-gradient(135deg, #C8D8C0, #98B890); display: flex; align-items: center; justify-content: center; }
+  .service-card { background: #F5F0E8; border: 0.5px solid rgba(44,40,32,0.1); overflow: hidden; }
+  .service-card-img-placeholder { width: 100%; height: 220px; background: linear-gradient(135deg, #C8D8C0, #98B890); }
   .service-card-body { padding: 24px 24px 28px; }
   .service-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: #2C2820; margin-bottom: 10px; }
   .service-card p { font-size: 13px; line-height: 1.8; color: #7A6F5E; font-weight: 300; }
@@ -82,6 +96,28 @@
   .sig-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 3.5vw, 34px); font-style: italic; font-weight: 300; color: #2C2820; max-width: 520px; margin: 0 auto 20px; line-height: 1.3; }
   .sig-sub { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: #8B7355; }
 
+  /* FORMULÁRIO DE ORÇAMENTO */
+  .orcamento { background: #2C3828; padding: 88px 48px; }
+  .orcamento .section-label { color: #8BA88B; }
+  .orcamento-header { text-align: center; margin-bottom: 52px; }
+  .orcamento-header .section-h2 { color: #E8E0D0; }
+  .orcamento-header .section-h2 em { color: #A8C5A0; }
+  .orcamento-header p { font-size: 13px; color: rgba(212,202,184,0.6); margin-top: 16px; font-weight: 300; line-height: 1.75; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 680px; margin: 0 auto; }
+  .form-full { grid-column: 1 / -1; }
+  .form-group { display: flex; flex-direction: column; gap: 8px; }
+  .form-group label { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(212,202,184,0.5); }
+  .form-group input, .form-group select, .form-group textarea { background: rgba(255,255,255,0.05); border: 0.5px solid rgba(255,255,255,0.12); color: #E8E0D0; font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 300; padding: 12px 16px; outline: none; transition: border-color 0.3s; width: 100%; }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(212,202,184,0.3); }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: rgba(168,197,160,0.5); }
+  .form-group select option { background: #2C3828; color: #E8E0D0; }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-submit { margin-top: 24px; text-align: center; }
+  .form-submit button { background: #2C5F2E; color: #F5F0E8; border: none; cursor: pointer; font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 400; padding: 14px 40px; transition: background 0.3s; }
+  .form-submit button:hover { background: #1F4820; }
+  .form-success { display: none; text-align: center; padding: 32px; }
+  .form-success p { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: #A8C5A0; }
+
   /* CONTACT */
   .contact { background: #EFEBE1; }
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
@@ -97,15 +133,22 @@
   .footer-copy { font-size: 11px; color: rgba(208,232,208,0.45); }
   .footer-tag { font-family: 'Cormorant Garamond', serif; font-size: 13px; font-style: italic; color: rgba(208,232,208,0.4); }
 
+  /* BOTÃO FLUTUANTE WHATSAPP */
+  .whatsapp-float { position: fixed; bottom: 28px; right: 28px; z-index: 200; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; }
+  .whatsapp-float:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
+  .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
+
   /* RESPONSIVE */
   @media (max-width: 768px) {
     nav { padding: 16px 24px; }
     .nav-links { display: none; }
-    section { padding: 64px 24px; }
+    section, .pilares, .orcamento { padding: 64px 24px; }
     .hero-content { padding: 0 24px 48px; }
-    .manifesto-grid, .services-grid, .pilares-grid, .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+    .manifesto-grid, .services-grid, .pilares-grid, .contact-grid, .form-grid { grid-template-columns: 1fr; gap: 32px; }
     .pilares-grid { gap: 1px; }
+    .form-full { grid-column: 1; }
     footer { padding: 24px; flex-direction: column; text-align: center; }
+    .whatsapp-float { bottom: 20px; right: 20px; }
   }
 </style>
 </head>
@@ -118,9 +161,10 @@
     <li><a href="#manifesto">Manifesto</a></li>
     <li><a href="#servicos">Serviços</a></li>
     <li><a href="#pilares">Pilares</a></li>
+    <li><a href="#orcamento">Orçamento</a></li>
     <li><a href="#contato">Contato</a></li>
   </ul>
-  <a href="https://wa.me/5585992252253" target="_blank" class="nav-btn">Fale Conosco</a>
+  <a href="https://wa.me/5585992252253" target="_blank" class="nav-btn" onclick="trackWhatsApp('nav')">Fale Conosco</a>
 </nav>
 
 <!-- HERO -->
@@ -202,36 +246,12 @@
       <h2 class="section-h2">O que nos <em>move.</em></h2>
     </div>
     <div class="pilares-grid">
-      <div class="pilar">
-        <p class="pilar-num">01</p>
-        <p class="pilar-title">Brasilidade Contemporânea</p>
-        <p class="pilar-desc">Uma visão moderna do Brasil: textura, luz, clima, naturalidade. A brasilidade aqui é sofisticada.</p>
-      </div>
-      <div class="pilar">
-        <p class="pilar-num">02</p>
-        <p class="pilar-title">Ceará Arquitetônico</p>
-        <p class="pilar-desc">O paisagismo acompanha a estética da região: linhas limpas, brises, sombra, ventilação, integração.</p>
-      </div>
-      <div class="pilar">
-        <p class="pilar-num">03</p>
-        <p class="pilar-title">Técnica Invisível</p>
-        <p class="pilar-desc">Execução impecável, detalhista e silenciosa. A técnica não aparece — o resultado, sim.</p>
-      </div>
-      <div class="pilar">
-        <p class="pilar-num">04</p>
-        <p class="pilar-title">Elegância Sustentável</p>
-        <p class="pilar-desc">Plantas adaptadas ao clima quente. Manutenção inteligente. Beleza que dura.</p>
-      </div>
-      <div class="pilar">
-        <p class="pilar-num">05</p>
-        <p class="pilar-title">Exterior Como Estilo de Vida</p>
-        <p class="pilar-desc">No Ceará, a vida acontece ao ar livre. Os jardins precisam convidar, abrigar, respirar.</p>
-      </div>
-      <div class="pilar">
-        <p class="pilar-num">06</p>
-        <p class="pilar-title">Raízes do Interior</p>
-        <p class="pilar-desc">Uma sensibilidade que vem de memórias espalhadas pelo interior nordestino. Discreta. Afetiva. Presente.</p>
-      </div>
+      <div class="pilar"><p class="pilar-num">01</p><p class="pilar-title">Brasilidade Contemporânea</p><p class="pilar-desc">Uma visão moderna do Brasil: textura, luz, clima, naturalidade. A brasilidade aqui é sofisticada.</p></div>
+      <div class="pilar"><p class="pilar-num">02</p><p class="pilar-title">Ceará Arquitetônico</p><p class="pilar-desc">O paisagismo acompanha a estética da região: linhas limpas, brises, sombra, ventilação, integração.</p></div>
+      <div class="pilar"><p class="pilar-num">03</p><p class="pilar-title">Técnica Invisível</p><p class="pilar-desc">Execução impecável, detalhista e silenciosa. A técnica não aparece — o resultado, sim.</p></div>
+      <div class="pilar"><p class="pilar-num">04</p><p class="pilar-title">Elegância Sustentável</p><p class="pilar-desc">Plantas adaptadas ao clima quente. Manutenção inteligente. Beleza que dura.</p></div>
+      <div class="pilar"><p class="pilar-num">05</p><p class="pilar-title">Exterior Como Estilo de Vida</p><p class="pilar-desc">No Ceará, a vida acontece ao ar livre. Os jardins precisam convidar, abrigar, respirar.</p></div>
+      <div class="pilar"><p class="pilar-num">06</p><p class="pilar-title">Raízes do Interior</p><p class="pilar-desc">Uma sensibilidade que vem de memórias espalhadas pelo interior nordestino. Discreta. Afetiva. Presente.</p></div>
     </div>
   </div>
 </section>
@@ -245,6 +265,53 @@
   </div>
 </section>
 
+<!-- FORMULÁRIO DE ORÇAMENTO -->
+<section class="orcamento" id="orcamento">
+  <div class="container">
+    <div class="orcamento-header">
+      <p class="section-label">Orçamento</p>
+      <h2 class="section-h2">Conte-nos sobre o seu <em>projeto.</em></h2>
+      <p>Preencha o formulário e entraremos em contato para agendar uma visita técnica.</p>
+    </div>
+    <form id="orcamentoForm" onsubmit="submitForm(event)">
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Nome</label>
+          <input type="text" name="nome" placeholder="Seu nome completo" required />
+        </div>
+        <div class="form-group">
+          <label>Telefone / WhatsApp</label>
+          <input type="tel" name="telefone" placeholder="(85) 9 0000-0000" required />
+        </div>
+        <div class="form-group">
+          <label>E-mail</label>
+          <input type="email" name="email" placeholder="seu@email.com" required />
+        </div>
+        <div class="form-group">
+          <label>Tipo de projeto</label>
+          <select name="tipo" required>
+            <option value="" disabled selected>Selecione</option>
+            <option value="Projeto Paisagístico">Projeto Paisagístico</option>
+            <option value="Flora & Espécies">Flora &amp; Espécies</option>
+            <option value="Execução & Manutenção">Execução &amp; Manutenção</option>
+            <option value="Outro">Outro</option>
+          </select>
+        </div>
+        <div class="form-group form-full">
+          <label>Mensagem</label>
+          <textarea name="mensagem" placeholder="Descreva brevemente o seu espaço e o que imagina para ele..."></textarea>
+        </div>
+      </div>
+      <div class="form-submit">
+        <button type="submit">Solicitar orçamento</button>
+      </div>
+    </form>
+    <div class="form-success" id="formSuccess">
+      <p>Obrigado! Entraremos em contato em breve. 🌿</p>
+    </div>
+  </div>
+</section>
+
 <!-- CONTATO -->
 <section class="contact" id="contato">
   <div class="container">
@@ -255,19 +322,19 @@
         <p class="body-text" style="max-width: 360px;">Entre em contato e agende uma visita técnica. Cada projeto começa com uma conversa sobre o seu espaço, o seu clima e a sua forma de viver ao ar livre.</p>
       </div>
       <div style="padding-top: 40px;">
-        <a href="https://wa.me/5585992252253" target="_blank" class="contact-item">
+        <a href="https://wa.me/5585992252253" target="_blank" class="contact-item" onclick="trackWhatsApp('contato')">
           <div class="contact-icon">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 3c0 0 2 0 3 2s0 3 1 4 3 2 4 3 2-1 4 0 0 4 0 4-5 1-10-6C0 4 3 3 3 3z" stroke="currentColor" stroke-width="1" fill="none"/></svg>
           </div>
           <div><p class="contact-lbl">WhatsApp</p><p class="contact-val">(85) 9 9225-2253</p></div>
         </a>
-        <a href="https://instagram.com/elloverdepaisagismo" target="_blank" class="contact-item">
+        <a href="https://instagram.com/elloverdepaisagismo" target="_blank" class="contact-item" onclick="trackInstagram()">
           <div class="contact-icon">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="3" width="12" height="12" rx="3" stroke="currentColor" stroke-width="1" fill="none"/><circle cx="9" cy="9" r="3" stroke="currentColor" stroke-width="1" fill="none"/><circle cx="13" cy="5" r="0.8" fill="currentColor"/></svg>
           </div>
           <div><p class="contact-lbl">Instagram</p><p class="contact-val">@elloverde</p></div>
         </a>
-        <a href="mailto:vamosconversar@elloverdepaisagismo.com.br" class="contact-item">
+        <a href="mailto:vamosconversar@elloverdepaisagismo.com.br" class="contact-item" onclick="trackEmail()">
           <div class="contact-icon">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="1" stroke="currentColor" stroke-width="1" fill="none"/><path d="M2 5l7 6 7-6" stroke="currentColor" stroke-width="1"/></svg>
           </div>
@@ -290,6 +357,81 @@
   <p class="footer-copy">© 2026 Elloverde Paisagismo &amp; Flora. Todos os direitos reservados.</p>
   <p class="footer-tag">Elegância natural, com raízes no território.</p>
 </footer>
+
+<!-- BOTÃO FLUTUANTE WHATSAPP -->
+<a href="https://wa.me/5585992252253" target="_blank" class="whatsapp-float" onclick="trackWhatsApp('float')" aria-label="Fale pelo WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 2C8.268 2 2 8.268 2 16c0 2.482.676 4.805 1.854 6.797L2 30l7.418-1.818A13.94 13.94 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.56 11.56 0 0 1-5.89-1.608l-.422-.252-4.402 1.08 1.114-4.28-.276-.44A11.56 11.56 0 0 1 4.4 16C4.4 9.59 9.59 4.4 16 4.4S27.6 9.59 27.6 16 22.41 27.6 16 27.6zm6.34-8.64c-.348-.174-2.06-1.016-2.38-1.132-.318-.116-.55-.174-.78.174-.23.348-.894 1.132-1.096 1.364-.202.232-.404.26-.752.086-.348-.174-1.47-.542-2.8-1.726-1.034-.922-1.732-2.06-1.936-2.408-.202-.348-.022-.536.152-.71.156-.154.348-.404.522-.606.174-.202.232-.348.348-.58.116-.232.058-.436-.03-.61-.086-.174-.78-1.878-1.07-2.572-.282-.676-.568-.584-.78-.594l-.664-.012c-.232 0-.61.086-.928.434-.318.348-1.214 1.186-1.214 2.892s1.242 3.354 1.416 3.586c.174.232 2.444 3.732 5.922 5.234.828.358 1.474.572 1.978.732.832.264 1.588.226 2.186.138.668-.1 2.06-.842 2.35-1.656.29-.814.29-1.512.202-1.656-.086-.144-.318-.232-.666-.406z"/>
+  </svg>
+</a>
+
+<script>
+  // ── TRACKING META PIXEL ──────────────────────────────
+  function trackWhatsApp(origem) {
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Contact', { content_name: 'WhatsApp', origem: origem });
+    }
+  }
+  function trackInstagram() {
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Contact', { content_name: 'Instagram' });
+    }
+  }
+  function trackEmail() {
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Contact', { content_name: 'Email' });
+    }
+  }
+
+  // ── TRACKING DE SCROLL POR SEÇÃO ────────────────────
+  const sections = ['manifesto','servicos','pilares','orcamento','contato'];
+  const tracked = {};
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !tracked[e.target.id]) {
+        tracked[e.target.id] = true;
+        if (typeof fbq !== 'undefined') {
+          fbq('trackCustom', 'SectionView', { section: e.target.id });
+        }
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) scrollObserver.observe(el);
+  });
+
+  // ── FORMULÁRIO DE ORÇAMENTO ──────────────────────────
+  function submitForm(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+    const nome  = data.get('nome');
+    const tipo  = data.get('tipo');
+    const tel   = data.get('telefone');
+    const email = data.get('email');
+    const msg   = data.get('mensagem') || '';
+
+    // Evento Lead no Meta Pixel
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Lead', { content_name: tipo, content_category: 'Orçamento' });
+    }
+
+    // Abre WhatsApp com os dados preenchidos
+    const texto = encodeURIComponent(
+      `Olá! Meu nome é ${nome}.\n` +
+      `Interesse: ${tipo}\n` +
+      `Telefone: ${tel}\n` +
+      `E-mail: ${email}\n` +
+      (msg ? `Mensagem: ${msg}` : '')
+    );
+    window.open(`https://wa.me/5585992252253?text=${texto}`, '_blank');
+
+    // Mostra mensagem de sucesso
+    form.style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
+</script>
 
 </body>
 </html>
