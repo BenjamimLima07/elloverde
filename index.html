@@ -154,7 +154,8 @@ fbq('track', 'PageView');
   /* SERVICES */
   .services { background: #EFEBE1; }
   .services-header { text-align: center; margin-bottom: 52px; }
-  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  @media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
   .service-card { background: #F5F0E8; border: 0.5px solid rgba(44,40,32,0.1); overflow: hidden; }
   .service-card-img-placeholder { width: 100%; height: 220px; background: linear-gradient(135deg, #C8D8C0, #98B890); }
   .service-card-body { padding: 24px 24px 28px; }
@@ -320,24 +321,31 @@ fbq('track', 'PageView');
     </div>
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-card-img-placeholder"></div>
+        <div class="service-card-img-placeholder" style="background: linear-gradient(135deg, #C8D8C0, #98B890);"></div>
         <div class="service-card-body">
-          <h3 data-i18n="services.card1.title">Projeto Paisagístico</h3>
-          <p data-i18n="services.card1.desc">Concepção completa do jardim: levantamento, proposta criativa, detalhamento técnico e acompanhamento de obra.</p>
+          <h3 data-i18n="services.card1.title">Criação e Execução de Paisagismo</h3>
+          <p data-i18n="services.card1.desc">Projetos personalizados residenciais e corporativos. Do levantamento à obra, com profissionais qualificados, insumos selecionados e acompanhamento próximo.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-img-placeholder" style="background: linear-gradient(135deg, #B8C8D8, #7890A8);"></div>
+        <div class="service-card-body">
+          <h3 data-i18n="services.card2.title">Paisagismo Condominial</h3>
+          <p data-i18n="services.card2.desc">Valorização dos espaços compartilhados e da fachada. Jardins, entradas e áreas comuns que transmitem organização e identidade ao condomínio.</p>
         </div>
       </div>
       <div class="service-card">
         <div class="service-card-img-placeholder" style="background: linear-gradient(135deg, #D8C8B0, #C0A880);"></div>
         <div class="service-card-body">
-          <h3 data-i18n="services.card2.title">Flora &amp; Espécies</h3>
-          <p data-i18n="services.card2.desc">Curadoria de espécies adaptadas ao clima quente. Plantas que pertencem ao território e florescem com naturalidade.</p>
+          <h3 data-i18n="services.card3.title">Manutenção Periódica</h3>
+          <p data-i18n="services.card3.desc">Visitas regulares para manter o jardim sempre bonito e saudável — poda, preservação de espécies e cuidado com cada detalhe ao longo do tempo.</p>
         </div>
       </div>
       <div class="service-card">
-        <div class="service-card-img-placeholder" style="background: linear-gradient(135deg, #B8C8B0, #809878);"></div>
+        <div class="service-card-img-placeholder" style="background: linear-gradient(135deg, #C8D0B0, #909870);"></div>
         <div class="service-card-body">
-          <h3 data-i18n="services.card3.title">Execução &amp; Manutenção</h3>
-          <p data-i18n="services.card3.desc">Implantação detalhista e manutenção inteligente. A técnica não aparece — o resultado, sim.</p>
+          <h3 data-i18n="services.card4.title">Poda, Extração e Insumos</h3>
+          <p data-i18n="services.card4.desc">Poda e extração de árvores de grande porte com equipamentos adequados. Fornecimento de plantas e insumos selecionados para cada ambiente.</p>
         </div>
       </div>
     </div>
@@ -397,10 +405,11 @@ fbq('track', 'PageView');
           <label data-i18n="form.type">Tipo de projeto</label>
           <select name="tipo" required>
             <option value="" disabled selected data-i18n="form.typeSelect">Selecione</option>
-            <option value="Projeto Paisagístico" data-i18n="form.opt1">Projeto Paisagístico</option>
-            <option value="Flora & Espécies" data-i18n="form.opt2">Flora &amp; Espécies</option>
-            <option value="Execução & Manutenção" data-i18n="form.opt3">Execução &amp; Manutenção</option>
-            <option value="Outro" data-i18n="form.opt4">Outro</option>
+            <option value="Criação e Execução de Paisagismo" data-i18n="form.opt1">Criação e Execução de Paisagismo</option>
+            <option value="Paisagismo Condominial" data-i18n="form.opt2">Paisagismo Condominial</option>
+            <option value="Manutenção Periódica" data-i18n="form.opt3">Manutenção Periódica</option>
+            <option value="Poda, Extração e Insumos" data-i18n="form.opt4">Poda, Extração e Insumos</option>
+            <option value="Outro" data-i18n="form.opt5">Outro</option>
           </select>
         </div>
         <div class="form-group form-full">
@@ -440,11 +449,11 @@ fbq('track', 'PageView');
           </div>
           <div><p class="contact-lbl">Instagram</p><p class="contact-val">@elloverde</p></div>
         </a>
-        <a href="mailto:vamosconversar@elloverdepaisagismo.com.br" class="contact-item" onclick="trackEmail()">
+        <a href="/cdn-cgi/l/email-protection#7c0a1d11130f1f13120a190e0f1d0e3c191010130a190e18190c1d150f1d1b150f1113521f1311521e0e" class="contact-item" onclick="trackEmail()">
           <div class="contact-icon">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="1" stroke="currentColor" stroke-width="1" fill="none"/><path d="M2 5l7 6 7-6" stroke="currentColor" stroke-width="1"/></svg>
           </div>
-          <div><p class="contact-lbl">E-mail</p><p class="contact-val">vamosconversar@elloverdepaisagismo.com.br</p></div>
+          <div><p class="contact-lbl">E-mail</p><p class="contact-val"><span class="__cf_email__" data-cfemail="0670676b697565696870637475677446636a6a69706374626376676f7567616f756b692865696b286474">[email&#160;protected]</span></p></div>
         </a>
         <div class="contact-item">
           <div class="contact-icon">
@@ -471,7 +480,7 @@ fbq('track', 'PageView');
   </svg>
 </a>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── DICIONÁRIO DE TRADUÇÕES ───────────────────────────────────────────────────
 const i18n = {
   pt: {
@@ -490,12 +499,14 @@ const i18n = {
     'divider.text':'O exterior como experiência.',
     'services.label':'Serviços',
     'services.h2':'Natureza sofisticada,<br><em>criada para o nosso clima.</em>',
-    'services.card1.title':'Projeto Paisagístico',
-    'services.card1.desc':'Concepção completa do jardim: levantamento, proposta criativa, detalhamento técnico e acompanhamento de obra.',
-    'services.card2.title':'Flora & Espécies',
-    'services.card2.desc':'Curadoria de espécies adaptadas ao clima quente. Plantas que pertencem ao território e florescem com naturalidade.',
-    'services.card3.title':'Execução & Manutenção',
-    'services.card3.desc':'Implantação detalhista e manutenção inteligente. A técnica não aparece — o resultado, sim.',
+    'services.card1.title':'Criação e Execução de Paisagismo',
+    'services.card1.desc':'Projetos personalizados residenciais e corporativos. Do levantamento à obra, com profissionais qualificados, insumos selecionados e acompanhamento próximo.',
+    'services.card2.title':'Paisagismo Condominial',
+    'services.card2.desc':'Valorização dos espaços compartilhados e da fachada. Jardins, entradas e áreas comuns que transmitem organização e identidade ao condomínio.',
+    'services.card3.title':'Manutenção Periódica',
+    'services.card3.desc':'Visitas regulares para manter o jardim sempre bonito e saudável — poda, preservação de espécies e cuidado com cada detalhe ao longo do tempo.',
+    'services.card4.title':'Poda, Extração e Insumos',
+    'services.card4.desc':'Poda e extração de árvores de grande porte com equipamentos adequados. Fornecimento de plantas e insumos selecionados para cada ambiente.',
     'pillars.label':'Pilares Criativos','pillars.h2':'O que nos <em>move.</em>',
     'pillars.p1.title':'Brasilidade Contemporânea','pillars.p1.desc':'Uma visão moderna do Brasil: textura, luz, clima, naturalidade. A brasilidade aqui é sofisticada.',
     'pillars.p2.title':'Ceará Arquitetônico','pillars.p2.desc':'O paisagismo acompanha a estética da região: linhas limpas, brises, sombra, ventilação, integração.',
@@ -509,8 +520,8 @@ const i18n = {
     'form.name':'Nome','form.namePh':'Seu nome completo',
     'form.phone':'Telefone / WhatsApp','form.email':'E-mail',
     'form.type':'Tipo de projeto','form.typeSelect':'Selecione',
-    'form.opt1':'Projeto Paisagístico','form.opt2':'Flora & Espécies',
-    'form.opt3':'Execução & Manutenção','form.opt4':'Outro',
+    'form.opt1':'Criação e Execução de Paisagismo','form.opt2':'Paisagismo Condominial',
+    'form.opt3':'Manutenção Periódica','form.opt4':'Poda, Extração e Insumos','form.opt5':'Outro',
     'form.message':'Mensagem','form.messagePh':'Descreva brevemente o seu espaço e o que imagina para ele...',
     'form.submit':'Solicitar orçamento via WhatsApp',
     'form.success':'Obrigado! Abrindo o WhatsApp agora… 🌿',
@@ -536,12 +547,14 @@ const i18n = {
     'divider.text':'The outdoors as an experience.',
     'services.label':'Services',
     'services.h2':'Sophisticated nature,<br><em>designed for our climate.</em>',
-    'services.card1.title':'Landscape Design',
-    'services.card1.desc':'Full garden conception: site survey, creative proposal, technical detailing, and construction supervision.',
-    'services.card2.title':'Flora & Species',
-    'services.card2.desc':'Curation of species adapted to the warm climate. Plants that belong to the territory and flourish naturally.',
-    'services.card3.title':'Installation & Maintenance',
-    'services.card3.desc':'Detailed installation and intelligent maintenance. The technique stays invisible — the result does not.',
+    'services.card1.title':'Landscape Design & Execution',
+    'services.card1.desc':'Custom residential and corporate projects. From site survey to completion, with qualified professionals, selected materials, and close supervision.',
+    'services.card2.title':'Condominium Landscaping',
+    'services.card2.desc':'Enhancing shared spaces and building facades. Gardens, entrances, and common areas that convey organization and identity to the condominium.',
+    'services.card3.title':'Periodic Maintenance',
+    'services.card3.desc':'Regular visits to keep the garden beautiful and healthy — pruning, species preservation, and attention to every detail over time.',
+    'services.card4.title':'Pruning, Extraction & Supplies',
+    'services.card4.desc':'Pruning and extraction of large trees with proper equipment. Supply of selected plants and materials suited to each environment.',
     'pillars.label':'Creative Pillars','pillars.h2':'What <em>drives us.</em>',
     'pillars.p1.title':'Contemporary Brazilianness','pillars.p1.desc':'A modern vision of Brazil: texture, light, climate, naturality. Brazilianness here is sophisticated.',
     'pillars.p2.title':'Architectural Ceará','pillars.p2.desc':'Landscaping follows the regional aesthetic: clean lines, brise-soleils, shade, ventilation, integration.',
@@ -555,8 +568,8 @@ const i18n = {
     'form.name':'Name','form.namePh':'Your full name',
     'form.phone':'Phone / WhatsApp','form.email':'E-mail',
     'form.type':'Project type','form.typeSelect':'Select',
-    'form.opt1':'Landscape Design','form.opt2':'Flora & Species',
-    'form.opt3':'Installation & Maintenance','form.opt4':'Other',
+    'form.opt1':'Landscape Design & Execution','form.opt2':'Condominium Landscaping',
+    'form.opt3':'Periodic Maintenance','form.opt4':'Pruning, Extraction & Supplies','form.opt5':'Other',
     'form.message':'Message','form.messagePh':'Briefly describe your space and what you envision for it...',
     'form.submit':'Request a quote via WhatsApp',
     'form.success':'Thank you! Opening WhatsApp now… 🌿',
@@ -638,14 +651,4 @@ function submitForm(e) {
   const texto = encodeURIComponent(
     (isEN
       ? `Hello! My name is ${nome}.\nInterest: ${tipo}\nPhone: ${tel}\nEmail: ${email}\n`
-      : `Olá! Meu nome é ${nome}.\nInteresse: ${tipo}\nTelefone: ${tel}\nE-mail: ${email}\n`)
-    + (msg ? (isEN ? `Message: ${msg}` : `Mensagem: ${msg}`) : '')
-  );
-
-  e.target.style.display = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
-  window.open(`https://wa.me/5585992252253?text=${texto}`, '_blank');
-}
-</script>
-</body>
-</html>
+      : `Olá! Meu nome é ${nome}.\nInteresse: ${tipo}\nTelefone: ${tel}\nE-mail
