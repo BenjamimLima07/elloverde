@@ -3,8 +3,31 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Elloverde Paisagismo & Flora</title>
+<title>Elloverde Paisagismo & Flora | Fortaleza, Ceará</title>
 <meta name="description" content="Paisagismo sofisticado criado para o clima e a estética do Ceará. Elegância natural, com raízes no território." />
+
+<!-- SEO -->
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Elloverde Paisagismo & Flora" />
+<meta name="keywords" content="paisagismo Fortaleza, paisagismo Ceará, jardim Fortaleza, flora Ceará, projeto paisagístico, manutenção jardim, plantas Fortaleza, Elloverde" />
+<link rel="canonical" href="https://www.elloverdepaisagismo.com.br/" />
+
+<!-- OPEN GRAPH (WhatsApp, Facebook, Instagram) -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.elloverdepaisagismo.com.br/" />
+<meta property="og:title" content="Elloverde Paisagismo & Flora | Fortaleza, Ceará" />
+<meta property="og:description" content="Paisagismo sofisticado criado para o clima e a estética do Ceará. Elegância natural, com raízes no território." />
+<meta property="og:image" content="https://www.elloverdepaisagismo.com.br/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:site_name" content="Elloverde Paisagismo & Flora" />
+
+<!-- TWITTER CARD -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Elloverde Paisagismo & Flora | Fortaleza, Ceará" />
+<meta name="twitter:description" content="Paisagismo sofisticado criado para o clima e a estética do Ceará. Elegância natural, com raízes no território." />
+<meta name="twitter:image" content="https://www.elloverdepaisagismo.com.br/og-image.png" />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 
 <!-- META PIXEL -->
@@ -334,11 +357,11 @@ fbq('track', 'PageView');
           </div>
           <div><p class="contact-lbl">Instagram</p><p class="contact-val">@elloverde</p></div>
         </a>
-        <a href="mailto:vamosconversar@elloverdepaisagismo.com.br" class="contact-item" onclick="trackEmail()">
+        <a href="/cdn-cgi/l/email-protection#582e3935372b3b37362e3d2a2b392a183d3434372e3d2a3c3d2839312b393f312b3537763b3735763a2a" class="contact-item" onclick="trackEmail()">
           <div class="contact-icon">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="1" stroke="currentColor" stroke-width="1" fill="none"/><path d="M2 5l7 6 7-6" stroke="currentColor" stroke-width="1"/></svg>
           </div>
-          <div><p class="contact-lbl">E-mail</p><p class="contact-val">vamosconversar@elloverdepaisagismo.com.br</p></div>
+          <div><p class="contact-lbl">E-mail</p><p class="contact-val"><span class="__cf_email__" data-cfemail="86f0e7ebe9f5e5e9e8f0e3f4f5e7f4c6e3eaeae9f0e3f4e2e3f6e7eff5e7e1eff5ebe9a8e5e9eba8e4f4">[email&#160;protected]</span></p></div>
         </a>
         <div class="contact-item">
           <div class="contact-icon">
@@ -365,7 +388,7 @@ fbq('track', 'PageView');
   </svg>
 </a>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // ── TRACKING META PIXEL ──────────────────────────────
   function trackWhatsApp(origem) {
     if (typeof fbq !== 'undefined') {
@@ -422,16 +445,4 @@ fbq('track', 'PageView');
       `Olá! Meu nome é ${nome}.\n` +
       `Interesse: ${tipo}\n` +
       `Telefone: ${tel}\n` +
-      `E-mail: ${email}\n` +
-      (msg ? `Mensagem: ${msg}` : '')
-    );
-    window.open(`https://wa.me/5585992252253?text=${texto}`, '_blank');
-
-    // Mostra mensagem de sucesso
-    form.style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
-  }
-</script>
-
-</body>
-</html>
+      `E-mail: ${email}\n`
