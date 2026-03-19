@@ -198,10 +198,12 @@ section { padding: 88px 48px; }
 .parceiros { background:#EFEBE1; }
 .parceiros-header { text-align:center; margin-bottom:52px; }
 .parceiros-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:rgba(44,40,32,0.08); }
-.parceiro-item { background:#EFEBE1; padding:28px 20px; display:flex; align-items:center; justify-content:center; transition:background 0.3s; }
+.parceiro-item { background:#EFEBE1; padding:28px 20px; display:flex; align-items:center; justify-content:center; transition:background 0.3s; min-height: 90px; }
 .parceiro-item:hover { background:#E8E3D8; }
 .parceiro-name { font-family:'Cormorant Garamond',serif; font-size:15px; font-weight:400; color:#6B5F50; text-align:center; letter-spacing:0.05em; }
 .parceiro-name small { display:block; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:#8B7355; margin-top:4px; font-family:'Jost',sans-serif; font-weight:300; }
+.parceiro-logo { max-width: 110px; max-height: 52px; width: 100%; height: auto; object-fit: contain; filter: grayscale(100%); opacity: 0.5; transition: filter 0.3s, opacity 0.3s; }
+.parceiro-item:hover .parceiro-logo { filter: grayscale(0%); opacity: 1; }
 
 /* ── SIGNATURE ── */
 .signature { background:#F5F0E8; text-align:center; }
@@ -481,16 +483,16 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
       <h2 class="section-h2" data-i18n-html="partners.h2">Empresas que <em>confiam no nosso trabalho.</em></h2>
     </div>
     <div class="parceiros-grid">
-      <div class="parceiro-item"><p class="parceiro-name">Tenda<small>Construtora</small></p></div>
-      <div class="parceiro-item"><p class="parceiro-name">Deloitte<small>Consultoria</small></p></div>
-      <div class="parceiro-item"><p class="parceiro-name">Prefeitura<small>Fortaleza</small></p></div>
-      <div class="parceiro-item"><p class="parceiro-name">CREMEC<small>Conselho Regional</small></p></div>
-      <div class="parceiro-item"><p class="parceiro-name">FUNAI<small>Fundação Nacional</small></p></div>
-      <div class="parceiro-item"><p class="parceiro-name">UPA 24h<small>Saúde Pública</small></p></div>
-      <div class="parceiro-item"><p class="parceiro-name">ISGH<small>Instituto de Saúde</small></p></div>
-      <div class="parceiro-item"><p class="parceiro-name">Toledo do Brasil<small>Indústria</small></p></div>
-      <div class="parceiro-item"><p class="parceiro-name">Todeschini<small>Móveis</small></p></div>
-      <div class="parceiro-item"><p class="parceiro-name">Governo do Ceará<small>Secretaria da Educação</small></p></div>
+      <div class="parceiro-item"><img src="TendaLogo.png" alt="Construtora Tenda" class="parceiro-logo" /></div>
+      <div class="parceiro-item"><img src="DeloitteLogo.jpg" alt="Deloitte" class="parceiro-logo" /></div>
+      <div class="parceiro-item"><img src="FortalezaLogo.png" alt="Prefeitura de Fortaleza" class="parceiro-logo" /></div>
+      <div class="parceiro-item"><img src="CREMECLogo.png" alt="CREMEC" class="parceiro-logo" /></div>
+      <div class="parceiro-item"><img src="FUNAILogo.png" alt="FUNAI" class="parceiro-logo" /></div>
+      <div class="parceiro-item"><img src="UPALogo.png" alt="UPA 24h" class="parceiro-logo" /></div>
+      <div class="parceiro-item"><img src="ISGHLogo.png" alt="ISGH" class="parceiro-logo" /></div>
+      <div class="parceiro-item"><img src="ToledoLogo.png" alt="Toledo do Brasil" class="parceiro-logo" /></div>
+      <div class="parceiro-item"><img src="TodeschiniLogo.png" alt="Todeschini" class="parceiro-logo" /></div>
+      <div class="parceiro-item"><img src="GovLogo.png" alt="Governo do Ceará" class="parceiro-logo" /></div>
     </div>
   </div>
 </section>
