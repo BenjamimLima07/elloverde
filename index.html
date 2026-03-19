@@ -23,6 +23,8 @@
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
 <link rel="apple-touch-icon" href="/favicon-192.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 <script type="application/ld+json">
 {
@@ -75,8 +77,9 @@ body { font-family: 'Jost', sans-serif; background: #F5F0E8; color: #2C2820; ove
 
 /* ── NAV ── */
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(245,240,232,0.95); backdrop-filter: blur(10px); border-bottom: 0.5px solid rgba(44,40,32,0.12); padding: 12px 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; letter-spacing: 0.05em; color: #2C5F2E; text-decoration: none; }
-.nav-logo span { color: #2C2820; }
+.nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+.nav-logo-img { height: 36px; width: auto; display: block; mix-blend-mode: multiply; }
+
 .nav-links { display: flex; gap: 32px; list-style: none; }
 .nav-links a { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #7A6F5E; text-decoration: none; transition: color 0.3s; }
 .nav-links a:hover { color: #2C5F2E; }
@@ -253,7 +256,8 @@ section { padding: 88px 48px; }
 
 /* ── FOOTER ── */
 footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
-.footer-logo { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:300; color:#D0E8D0; letter-spacing:0.05em; }
+.footer-logo { display: flex; align-items: center; }
+.footer-logo-img { height: 40px; width: auto; display: block; mix-blend-mode: lighten; }
 .footer-copy { font-size:11px; color:rgba(208,232,208,0.45); }
 .footer-tag { font-family:'Cormorant Garamond',serif; font-size:13px; font-style:italic; color:rgba(208,232,208,0.4); }
 
@@ -297,6 +301,43 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
   .hero-scroll { right:20px; }
   .contact-grid { gap:40px; }
 }
+
+/* ── SCROLL FADE-IN ── */
+.fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+.fade-in-delay-1 { transition-delay: 0.1s; }
+.fade-in-delay-2 { transition-delay: 0.2s; }
+.fade-in-delay-3 { transition-delay: 0.3s; }
+.fade-in-delay-4 { transition-delay: 0.4s; }
+
+/* ── CARROSSEL DEPOIMENTOS (mobile) ── */
+.depo-carousel-wrap { position: relative; }
+.depo-dots { display: none; justify-content: center; gap: 8px; margin-top: 24px; }
+.depo-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(44,40,32,0.2); border: none; cursor: pointer; padding: 0; transition: background 0.3s, transform 0.3s; }
+.depo-dot.active { background: #2C5F2E; transform: scale(1.3); }
+
+/* ── TOGGLE IDIOMA NO MOBILE MENU ── */
+.mobile-lang { display: flex; align-items: center; border: 0.5px solid rgba(44,40,32,0.18); overflow: hidden; border-radius: 8px; }
+.mobile-lang button { font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; padding: 9px 16px; border: none; cursor: pointer; background: transparent; color: #8B7355; transition: background 0.25s, color 0.25s; }
+.mobile-lang button.active { background: #2C5F2E; color: #F5F0E8; }
+.mobile-lang .lang-sep { width: 0.5px; height: 20px; background: rgba(44,40,32,0.15); }
+
+/* ── FORM SUCCESS ELABORADO ── */
+.form-success { display: none; text-align: center; padding: 48px 32px; }
+.form-success-icon { width: 56px; height: 56px; border-radius: 50%; background: rgba(168,197,160,0.15); border: 1px solid rgba(168,197,160,0.4); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+.form-success-icon svg { width: 24px; height: 24px; stroke: #A8C5A0; }
+.form-success h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-style: italic; color: #A8C5A0; margin-bottom: 10px; }
+.form-success p { font-size: 13px; color: rgba(212,202,184,0.6); font-weight: 300; line-height: 1.75; }
+
+/* ── PARCEIROS width/height (CLS fix) ── */
+.parceiro-logo { width: 150px; height: 72px; object-fit: contain; filter: grayscale(100%); opacity: 0.5; transition: filter 0.3s, opacity 0.3s; }
+
+@media (max-width: 768px) {
+  .depo-dots { display: flex; }
+  .depoimentos-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; padding-bottom: 8px; scrollbar-width: none; }
+  .depoimentos-grid::-webkit-scrollbar { display: none; }
+  .depo-card { min-width: 80vw; scroll-snap-align: start; flex-shrink: 0; }
+}
 </style>
 </head>
 <body>
@@ -310,6 +351,11 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
   <a href="#orcamento" onclick="closeMobile()" data-i18n="nav.quote">Orçamento</a>
   <a href="#contato" onclick="closeMobile()" data-i18n="nav.contact">Contato</a>
   <a href="https://wa.me/5585992252253" target="_blank" class="mobile-cta" onclick="trackWhatsApp('mobile')" data-i18n="nav.cta">Fale Conosco</a>
+  <div class="mobile-lang">
+    <button id="mobileBtnPT" class="active" onclick="setLang('pt')">PT</button>
+    <div class="lang-sep"></div>
+    <button id="mobileBtnEN" onclick="setLang('en')">EN</button>
+  </div>
 </div>
 
 <!-- NAV -->
@@ -317,7 +363,9 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
   <button class="nav-hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
-  <a href="#" class="nav-logo">Ello<span>verde</span></a>
+  <a href="#" class="nav-logo" aria-label="Elloverde Paisagismo & Flora">
+    <img src="Ello_Verde_Marca_01__1_.png" alt="Elloverde Paisagismo & Flora" class="nav-logo-img" />
+  </a>
   <ul class="nav-links">
     <li><a href="#manifesto" data-i18n="nav.manifesto">Manifesto</a></li>
     <li><a href="#servicos" data-i18n="nav.services">Serviços</a></li>
@@ -383,16 +431,16 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
 <!-- MANIFESTO -->
 <section class="manifesto" id="manifesto">
   <div class="container">
-    <div class="manifesto-header">
+    <div class="manifesto-header fade-in">
       <p class="section-label" data-i18n="manifesto.label">Manifesto</p>
       <h2 class="section-h2" data-i18n-html="manifesto.h2">A Elloverde nasce de um olhar que sempre <em>reconheceu valor no natural.</em></h2>
     </div>
     <div class="manifesto-grid">
-      <div>
+      <div class="fade-in fade-in-delay-1">
         <p class="body-text" data-i18n="manifesto.p1">Um olhar moldado pela luz intensa do Ceará, pelo vento que movimenta as folhas ao longo do dia e por lembranças difusas da simplicidade do interior — memórias discretas, mas que permanecem.</p>
         <p class="body-text" data-i18n="manifesto.p2">É desse território, dessa sensação e dessa estética que vem a nossa forma de criar áreas externas: com respeito ao clima, com atenção às texturas locais, com harmonia entre natureza e arquitetura.</p>
       </div>
-      <div>
+      <div class="fade-in fade-in-delay-2">
         <p class="body-text" data-i18n="manifesto.p3">Não buscamos excessos. Buscamos coerência, equilíbrio e permanência. Criamos jardins que pertencem ao lugar, que ampliam a experiência de viver do lado de fora, que conversam com o jeito brasileiro — e especialmente cearense — de morar.</p>
         <div class="quote-block">
           <p class="quote-text" data-i18n="manifesto.quote">"Elegância natural, com raízes no território."</p>
@@ -412,33 +460,33 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
      1. PERFORMANCE + 2. ACESSIBILIDADE: <picture><img> com alt descritivo e loading=lazy -->
 <section class="services" id="servicos">
   <div class="container">
-    <div class="services-header">
+    <div class="services-header fade-in">
       <p class="section-label" data-i18n="services.label">Serviços</p>
       <h2 class="section-h2" data-i18n-html="services.h2">Natureza sofisticada,<br><em>criada para o nosso clima.</em></h2>
     </div>
     <div class="services-grid">
-      <div class="service-card">
+      <div class="service-card fade-in fade-in-delay-1">
         <div class="service-card-img-placeholder" style="background-image:url('servico-criacao.jpg');"></div>
         <div class="service-card-body">
           <h3 data-i18n="services.card1.title">Criação e Execução de Paisagismo</h3>
           <p data-i18n="services.card1.desc">Projetos personalizados residenciais e corporativos. Do levantamento à obra, com profissionais qualificados, insumos selecionados e acompanhamento próximo.</p>
         </div>
       </div>
-      <div class="service-card">
+      <div class="service-card fade-in fade-in-delay-2">
         <div class="service-card-img-placeholder" style="background-image:url('servico-condominial.jpg');"></div>
         <div class="service-card-body">
           <h3 data-i18n="services.card2.title">Paisagismo Condominial</h3>
           <p data-i18n="services.card2.desc">Valorização dos espaços compartilhados e da fachada. Jardins, entradas e áreas comuns que transmitem organização e identidade ao condomínio.</p>
         </div>
       </div>
-      <div class="service-card">
+      <div class="service-card fade-in fade-in-delay-3">
         <div class="service-card-img-placeholder" style="background-image:url('servico-manutencao.jpg');"></div>
         <div class="service-card-body">
           <h3 data-i18n="services.card3.title">Manutenção Periódica</h3>
           <p data-i18n="services.card3.desc">Visitas regulares para manter o jardim sempre bonito e saudável — poda, preservação de espécies e cuidado com cada detalhe ao longo do tempo.</p>
         </div>
       </div>
-      <div class="service-card">
+      <div class="service-card fade-in fade-in-delay-4">
         <div class="service-card-img-placeholder" style="background-image:url('servico-poda.jpg');"></div>
         <div class="service-card-body">
           <h3 data-i18n="services.card4.title">Poda, Extração e Insumos</h3>
@@ -452,17 +500,17 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
 <!-- PILARES -->
 <section class="pilares" id="pilares">
   <div class="container">
-    <div class="pilares-header">
+    <div class="pilares-header fade-in">
       <p class="section-label" data-i18n="pillars.label">Pilares Criativos</p>
       <h2 class="section-h2" data-i18n-html="pillars.h2">O que nos <em>move.</em></h2>
     </div>
     <div class="pilares-grid">
-      <div class="pilar"><p class="pilar-num">01</p><p class="pilar-title" data-i18n="pillars.p1.title">Brasilidade Contemporânea</p><p class="pilar-desc" data-i18n="pillars.p1.desc">Uma visão moderna do Brasil: textura, luz, clima, naturalidade. A brasilidade aqui é sofisticada.</p></div>
-      <div class="pilar"><p class="pilar-num">02</p><p class="pilar-title" data-i18n="pillars.p2.title">Ceará Arquitetônico</p><p class="pilar-desc" data-i18n="pillars.p2.desc">O paisagismo acompanha a estética da região: linhas limpas, brises, sombra, ventilação, integração.</p></div>
-      <div class="pilar"><p class="pilar-num">03</p><p class="pilar-title" data-i18n="pillars.p3.title">Técnica Invisível</p><p class="pilar-desc" data-i18n="pillars.p3.desc">Execução impecável, detalhista e silenciosa. A técnica não aparece — o resultado, sim.</p></div>
-      <div class="pilar"><p class="pilar-num">04</p><p class="pilar-title" data-i18n="pillars.p4.title">Elegância Sustentável</p><p class="pilar-desc" data-i18n="pillars.p4.desc">Plantas adaptadas ao clima quente. Manutenção inteligente. Beleza que dura.</p></div>
-      <div class="pilar"><p class="pilar-num">05</p><p class="pilar-title" data-i18n="pillars.p5.title">Exterior Como Estilo de Vida</p><p class="pilar-desc" data-i18n="pillars.p5.desc">No Ceará, a vida acontece ao ar livre. Os jardins precisam convidar, abrigar, respirar.</p></div>
-      <div class="pilar"><p class="pilar-num">06</p><p class="pilar-title" data-i18n="pillars.p6.title">Raízes do Interior</p><p class="pilar-desc" data-i18n="pillars.p6.desc">Uma sensibilidade que vem de memórias espalhadas pelo interior nordestino. Discreta. Afetiva. Presente.</p></div>
+      <div class="pilar fade-in fade-in-delay-1"><p class="pilar-num">01</p><p class="pilar-title" data-i18n="pillars.p1.title">Brasilidade Contemporânea</p><p class="pilar-desc" data-i18n="pillars.p1.desc">Uma visão moderna do Brasil: textura, luz, clima, naturalidade. A brasilidade aqui é sofisticada.</p></div>
+      <div class="pilar fade-in fade-in-delay-2"><p class="pilar-num">02</p><p class="pilar-title" data-i18n="pillars.p2.title">Ceará Arquitetônico</p><p class="pilar-desc" data-i18n="pillars.p2.desc">O paisagismo acompanha a estética da região: linhas limpas, brises, sombra, ventilação, integração.</p></div>
+      <div class="pilar fade-in fade-in-delay-3"><p class="pilar-num">03</p><p class="pilar-title" data-i18n="pillars.p3.title">Técnica Invisível</p><p class="pilar-desc" data-i18n="pillars.p3.desc">Execução impecável, detalhista e silenciosa. A técnica não aparece — o resultado, sim.</p></div>
+      <div class="pilar fade-in fade-in-delay-1"><p class="pilar-num">04</p><p class="pilar-title" data-i18n="pillars.p4.title">Elegância Sustentável</p><p class="pilar-desc" data-i18n="pillars.p4.desc">Plantas adaptadas ao clima quente. Manutenção inteligente. Beleza que dura.</p></div>
+      <div class="pilar fade-in fade-in-delay-2"><p class="pilar-num">05</p><p class="pilar-title" data-i18n="pillars.p5.title">Exterior Como Estilo de Vida</p><p class="pilar-desc" data-i18n="pillars.p5.desc">No Ceará, a vida acontece ao ar livre. Os jardins precisam convidar, abrigar, respirar.</p></div>
+      <div class="pilar fade-in fade-in-delay-3"><p class="pilar-num">06</p><p class="pilar-title" data-i18n="pillars.p6.title">Raízes do Interior</p><p class="pilar-desc" data-i18n="pillars.p6.desc">Uma sensibilidade que vem de memórias espalhadas pelo interior nordestino. Discreta. Afetiva. Presente.</p></div>
     </div>
   </div>
 </section>
@@ -470,28 +518,35 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
 <!-- DEPOIMENTOS -->
 <section class="depoimentos" id="depoimentos">
   <div class="container">
-    <div class="depoimentos-header">
+    <div class="depoimentos-header fade-in">
       <p class="section-label" data-i18n="depo.label">Depoimentos</p>
       <h2 class="section-h2" data-i18n-html="depo.h2">O que nossos <em>clientes dizem.</em></h2>
     </div>
-    <div class="depoimentos-grid">
-      <div class="depo-card">
-        <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
-        <p class="depo-text" data-i18n="depo.d1.text">A Elloverde transformou completamente o jardim do nosso condomínio. Profissionalismo impecável do início ao fim, com plantas bem escolhidas para o nosso clima. O resultado superou todas as expectativas.</p>
-        <p class="depo-author" data-i18n="depo.d1.author">Solange Alves</p>
-        <p class="depo-role" data-i18n="depo.d1.role">Paisagismo Residencial</p>
+    <div class="depo-carousel-wrap">
+      <div class="depoimentos-grid" id="depoGrid">
+        <div class="depo-card fade-in fade-in-delay-1">
+          <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
+          <p class="depo-text" data-i18n="depo.d1.text">A Elloverde transformou completamente o jardim do nosso condomínio. Profissionalismo impecável do início ao fim, com plantas bem escolhidas para o nosso clima. O resultado superou todas as expectativas.</p>
+          <p class="depo-author" data-i18n="depo.d1.author">Solange Alves</p>
+          <p class="depo-role" data-i18n="depo.d1.role">Paisagismo Residencial</p>
+        </div>
+        <div class="depo-card fade-in fade-in-delay-2">
+          <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
+          <p class="depo-text" data-i18n="depo.d2.text">Contratamos a Elloverde para a execução do paisagismo do nosso empreendimento e ficamos muito satisfeitos. Equipe comprometida, prazo cumprido e resultado de altíssima qualidade.</p>
+          <p class="depo-author" data-i18n="depo.d2.author">Construtora Tenda</p>
+          <p class="depo-role" data-i18n="depo.d2.role">Paisagismo Condominial</p>
+        </div>
+        <div class="depo-card fade-in fade-in-delay-3">
+          <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
+          <p class="depo-text" data-i18n="depo.d3.text">A manutenção periódica que a Elloverde realiza no nosso espaço é exemplar. Cada visita deixa o jardim ainda mais bonito. Profissionais que realmente entendem e respeitam o verde.</p>
+          <p class="depo-author" data-i18n="depo.d3.author">Condomínio Belas Artes</p>
+          <p class="depo-role" data-i18n="depo.d3.role">Manutenção Periódica</p>
+        </div>
       </div>
-      <div class="depo-card">
-        <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
-        <p class="depo-text" data-i18n="depo.d2.text">Contratamos a Elloverde para a execução do paisagismo do nosso empreendimento e ficamos muito satisfeitos. Equipe comprometida, prazo cumprido e resultado de altíssima qualidade.</p>
-        <p class="depo-author" data-i18n="depo.d2.author">Construtora Tenda</p>
-        <p class="depo-role" data-i18n="depo.d2.role">Paisagismo Condominial</p>
-      </div>
-      <div class="depo-card">
-        <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
-        <p class="depo-text" data-i18n="depo.d3.text">A manutenção periódica que a Elloverde realiza no nosso espaço é exemplar. Cada visita deixa o jardim ainda mais bonito. Profissionais que realmente entendem e respeitam o verde.</p>
-        <p class="depo-author" data-i18n="depo.d3.author">Condomínio Belas Artes</p>
-        <p class="depo-role" data-i18n="depo.d3.role">Manutenção Periódica</p>
+      <div class="depo-dots" id="depoDots">
+        <button class="depo-dot active" onclick="scrollDepo(0)" aria-label="Depoimento 1"></button>
+        <button class="depo-dot" onclick="scrollDepo(1)" aria-label="Depoimento 2"></button>
+        <button class="depo-dot" onclick="scrollDepo(2)" aria-label="Depoimento 3"></button>
       </div>
     </div>
   </div>
@@ -500,23 +555,22 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
 <!-- PARCEIROS -->
 <section class="parceiros" id="parceiros">
   <div class="container">
-    <div class="parceiros-header">
+    <div class="parceiros-header fade-in">
       <p class="section-label" data-i18n="partners.label">Parceiros</p>
       <h2 class="section-h2" data-i18n-html="partners.h2">Empresas que <em>confiam no nosso trabalho.</em></h2>
     </div>
     <div class="parceiros-grid">
-      <!-- 1. PERFORMANCE + 2. ACESSIBILIDADE: logos com alt descritivo e loading=lazy -->
-      <div class="parceiro-item"><img src="TendaLogo.png" alt="Construtora Tenda" class="parceiro-logo" loading="lazy" decoding="async" /></div>
-      <div class="parceiro-item"><img src="DeloitteLogo.jpg" alt="Deloitte" class="parceiro-logo" loading="lazy" decoding="async" /></div>
-      <div class="parceiro-item"><img src="FortalezaLogo.png" alt="Prefeitura de Fortaleza" class="parceiro-logo" loading="lazy" decoding="async" /></div>
-      <div class="parceiro-item"><img src="CREMECLogo.png" alt="CREMEC — Conselho Regional de Medicina do Ceará" class="parceiro-logo" loading="lazy" decoding="async" /></div>
-      <div class="parceiro-item"><img src="FUNAILogo.png" alt="FUNAI — Fundação Nacional dos Povos Indígenas" class="parceiro-logo" loading="lazy" decoding="async" /></div>
-      <div class="parceiro-item"><img src="UPALogo.png" alt="UPA 24h" class="parceiro-logo" loading="lazy" decoding="async" /></div>
-      <div class="parceiro-item"><img src="ISGHLogo.png" alt="ISGH — Instituto de Saúde e Gestão Hospitalar" class="parceiro-logo" loading="lazy" decoding="async" /></div>
-      <div class="parceiro-item"><img src="LogLogo.webp" alt="Log" class="parceiro-logo" loading="lazy" decoding="async" /></div>
-      <div class="parceiro-item"><img src="ToledoLogo.png" alt="Toledo do Brasil" class="parceiro-logo" loading="lazy" decoding="async" /></div>
-      <div class="parceiro-item"><img src="TodeschiniLogo.png" alt="Todeschini" class="parceiro-logo" loading="lazy" decoding="async" /></div>
-      <div class="parceiro-item"><img src="GovLogo.png" alt="Governo do Estado do Ceará" class="parceiro-logo" loading="lazy" decoding="async" /></div>
+      <div class="parceiro-item fade-in fade-in-delay-1"><img src="TendaLogo.png" alt="Construtora Tenda" class="parceiro-logo" width="150" height="72" loading="lazy" decoding="async" /></div>
+      <div class="parceiro-item fade-in fade-in-delay-1"><img src="DeloitteLogo.jpg" alt="Deloitte" class="parceiro-logo" width="150" height="72" loading="lazy" decoding="async" /></div>
+      <div class="parceiro-item fade-in fade-in-delay-2"><img src="FortalezaLogo.png" alt="Prefeitura de Fortaleza" class="parceiro-logo" width="150" height="72" loading="lazy" decoding="async" /></div>
+      <div class="parceiro-item fade-in fade-in-delay-2"><img src="CREMECLogo.png" alt="CREMEC — Conselho Regional de Medicina do Ceará" class="parceiro-logo" width="150" height="72" loading="lazy" decoding="async" /></div>
+      <div class="parceiro-item fade-in fade-in-delay-3"><img src="FUNAILogo.png" alt="FUNAI — Fundação Nacional dos Povos Indígenas" class="parceiro-logo" width="150" height="72" loading="lazy" decoding="async" /></div>
+      <div class="parceiro-item fade-in fade-in-delay-3"><img src="UPALogo.png" alt="UPA 24h" class="parceiro-logo" width="150" height="72" loading="lazy" decoding="async" /></div>
+      <div class="parceiro-item fade-in fade-in-delay-4"><img src="ISGHLogo.png" alt="ISGH — Instituto de Saúde e Gestão Hospitalar" class="parceiro-logo" width="150" height="72" loading="lazy" decoding="async" /></div>
+      <div class="parceiro-item fade-in fade-in-delay-4"><img src="LogLogo.webp" alt="Log" class="parceiro-logo" width="150" height="72" loading="lazy" decoding="async" /></div>
+      <div class="parceiro-item fade-in fade-in-delay-1"><img src="ToledoLogo.png" alt="Toledo do Brasil" class="parceiro-logo" width="150" height="72" loading="lazy" decoding="async" /></div>
+      <div class="parceiro-item fade-in fade-in-delay-2"><img src="TodeschiniLogo.png" alt="Todeschini" class="parceiro-logo" width="150" height="72" loading="lazy" decoding="async" /></div>
+      <div class="parceiro-item fade-in fade-in-delay-3"><img src="GovLogo.png" alt="Governo do Estado do Ceará" class="parceiro-logo" width="150" height="72" loading="lazy" decoding="async" /></div>
     </div>
   </div>
 </section>
@@ -534,7 +588,7 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
      3. VALIDAÇÃO INLINE: feedback por campo antes de abrir o WhatsApp -->
 <section class="orcamento" id="orcamento">
   <div class="container">
-    <div class="orcamento-header">
+    <div class="orcamento-header fade-in">
       <p class="section-label" data-i18n="form.label">Orçamento</p>
       <h2 class="section-h2" data-i18n-html="form.h2">Conte-nos sobre o seu <em>projeto.</em></h2>
       <p data-i18n="form.intro">Preencha o formulário e entraremos em contato via WhatsApp para agendar uma visita técnica.</p>
@@ -590,6 +644,12 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
       </div>
     </form>
     <div class="form-success" id="formSuccess">
+      <div class="form-success-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 6L9 17l-5-5"/>
+        </svg>
+      </div>
+      <h3 data-i18n="form.successTitle">Recebemos seu contato!</h3>
       <p data-i18n="form.success">Obrigado! Abrindo o WhatsApp agora… 🌿</p>
     </div>
   </div>
@@ -600,7 +660,7 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
 <section class="contact" id="contato">
   <div class="container">
     <div class="contact-grid">
-      <div>
+      <div class="fade-in">
         <p class="section-label" data-i18n="contact.label">Contato</p>
         <h2 class="section-h2" style="margin-bottom:20px;" data-i18n-html="contact.h2">Vamos criar o seu<br><em>jardim ideal.</em></h2>
         <p class="body-text" style="max-width:360px;" data-i18n="contact.desc">Entre em contato e agende uma visita técnica. Cada projeto começa com uma conversa sobre o seu espaço, o seu clima e a sua forma de viver ao ar livre.</p>
@@ -653,7 +713,9 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Elloverde</div>
+  <div class="footer-logo">
+    <img src="Ello_Verde_Marca_01__1_.png" alt="Elloverde Paisagismo & Flora" class="footer-logo-img" />
+  </div>
   <p class="footer-copy" data-i18n="footer.copy">© 2026 Elloverde Paisagismo &amp; Flora. Todos os direitos reservados.</p>
   <p class="footer-tag" data-i18n="footer.tag">Elegância natural, com raízes no território.</p>
 </footer>
@@ -723,7 +785,8 @@ var i18n = {
     'form.opt1':'Criação e Execução de Paisagismo','form.opt2':'Paisagismo Condominial',
     'form.opt3':'Manutenção Periódica','form.opt4':'Poda, Extração e Insumos','form.opt5':'Outro',
     'form.message':'Mensagem','form.messagePh':'Descreva brevemente o seu espaço e o que imagina para ele...',
-    'form.submit':'Solicitar orçamento via WhatsApp','form.success':'Obrigado! Abrindo o WhatsApp agora… 🌿',
+    'form.submit':'Solicitar orçamento via WhatsApp','form.success':'Abrindo o WhatsApp agora… 🌿',
+    'form.successTitle':'Recebemos seu contato!',
     'contact.label':'Contato','contact.h2':'Vamos criar o seu<br><em>jardim ideal.</em>',
     'contact.desc':'Entre em contato e agende uma visita técnica. Cada projeto começa com uma conversa sobre o seu espaço, o seu clima e a sua forma de viver ao ar livre.',
     'contact.locLabel':'Localização',
@@ -779,7 +842,8 @@ var i18n = {
     'form.opt1':'Landscape Design & Execution','form.opt2':'Condominium Landscaping',
     'form.opt3':'Periodic Maintenance','form.opt4':'Pruning, Extraction & Supplies','form.opt5':'Other',
     'form.message':'Message','form.messagePh':'Briefly describe your space and what you envision for it...',
-    'form.submit':'Request a quote via WhatsApp','form.success':'Thank you! Opening WhatsApp now… 🌿',
+    'form.submit':'Request a quote via WhatsApp','form.success':'Opening WhatsApp now… 🌿',
+    'form.successTitle':'We received your message!',
     'contact.label':'Contact','contact.h2':"Let's create your<br><em>ideal garden.</em>",
     'contact.desc':'Get in touch and schedule a site visit. Every project begins with a conversation about your space, your climate, and your way of living outdoors.',
     'contact.locLabel':'Location',
@@ -811,10 +875,16 @@ function setLang(lang) {
   currentLang = lang;
   isEN = (lang === 'en');
   document.documentElement.lang = isEN ? 'en' : 'pt-BR';
+  // nav buttons
   var btnPT = document.getElementById('btnPT');
   var btnEN = document.getElementById('btnEN');
   if (btnPT) btnPT.classList.toggle('active', !isEN);
   if (btnEN) btnEN.classList.toggle('active', isEN);
+  // mobile menu buttons
+  var mobilePT = document.getElementById('mobileBtnPT');
+  var mobileEN = document.getElementById('mobileBtnEN');
+  if (mobilePT) mobilePT.classList.toggle('active', !isEN);
+  if (mobileEN) mobileEN.classList.toggle('active', isEN);
   var dict = i18n[lang];
   if (!dict) return;
   document.querySelectorAll('[data-i18n]').forEach(function(el) {
@@ -834,6 +904,50 @@ function setLang(lang) {
     if (v !== undefined) el.textContent = v;
   });
 }
+
+// ── SCROLL FADE-IN ────────────────────────────────────────────────────────────
+var fadeObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      fadeObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.fade-in').forEach(function(el) {
+  fadeObserver.observe(el);
+});
+
+// ── CARROSSEL DOTS (mobile) ───────────────────────────────────────────────────
+function scrollDepo(index) {
+  var grid = document.getElementById('depoGrid');
+  if (!grid) return;
+  var card = grid.children[index];
+  if (card) grid.scrollTo({ left: card.offsetLeft - grid.offsetLeft, behavior: 'smooth' });
+  document.querySelectorAll('.depo-dot').forEach(function(dot, i) {
+    dot.classList.toggle('active', i === index);
+  });
+}
+
+// Sync dots on scroll
+(function() {
+  var grid = document.getElementById('depoGrid');
+  if (!grid) return;
+  grid.addEventListener('scroll', function() {
+    var cards = grid.children;
+    var scrollLeft = grid.scrollLeft;
+    var closest = 0;
+    var minDist = Infinity;
+    for (var i = 0; i < cards.length; i++) {
+      var dist = Math.abs(cards[i].offsetLeft - grid.offsetLeft - scrollLeft);
+      if (dist < minDist) { minDist = dist; closest = i; }
+    }
+    document.querySelectorAll('.depo-dot').forEach(function(dot, i) {
+      dot.classList.toggle('active', i === closest);
+    });
+  });
+})();
 
 // ── 4. WHATSAPP FLOAT — aparece após 4s ───────────────────────────────────────
 window.addEventListener('load', function() {
