@@ -106,7 +106,9 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 
 /* ── HERO ── */
 .hero { position: relative; height: 100vh; min-height: 600px; display: flex; align-items: flex-end; overflow: hidden; }
-.hero-bg { position: absolute; inset: 0; background: url('hero.jpg') center top/cover no-repeat; }
+.hero-bg { position: absolute; inset: 0; }
+/* 1. PERFORMANCE: hero usa <picture> com WebP/AVIF + fallback — ver markup abaixo */
+.hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,30,22,0.92) 0%, rgba(20,40,20,0.60) 55%, rgba(0,0,0,0.30) 100%); }
 .hero-content { position: relative; z-index: 2; padding: 0 48px 72px; max-width: 1200px; width: 100%; animation: heroFadeUp 1.1s cubic-bezier(0.22,1,0.36,1) both; }
 @keyframes heroFadeUp { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
@@ -155,8 +157,10 @@ section { padding: 88px 48px; }
 .numero-lbl { font-size:10px; letter-spacing:0.25em; text-transform:uppercase; color:rgba(240,235,224,0.5); margin-top:10px; font-weight:300; }
 
 /* ── DIVIDER ── */
-.divider { padding:0; height:55vh; min-height:320px; background:url('divider.jpg') center center/cover no-repeat; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
-.divider::before { content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(10,20,10,0.65); z-index:0; }
+.divider { padding:0; height:55vh; min-height:320px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+/* 1. PERFORMANCE: divider usa <picture> com WebP/AVIF + loading=lazy — ver markup */
+.divider-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; }
+.divider::before { content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(10,20,10,0.65); z-index:1; }
 .divider-text { font-family:'Cormorant Garamond',serif; font-size:clamp(24px,4vw,38px); font-weight:300; font-style:italic; color:#F0EBE0; text-align:center; position:relative; z-index:2; text-shadow:0 2px 16px rgba(0,0,0,0.5); }
 
 /* ── SERVICES ── */
@@ -165,7 +169,8 @@ section { padding: 88px 48px; }
 .services-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
 .service-card { background:#F5F0E8; border:0.5px solid rgba(44,40,32,0.1); overflow:hidden; transition:transform 0.3s, box-shadow 0.3s; }
 .service-card:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(44,40,32,0.08); }
-.service-card-img-placeholder { width:100%; height:200px; background-size:cover; background-position:center; }
+/* 1. PERFORMANCE + 2. ACESSIBILIDADE: cards agora usam <picture><img> com alt e loading=lazy */
+.service-card-img { width:100%; height:200px; object-fit:cover; object-position:center; display:block; }
 .service-card-body { padding:24px 24px 28px; }
 .service-card h3 { font-family:'Cormorant Garamond',serif; font-size:19px; font-weight:400; color:#2C2820; margin-bottom:10px; }
 .service-card p { font-size:13px; line-height:1.8; color:#7A6F5E; font-weight:300; }
@@ -225,6 +230,15 @@ section { padding: 88px 48px; }
 .form-group input,.form-group select,.form-group textarea { background:rgba(255,255,255,0.05); border:0.5px solid rgba(255,255,255,0.12); color:#E8E0D0; font-family:'Jost',sans-serif; font-size:13px; font-weight:300; padding:12px 16px; outline:none; transition:border-color 0.3s; width:100%; }
 .form-group input::placeholder,.form-group textarea::placeholder { color:rgba(212,202,184,0.3); }
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus { border-color:rgba(168,197,160,0.5); }
+/* 3. VALIDAÇÃO INLINE: estados de erro e sucesso por campo */
+.form-group input.field-error,
+.form-group select.field-error,
+.form-group textarea.field-error { border-color:rgba(220,80,60,0.7); }
+.form-group input.field-ok,
+.form-group select.field-ok { border-color:rgba(168,197,160,0.6); }
+.field-msg { font-size:10px; letter-spacing:0.05em; min-height:14px; transition:opacity 0.25s; }
+.field-msg.error { color:rgba(220,120,100,0.9); }
+.field-msg.ok { color:rgba(168,197,160,0.8); }
 .form-group select option { background:#2C3828; color:#E8E0D0; }
 .form-group textarea { resize:vertical; min-height:100px; }
 .form-submit { margin-top:24px; text-align:center; }
@@ -248,8 +262,18 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
 .footer-copy { font-size:11px; color:rgba(208,232,208,0.45); }
 .footer-tag { font-family:'Cormorant Garamond',serif; font-size:13px; font-style:italic; color:rgba(208,232,208,0.4); }
 
-/* ── WHATSAPP FLOAT ── */
-.whatsapp-float { position:fixed; bottom:28px; right:28px; z-index:200; width:56px; height:56px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(37,211,102,0.4); text-decoration:none; transition:transform 0.3s,box-shadow 0.3s; }
+/* ── WHATSAPP FLOAT ──
+   4. DELAY: oculto por padrão, aparece via JS após 4s */
+.whatsapp-float {
+  position:fixed; bottom:28px; right:28px; z-index:200;
+  width:56px; height:56px; border-radius:50%; background:#25D366;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,0.4); text-decoration:none;
+  opacity:0; transform:scale(0.7) translateY(8px);
+  transition:opacity 0.4s cubic-bezier(0.22,1,0.36,1), transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s;
+  pointer-events:none;
+}
+.whatsapp-float.visible { opacity:1; transform:scale(1) translateY(0); pointer-events:auto; }
 .whatsapp-float:hover { transform:scale(1.08); box-shadow:0 6px 28px rgba(37,211,102,0.55); }
 .whatsapp-float svg { width:28px; height:28px; fill:#fff; }
 
@@ -315,9 +339,20 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- HERO
+     1. PERFORMANCE: <picture> com AVIF → WebP → JPG fallback. Hero é above-the-fold, sem lazy. -->
 <section class="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-bg">
+    <picture>
+      <source srcset="hero.avif" type="image/avif" />
+      <source srcset="hero.webp" type="image/webp" />
+      <img src="hero.jpg"
+           alt="Jardim residencial exuberante criado pela Elloverde em Fortaleza, Ceará"
+           width="1920" height="1080"
+           fetchpriority="high"
+           decoding="async" />
+    </picture>
+  </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <p class="hero-eyebrow" data-i18n="hero.eyebrow">Paisagismo &amp; Flora — Ceará</p>
@@ -326,13 +361,13 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
     <div class="hero-cta">
       <a href="#orcamento" class="hero-cta-primary" onclick="if(typeof fbq!=='undefined'){fbq('trackCustom','HeroCTA')}" data-i18n="hero.ctaPrimary">
         Solicitar visita técnica
-        <svg viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <div class="hero-cta-divider"></div>
+      <div class="hero-cta-divider" aria-hidden="true"></div>
       <a href="#servicos" class="hero-cta-secondary" data-i18n="hero.ctaSecondary">Ver serviços</a>
     </div>
   </div>
-  <div class="hero-scroll">
+  <div class="hero-scroll" aria-hidden="true">
     <div class="hero-scroll-line"></div>
     <span>scroll</span>
   </div>
@@ -382,12 +417,25 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
   </div>
 </section>
 
-<!-- DIVIDER -->
+<!-- DIVIDER
+     1. PERFORMANCE: <picture> com AVIF → WebP → JPG + loading=lazy (abaixo do fold) -->
 <div class="divider">
+  <picture>
+    <source srcset="divider.avif" type="image/avif" />
+    <source srcset="divider.webp" type="image/webp" />
+    <img src="divider.jpg"
+         class="divider-img"
+         alt=""
+         role="presentation"
+         width="1920" height="1080"
+         loading="lazy"
+         decoding="async" />
+  </picture>
   <p class="divider-text" data-i18n="divider.text">O exterior como experiência.</p>
 </div>
 
-<!-- SERVIÇOS -->
+<!-- SERVIÇOS
+     1. PERFORMANCE + 2. ACESSIBILIDADE: <picture><img> com alt descritivo e loading=lazy -->
 <section class="services" id="servicos">
   <div class="container">
     <div class="services-header">
@@ -396,28 +444,64 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
     </div>
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-card-img-placeholder" style="background-image:url('servico-criacao.jpg');"></div>
+        <picture>
+          <source srcset="servico-criacao.avif" type="image/avif" />
+          <source srcset="servico-criacao.webp" type="image/webp" />
+          <img src="servico-criacao.jpg"
+               class="service-card-img"
+               alt="Projeto de criação e execução de paisagismo em jardim residencial"
+               width="600" height="400"
+               loading="lazy"
+               decoding="async" />
+        </picture>
         <div class="service-card-body">
           <h3 data-i18n="services.card1.title">Criação e Execução de Paisagismo</h3>
           <p data-i18n="services.card1.desc">Projetos personalizados residenciais e corporativos. Do levantamento à obra, com profissionais qualificados, insumos selecionados e acompanhamento próximo.</p>
         </div>
       </div>
       <div class="service-card">
-        <div class="service-card-img-placeholder" style="background-image:url('servico-condominial.jpg');"></div>
+        <picture>
+          <source srcset="servico-condominial.avif" type="image/avif" />
+          <source srcset="servico-condominial.webp" type="image/webp" />
+          <img src="servico-condominial.jpg"
+               class="service-card-img"
+               alt="Área verde e entrada de condomínio com paisagismo sofisticado"
+               width="600" height="400"
+               loading="lazy"
+               decoding="async" />
+        </picture>
         <div class="service-card-body">
           <h3 data-i18n="services.card2.title">Paisagismo Condominial</h3>
           <p data-i18n="services.card2.desc">Valorização dos espaços compartilhados e da fachada. Jardins, entradas e áreas comuns que transmitem organização e identidade ao condomínio.</p>
         </div>
       </div>
       <div class="service-card">
-        <div class="service-card-img-placeholder" style="background-image:url('servico-manutencao.jpg');"></div>
+        <picture>
+          <source srcset="servico-manutencao.avif" type="image/avif" />
+          <source srcset="servico-manutencao.webp" type="image/webp" />
+          <img src="servico-manutencao.jpg"
+               class="service-card-img"
+               alt="Manutenção periódica de jardim com poda e cuidado das plantas"
+               width="600" height="400"
+               loading="lazy"
+               decoding="async" />
+        </picture>
         <div class="service-card-body">
           <h3 data-i18n="services.card3.title">Manutenção Periódica</h3>
           <p data-i18n="services.card3.desc">Visitas regulares para manter o jardim sempre bonito e saudável — poda, preservação de espécies e cuidado com cada detalhe ao longo do tempo.</p>
         </div>
       </div>
       <div class="service-card">
-        <div class="service-card-img-placeholder" style="background-image:url('servico-poda.jpg');"></div>
+        <picture>
+          <source srcset="servico-poda.avif" type="image/avif" />
+          <source srcset="servico-poda.webp" type="image/webp" />
+          <img src="servico-poda.jpg"
+               class="service-card-img"
+               alt="Poda e extração de árvore de grande porte com equipamentos profissionais"
+               width="600" height="400"
+               loading="lazy"
+               decoding="async" />
+        </picture>
         <div class="service-card-body">
           <h3 data-i18n="services.card4.title">Poda, Extração e Insumos</h3>
           <p data-i18n="services.card4.desc">Poda e extração de árvores de grande porte com equipamentos adequados. Fornecimento de plantas e insumos selecionados para cada ambiente.</p>
@@ -454,19 +538,19 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
     </div>
     <div class="depoimentos-grid">
       <div class="depo-card">
-        <div class="depo-stars">★★★★★</div>
+        <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
         <p class="depo-text" data-i18n="depo.d1.text">A Elloverde transformou completamente o jardim do nosso condomínio. Profissionalismo impecável do início ao fim, com plantas bem escolhidas para o nosso clima. O resultado superou todas as expectativas.</p>
         <p class="depo-author" data-i18n="depo.d1.author">Solange Alves</p>
         <p class="depo-role" data-i18n="depo.d1.role">Paisagismo Residencial</p>
       </div>
       <div class="depo-card">
-        <div class="depo-stars">★★★★★</div>
+        <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
         <p class="depo-text" data-i18n="depo.d2.text">Contratamos a Elloverde para a execução do paisagismo do nosso empreendimento e ficamos muito satisfeitos. Equipe comprometida, prazo cumprido e resultado de altíssima qualidade.</p>
         <p class="depo-author" data-i18n="depo.d2.author">Construtora Tenda</p>
         <p class="depo-role" data-i18n="depo.d2.role">Paisagismo Condominial</p>
       </div>
       <div class="depo-card">
-        <div class="depo-stars">★★★★★</div>
+        <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
         <p class="depo-text" data-i18n="depo.d3.text">A manutenção periódica que a Elloverde realiza no nosso espaço é exemplar. Cada visita deixa o jardim ainda mais bonito. Profissionais que realmente entendem e respeitam o verde.</p>
         <p class="depo-author" data-i18n="depo.d3.author">Condomínio Belas Artes</p>
         <p class="depo-role" data-i18n="depo.d3.role">Manutenção Periódica</p>
@@ -483,17 +567,18 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
       <h2 class="section-h2" data-i18n-html="partners.h2">Empresas que <em>confiam no nosso trabalho.</em></h2>
     </div>
     <div class="parceiros-grid">
-      <div class="parceiro-item"><img src="TendaLogo.png" alt="Construtora Tenda" class="parceiro-logo" /></div>
-      <div class="parceiro-item"><img src="DeloitteLogo.jpg" alt="Deloitte" class="parceiro-logo" /></div>
-      <div class="parceiro-item"><img src="FortalezaLogo.png" alt="Prefeitura de Fortaleza" class="parceiro-logo" /></div>
-      <div class="parceiro-item"><img src="CREMECLogo.png" alt="CREMEC" class="parceiro-logo" /></div>
-      <div class="parceiro-item"><img src="FUNAILogo.png" alt="FUNAI" class="parceiro-logo" /></div>
-      <div class="parceiro-item"><img src="UPALogo.png" alt="UPA 24h" class="parceiro-logo" /></div>
-      <div class="parceiro-item"><img src="ISGHLogo.png" alt="ISGH" class="parceiro-logo" /></div>
-      <div class="parceiro-item"><img src="LogLogo.webp" alt="Log" class="parceiro-logo" /></div>
-      <div class="parceiro-item"><img src="ToledoLogo.png" alt="Toledo do Brasil" class="parceiro-logo" /></div>
-      <div class="parceiro-item"><img src="TodeschiniLogo.png" alt="Todeschini" class="parceiro-logo" /></div>
-      <div class="parceiro-item"><img src="GovLogo.png" alt="Governo do Ceará" class="parceiro-logo" /></div>
+      <!-- 1. PERFORMANCE + 2. ACESSIBILIDADE: logos com alt descritivo e loading=lazy -->
+      <div class="parceiro-item"><img src="TendaLogo.png" alt="Construtora Tenda" class="parceiro-logo" loading="lazy" decoding="async" /></div>
+      <div class="parceiro-item"><img src="DeloitteLogo.jpg" alt="Deloitte" class="parceiro-logo" loading="lazy" decoding="async" /></div>
+      <div class="parceiro-item"><img src="FortalezaLogo.png" alt="Prefeitura de Fortaleza" class="parceiro-logo" loading="lazy" decoding="async" /></div>
+      <div class="parceiro-item"><img src="CREMECLogo.png" alt="CREMEC — Conselho Regional de Medicina do Ceará" class="parceiro-logo" loading="lazy" decoding="async" /></div>
+      <div class="parceiro-item"><img src="FUNAILogo.png" alt="FUNAI — Fundação Nacional dos Povos Indígenas" class="parceiro-logo" loading="lazy" decoding="async" /></div>
+      <div class="parceiro-item"><img src="UPALogo.png" alt="UPA 24h" class="parceiro-logo" loading="lazy" decoding="async" /></div>
+      <div class="parceiro-item"><img src="ISGHLogo.png" alt="ISGH — Instituto de Saúde e Gestão Hospitalar" class="parceiro-logo" loading="lazy" decoding="async" /></div>
+      <div class="parceiro-item"><img src="LogLogo.webp" alt="Log" class="parceiro-logo" loading="lazy" decoding="async" /></div>
+      <div class="parceiro-item"><img src="ToledoLogo.png" alt="Toledo do Brasil" class="parceiro-logo" loading="lazy" decoding="async" /></div>
+      <div class="parceiro-item"><img src="TodeschiniLogo.png" alt="Todeschini" class="parceiro-logo" loading="lazy" decoding="async" /></div>
+      <div class="parceiro-item"><img src="GovLogo.png" alt="Governo do Estado do Ceará" class="parceiro-logo" loading="lazy" decoding="async" /></div>
     </div>
   </div>
 </section>
@@ -507,7 +592,8 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
   </div>
 </section>
 
-<!-- FORMULÁRIO -->
+<!-- FORMULÁRIO
+     3. VALIDAÇÃO INLINE: feedback por campo antes de abrir o WhatsApp -->
 <section class="orcamento" id="orcamento">
   <div class="container">
     <div class="orcamento-header">
@@ -515,23 +601,36 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
       <h2 class="section-h2" data-i18n-html="form.h2">Conte-nos sobre o seu <em>projeto.</em></h2>
       <p data-i18n="form.intro">Preencha o formulário e entraremos em contato via WhatsApp para agendar uma visita técnica.</p>
     </div>
-    <form id="orcamentoForm" onsubmit="submitForm(event)">
+    <form id="orcamentoForm" onsubmit="submitForm(event)" novalidate>
       <div class="form-grid">
         <div class="form-group">
-          <label data-i18n="form.name">Nome</label>
-          <input type="text" name="nome" data-i18n-placeholder="form.namePh" placeholder="Seu nome completo" required />
+          <label for="f-nome" data-i18n="form.name">Nome</label>
+          <input type="text" id="f-nome" name="nome"
+                 data-i18n-placeholder="form.namePh" placeholder="Seu nome completo"
+                 autocomplete="name"
+                 oninput="validateField(this)" onblur="validateField(this)" />
+          <span class="field-msg" id="msg-nome" aria-live="polite"></span>
         </div>
         <div class="form-group">
-          <label data-i18n="form.phone">Telefone / WhatsApp</label>
-          <input type="tel" name="telefone" placeholder="(85) 9 0000-0000" required />
+          <label for="f-tel" data-i18n="form.phone">Telefone / WhatsApp</label>
+          <input type="tel" id="f-tel" name="telefone"
+                 placeholder="(85) 9 0000-0000"
+                 autocomplete="tel"
+                 oninput="maskPhone(this); validateField(this)" onblur="validateField(this)" />
+          <span class="field-msg" id="msg-telefone" aria-live="polite"></span>
         </div>
         <div class="form-group">
-          <label data-i18n="form.email">E-mail</label>
-          <input type="email" name="email" placeholder="seu@email.com" required />
+          <label for="f-email" data-i18n="form.email">E-mail</label>
+          <input type="email" id="f-email" name="email"
+                 placeholder="seu@email.com"
+                 autocomplete="email"
+                 oninput="validateField(this)" onblur="validateField(this)" />
+          <span class="field-msg" id="msg-email" aria-live="polite"></span>
         </div>
         <div class="form-group">
-          <label data-i18n="form.type">Tipo de projeto</label>
-          <select name="tipo" required>
+          <label for="f-tipo" data-i18n="form.type">Tipo de projeto</label>
+          <select id="f-tipo" name="tipo"
+                  onchange="validateField(this)" onblur="validateField(this)">
             <option value="" disabled selected data-i18n="form.typeSelect">Selecione</option>
             <option value="Criação e Execução de Paisagismo" data-i18n="form.opt1">Criação e Execução de Paisagismo</option>
             <option value="Paisagismo Condominial" data-i18n="form.opt2">Paisagismo Condominial</option>
@@ -539,10 +638,13 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
             <option value="Poda, Extração e Insumos" data-i18n="form.opt4">Poda, Extração e Insumos</option>
             <option value="Outro" data-i18n="form.opt5">Outro</option>
           </select>
+          <span class="field-msg" id="msg-tipo" aria-live="polite"></span>
         </div>
         <div class="form-group form-full">
-          <label data-i18n="form.message">Mensagem</label>
-          <textarea name="mensagem" data-i18n-placeholder="form.messagePh" placeholder="Descreva brevemente o seu espaço e o que imagina para ele..."></textarea>
+          <label for="f-msg" data-i18n="form.message">Mensagem</label>
+          <textarea id="f-msg" name="mensagem"
+                    data-i18n-placeholder="form.messagePh"
+                    placeholder="Descreva brevemente o seu espaço e o que imagina para ele..."></textarea>
         </div>
       </div>
       <div class="form-submit">
@@ -555,7 +657,8 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
   </div>
 </section>
 
-<!-- CONTATO -->
+<!-- CONTATO
+     2. ACESSIBILIDADE: aria-label descritivos nos ícones SVG de contato -->
 <section class="contact" id="contato">
   <div class="container">
     <div class="contact-grid">
@@ -565,20 +668,46 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
         <p class="body-text" style="max-width:360px;" data-i18n="contact.desc">Entre em contato e agende uma visita técnica. Cada projeto começa com uma conversa sobre o seu espaço, o seu clima e a sua forma de viver ao ar livre.</p>
       </div>
       <div style="padding-top:40px;">
-        <a href="https://wa.me/5585992252253" target="_blank" class="contact-item" onclick="trackWhatsApp('contato')">
-          <div class="contact-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 3c0 0 2 0 3 2s0 3 1 4 3 2 4 3 2-1 4 0 0 4 0 4-5 1-10-6C0 4 3 3 3 3z" stroke="currentColor" stroke-width="1" fill="none"/></svg></div>
+        <a href="https://wa.me/5585992252253" target="_blank" rel="noopener noreferrer"
+           class="contact-item" onclick="trackWhatsApp('contato')"
+           aria-label="Falar pelo WhatsApp: (85) 9 9225-2253">
+          <div class="contact-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+              <path d="M3 3c0 0 2 0 3 2s0 3 1 4 3 2 4 3 2-1 4 0 0 4 0 4-5 1-10-6C0 4 3 3 3 3z" stroke="currentColor" stroke-width="1" fill="none"/>
+            </svg>
+          </div>
           <div><p class="contact-lbl">WhatsApp</p><p class="contact-val">(85) 9 9225-2253</p></div>
         </a>
-        <a href="https://instagram.com/elloverde" target="_blank" class="contact-item" onclick="trackInstagram()">
-          <div class="contact-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="3" width="12" height="12" rx="3" stroke="currentColor" stroke-width="1" fill="none"/><circle cx="9" cy="9" r="3" stroke="currentColor" stroke-width="1" fill="none"/><circle cx="13" cy="5" r="0.8" fill="currentColor"/></svg></div>
+        <a href="https://instagram.com/elloverde" target="_blank" rel="noopener noreferrer"
+           class="contact-item" onclick="trackInstagram()"
+           aria-label="Visitar o Instagram @elloverde">
+          <div class="contact-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+              <rect x="3" y="3" width="12" height="12" rx="3" stroke="currentColor" stroke-width="1" fill="none"/>
+              <circle cx="9" cy="9" r="3" stroke="currentColor" stroke-width="1" fill="none"/>
+              <circle cx="13" cy="5" r="0.8" fill="currentColor"/>
+            </svg>
+          </div>
           <div><p class="contact-lbl">Instagram</p><p class="contact-val">@elloverde</p></div>
         </a>
-        <a href="mailto:vamosconversar@elloverdepaisagismo.com.br" class="contact-item" onclick="trackEmail()">
-          <div class="contact-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="1" stroke="currentColor" stroke-width="1" fill="none"/><path d="M2 5l7 6 7-6" stroke="currentColor" stroke-width="1"/></svg></div>
+        <a href="mailto:vamosconversar@elloverdepaisagismo.com.br"
+           class="contact-item" onclick="trackEmail()"
+           aria-label="Enviar e-mail para vamosconversar@elloverdepaisagismo.com.br">
+          <div class="contact-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+              <rect x="2" y="4" width="14" height="10" rx="1" stroke="currentColor" stroke-width="1" fill="none"/>
+              <path d="M2 5l7 6 7-6" stroke="currentColor" stroke-width="1"/>
+            </svg>
+          </div>
           <div><p class="contact-lbl">E-mail</p><p class="contact-val">vamosconversar@elloverdepaisagismo.com.br</p></div>
         </a>
         <div class="contact-item">
-          <div class="contact-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2C6 2 4 4.5 4 7c0 4 5 9 5 9s5-5 5-9c0-2.5-2-5-5-5z" stroke="currentColor" stroke-width="1" fill="none"/><circle cx="9" cy="7" r="2" stroke="currentColor" stroke-width="1" fill="none"/></svg></div>
+          <div class="contact-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+              <path d="M9 2C6 2 4 4.5 4 7c0 4 5 9 5 9s5-5 5-9c0-2.5-2-5-5-5z" stroke="currentColor" stroke-width="1" fill="none"/>
+              <circle cx="9" cy="7" r="2" stroke="currentColor" stroke-width="1" fill="none"/>
+            </svg>
+          </div>
           <div><p class="contact-lbl" data-i18n="contact.locLabel">Localização</p><p class="contact-val">Fortaleza, Ceará — Brasil</p></div>
         </div>
       </div>
@@ -593,9 +722,16 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
   <p class="footer-tag" data-i18n="footer.tag">Elegância natural, com raízes no território.</p>
 </footer>
 
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/5585992252253?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" class="whatsapp-float" onclick="trackWhatsApp('float')" aria-label="Fale pelo WhatsApp">
-  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.482.676 4.805 1.854 6.797L2 30l7.418-1.818A13.94 13.94 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.56 11.56 0 0 1-5.89-1.608l-.422-.252-4.402 1.08 1.114-4.28-.276-.44A11.56 11.56 0 0 1 4.4 16C4.4 9.59 9.59 4.4 16 4.4S27.6 9.59 27.6 16 22.41 27.6 16 27.6zm6.34-8.64c-.348-.174-2.06-1.016-2.38-1.132-.318-.116-.55-.174-.78.174-.23.348-.894 1.132-1.096 1.364-.202.232-.404.26-.752.086-.348-.174-1.47-.542-2.8-1.726-1.034-.922-1.732-2.06-1.936-2.408-.202-.348-.022-.536.152-.71.156-.154.348-.404.522-.606.174-.202.232-.348.348-.58.116-.232.058-.436-.03-.61-.086-.174-.78-1.878-1.07-2.572-.282-.676-.568-.584-.78-.594l-.664-.012c-.232 0-.61.086-.928.434-.318.348-1.214 1.186-1.214 2.892s1.242 3.354 1.416 3.586c.174.232 2.444 3.732 5.922 5.234.828.358 1.474.572 1.978.732.832.264 1.588.226 2.186.138.668-.1 2.06-.842 2.35-1.656.29-.814.29-1.512.202-1.656-.086-.144-.318-.232-.666-.406z"/></svg>
+<!-- WHATSAPP FLOAT
+     4. DELAY: aparece após 4s via JS, com transição suave -->
+<a href="https://wa.me/5585992252253?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+   target="_blank" rel="noopener noreferrer"
+   class="whatsapp-float" id="whatsappFloat"
+   onclick="trackWhatsApp('float')"
+   aria-label="Fale conosco pelo WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <path d="M16 2C8.268 2 2 8.268 2 16c0 2.482.676 4.805 1.854 6.797L2 30l7.418-1.818A13.94 13.94 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.56 11.56 0 0 1-5.89-1.608l-.422-.252-4.402 1.08 1.114-4.28-.276-.44A11.56 11.56 0 0 1 4.4 16C4.4 9.59 9.59 4.4 16 4.4S27.6 9.59 27.6 16 22.41 27.6 16 27.6zm6.34-8.64c-.348-.174-2.06-1.016-2.38-1.132-.318-.116-.55-.174-.78.174-.23.348-.894 1.132-1.096 1.364-.202.232-.404.26-.752.086-.348-.174-1.47-.542-2.8-1.726-1.034-.922-1.732-2.06-1.936-2.408-.202-.348-.022-.536.152-.71.156-.154.348-.404.522-.606.174-.202.232-.348.348-.58.116-.232.058-.436-.03-.61-.086-.174-.78-1.878-1.07-2.572-.282-.676-.568-.584-.78-.594l-.664-.012c-.232 0-.61.086-.928.434-.318.348-1.214 1.186-1.214 2.892s1.242 3.354 1.416 3.586c.174.232 2.444 3.732 5.922 5.234.828.358 1.474.572 1.978.732.832.264 1.588.226 2.186.138.668-.1 2.06-.842 2.35-1.656.29-.814.29-1.512.202-1.656-.086-.144-.318-.232-.666-.406z"/>
+  </svg>
 </a>
 
 <script>
@@ -611,6 +747,90 @@ function closeMobile() {
   document.getElementById('mobileMenu').classList.remove('open');
   document.getElementById('hamburger').classList.remove('open');
   document.body.style.overflow = '';
+}
+
+// ── 4. WHATSAPP FLOAT — aparece após 4s ───────────────────────────────────────
+window.addEventListener('load', function () {
+  setTimeout(function () {
+    var btn = document.getElementById('whatsappFloat');
+    if (btn) btn.classList.add('visible');
+  }, 4000);
+});
+
+// ── 3. VALIDAÇÃO INLINE ───────────────────────────────────────────────────────
+var isEN = false;
+
+var validationMessages = {
+  pt: {
+    nome:     { empty: 'Informe seu nome.', ok: 'Tudo certo.' },
+    telefone: { empty: 'Informe seu telefone.', invalid: 'Número incompleto (mínimo 10 dígitos).', ok: 'Tudo certo.' },
+    email:    { empty: 'Informe seu e-mail.', invalid: 'E-mail inválido.', ok: 'Tudo certo.' },
+    tipo:     { empty: 'Selecione o tipo de projeto.', ok: 'Tudo certo.' },
+  },
+  en: {
+    nome:     { empty: 'Please enter your name.', ok: 'Looks good.' },
+    telefone: { empty: 'Please enter your phone number.', invalid: 'Incomplete number (min. 10 digits).', ok: 'Looks good.' },
+    email:    { empty: 'Please enter your e-mail.', invalid: 'Invalid e-mail address.', ok: 'Looks good.' },
+    tipo:     { empty: 'Please select a project type.', ok: 'Looks good.' },
+  }
+};
+
+function getMsg(field, key) {
+  var lang = isEN ? 'en' : 'pt';
+  return (validationMessages[lang][field] || {})[key] || '';
+}
+
+function setFieldState(input, state, message) {
+  var name = input.name;
+  var msgEl = document.getElementById('msg-' + name);
+  input.classList.remove('field-error', 'field-ok');
+  if (msgEl) { msgEl.className = 'field-msg'; msgEl.textContent = ''; }
+  if (state === 'error') {
+    input.classList.add('field-error');
+    if (msgEl) { msgEl.classList.add('error'); msgEl.textContent = message || ''; }
+  } else if (state === 'ok') {
+    input.classList.add('field-ok');
+    if (msgEl) { msgEl.classList.add('ok'); msgEl.textContent = message || ''; }
+  }
+}
+
+function validateField(input) {
+  var name = input.name;
+  var val  = input.value.trim();
+
+  if (name === 'nome') {
+    if (!val) { setFieldState(input, 'error', getMsg('nome', 'empty')); return false; }
+    setFieldState(input, 'ok', getMsg('nome', 'ok')); return true;
+  }
+  if (name === 'telefone') {
+    var digits = val.replace(/\D/g, '');
+    if (!digits) { setFieldState(input, 'error', getMsg('telefone', 'empty')); return false; }
+    if (digits.length < 10) { setFieldState(input, 'error', getMsg('telefone', 'invalid')); return false; }
+    setFieldState(input, 'ok', getMsg('telefone', 'ok')); return true;
+  }
+  if (name === 'email') {
+    if (!val) { setFieldState(input, 'error', getMsg('email', 'empty')); return false; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) { setFieldState(input, 'error', getMsg('email', 'invalid')); return false; }
+    setFieldState(input, 'ok', getMsg('email', 'ok')); return true;
+  }
+  if (name === 'tipo') {
+    if (!val) { setFieldState(input, 'error', getMsg('tipo', 'empty')); return false; }
+    setFieldState(input, 'ok', getMsg('tipo', 'ok')); return true;
+  }
+  return true;
+}
+
+function maskPhone(input) {
+  var v = input.value.replace(/\D/g, '').slice(0, 11);
+  if (v.length <= 2) {
+    input.value = v.length ? '(' + v : '';
+  } else if (v.length <= 6) {
+    input.value = '(' + v.slice(0,2) + ') ' + v.slice(2);
+  } else if (v.length <= 10) {
+    input.value = '(' + v.slice(0,2) + ') ' + v.slice(2,6) + '-' + v.slice(6);
+  } else {
+    input.value = '(' + v.slice(0,2) + ') ' + v.slice(2,3) + ' ' + v.slice(3,7) + '-' + v.slice(7);
+  }
 }
 
 // ── TRADUÇÕES ─────────────────────────────────────────────────────────────────
@@ -733,6 +953,7 @@ let currentLang = 'pt';
 
 function setLang(lang) {
   currentLang = lang;
+  isEN = lang === 'en';
   document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
   document.getElementById('btnPT').classList.toggle('active', lang === 'pt');
   document.getElementById('btnEN').classList.toggle('active', lang === 'en');
@@ -757,10 +978,19 @@ const scrollObserver = new IntersectionObserver((entries) => {
 // ── FORMULÁRIO ────────────────────────────────────────────────────────────────
 function submitForm(e) {
   e.preventDefault();
+  const fields = ['f-nome','f-tel','f-email','f-tipo'];
+  const inputs = fields.map(id => document.getElementById(id));
+  const allValid = inputs.every(inp => validateField(inp));
+  if (!allValid) {
+    // Foca o primeiro campo com erro
+    const first = inputs.find(inp => inp.classList.contains('field-error'));
+    if (first) first.focus();
+    return;
+  }
+
   const data = new FormData(e.target);
   const nome=data.get('nome'), tipo=data.get('tipo'), tel=data.get('telefone'), email=data.get('email'), msg=data.get('mensagem')||'';
   if (typeof fbq!=='undefined') fbq('track','Lead',{content_name:tipo,content_category:'Orçamento'});
-  const isEN = currentLang==='en';
   const texto = encodeURIComponent(
     isEN
       ? `Hello! My name is ${nome}.\nInterest: ${tipo}\nPhone: ${tel}\nEmail: ${email}\n${msg ? 'Message: '+msg : ''}`
