@@ -694,8 +694,6 @@ window.addEventListener('load', function () {
 });
 
 // ── 3. VALIDAÇÃO INLINE ───────────────────────────────────────────────────────
-var isEN = false;
-
 var validationMessages = {
   pt: {
     nome:     { empty: 'Informe seu nome.', ok: 'Tudo certo.' },
@@ -886,14 +884,18 @@ const i18n = {
 };
 
 let currentLang = 'pt';
+let isEN = false;
 
 function setLang(lang) {
   currentLang = lang;
   isEN = lang === 'en';
   document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
-  document.getElementById('btnPT').classList.toggle('active', lang === 'pt');
-  document.getElementById('btnEN').classList.toggle('active', lang === 'en');
+  var btnPT = document.getElementById('btnPT');
+  var btnEN = document.getElementById('btnEN');
+  if (btnPT) btnPT.classList.toggle('active', lang === 'pt');
+  if (btnEN) btnEN.classList.toggle('active', lang === 'en');
   const dict = i18n[lang];
+  if (!dict) return;
   document.querySelectorAll('[data-i18n]').forEach(el => { const v = dict[el.getAttribute('data-i18n')]; if (v !== undefined) el.textContent = v; });
   document.querySelectorAll('[data-i18n-html]').forEach(el => { const v = dict[el.getAttribute('data-i18n-html')]; if (v !== undefined) el.innerHTML = v; });
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { const v = dict[el.getAttribute('data-i18n-placeholder')]; if (v !== undefined) el.placeholder = v; });
