@@ -24,6 +24,35 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
 <link rel="apple-touch-icon" href="/favicon-192.png" />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Elloverde Paisagismo & Flora",
+  "description": "Paisagismo sofisticado criado para o clima e a estética do Ceará. Elegância natural, com raízes no território.",
+  "url": "https://www.elloverdepaisagismo.com.br",
+  "telephone": "+5585992252253",
+  "email": "vamosconversar@elloverdepaisagismo.com.br",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Fortaleza",
+    "addressRegion": "CE",
+    "addressCountry": "BR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": -3.7172, "longitude": -38.5434 },
+  "sameAs": ["https://instagram.com/elloverde"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Serviços de Paisagismo",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Criação e Execução de Paisagismo"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Paisagismo Condominial"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Manutenção Periódica"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Poda, Extração e Insumos"}}
+    ]
+  }
+}
+</script>
 
 <!-- META PIXEL -->
 <script>
@@ -126,9 +155,9 @@ section { padding: 88px 48px; }
 .numero-lbl { font-size:10px; letter-spacing:0.25em; text-transform:uppercase; color:rgba(240,235,224,0.5); margin-top:10px; font-weight:300; }
 
 /* ── DIVIDER ── */
-.divider { padding:0; height:220px; background:url('https://raw.githubusercontent.com/BenjamimLima07/elloverde/main/divider.jpg') center center/cover no-repeat; }
-.divider::before { content:''; position:absolute; inset:0; background:rgba(5,12,5,0.82); }
-.divider-text { font-family:'Cormorant Garamond',serif; font-size:clamp(24px,4vw,38px); font-weight:300; font-style:italic; color:#FFFFFF; text-align:center; position:relative; z-index:1; text-shadow: 0 1px 12px rgba(0,0,0,0.6); }
+.divider { padding:0; height:280px; background:url('divider.jpg') center center/cover no-repeat; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+.divider::before { content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(10,20,10,0.65); z-index:0; }
+.divider-text { font-family:'Cormorant Garamond',serif; font-size:clamp(24px,4vw,38px); font-weight:300; font-style:italic; color:#F0EBE0; text-align:center; position:relative; z-index:2; text-shadow:0 2px 16px rgba(0,0,0,0.5); }
 
 /* ── SERVICES ── */
 .services { background:#EFEBE1; }
@@ -550,9 +579,9 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
           <div class="contact-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="3" width="12" height="12" rx="3" stroke="currentColor" stroke-width="1" fill="none"/><circle cx="9" cy="9" r="3" stroke="currentColor" stroke-width="1" fill="none"/><circle cx="13" cy="5" r="0.8" fill="currentColor"/></svg></div>
           <div><p class="contact-lbl">Instagram</p><p class="contact-val">@elloverde</p></div>
         </a>
-        <a href="mailto:vamosconversar@elloverdepaisagismo.com.br" class="contact-item" onclick="trackEmail()">
+        <a href="/cdn-cgi/l/email-protection#93e5f2fefce0f0fcfde5f6e1e0f2e1d3f6fffffce5f6e1f7f6e3f2fae0f2f4fae0fefcbdf0fcfebdf1e1" class="contact-item" onclick="trackEmail()">
           <div class="contact-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="1" stroke="currentColor" stroke-width="1" fill="none"/><path d="M2 5l7 6 7-6" stroke="currentColor" stroke-width="1"/></svg></div>
-          <div><p class="contact-lbl">E-mail</p><p class="contact-val">vamosconversar@elloverdepaisagismo.com.br</p></div>
+          <div><p class="contact-lbl">E-mail</p><p class="contact-val"><span class="__cf_email__" data-cfemail="3147505c5e42525e5f47544342504371545d5d5e475443555441505842505658425c5e1f525e5c1f5343">[email&#160;protected]</span></p></div>
         </a>
         <div class="contact-item">
           <div class="contact-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2C6 2 4 4.5 4 7c0 4 5 9 5 9s5-5 5-9c0-2.5-2-5-5-5z" stroke="currentColor" stroke-width="1" fill="none"/><circle cx="9" cy="7" r="2" stroke="currentColor" stroke-width="1" fill="none"/></svg></div>
@@ -571,11 +600,11 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
 </footer>
 
 <!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/5585992252253" target="_blank" class="whatsapp-float" onclick="trackWhatsApp('float')" aria-label="Fale pelo WhatsApp">
+<a href="https://wa.me/5585992252253?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" class="whatsapp-float" onclick="trackWhatsApp('float')" aria-label="Fale pelo WhatsApp">
   <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.482.676 4.805 1.854 6.797L2 30l7.418-1.818A13.94 13.94 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.56 11.56 0 0 1-5.89-1.608l-.422-.252-4.402 1.08 1.114-4.28-.276-.44A11.56 11.56 0 0 1 4.4 16C4.4 9.59 9.59 4.4 16 4.4S27.6 9.59 27.6 16 22.41 27.6 16 27.6zm6.34-8.64c-.348-.174-2.06-1.016-2.38-1.132-.318-.116-.55-.174-.78.174-.23.348-.894 1.132-1.096 1.364-.202.232-.404.26-.752.086-.348-.174-1.47-.542-2.8-1.726-1.034-.922-1.732-2.06-1.936-2.408-.202-.348-.022-.536.152-.71.156-.154.348-.404.522-.606.174-.202.232-.348.348-.58.116-.232.058-.436-.03-.61-.086-.174-.78-1.878-1.07-2.572-.282-.676-.568-.584-.78-.594l-.664-.012c-.232 0-.61.086-.928.434-.318.348-1.214 1.186-1.214 2.892s1.242 3.354 1.416 3.586c.174.232 2.444 3.732 5.922 5.234.828.358 1.474.572 1.978.732.832.264 1.588.226 2.186.138.668-.1 2.06-.842 2.35-1.656.29-.814.29-1.512.202-1.656-.086-.144-.318-.232-.666-.406z"/></svg>
 </a>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── HAMBURGER ─────────────────────────────────────────────────────────────────
 function toggleMobile() {
   const menu = document.getElementById('mobileMenu');
@@ -740,13 +769,4 @@ function submitForm(e) {
   const isEN = currentLang==='en';
   const texto = encodeURIComponent(
     (isEN ? `Hello! My name is ${nome}.\nInterest: ${tipo}\nPhone: ${tel}\nEmail: ${email}\n`
-           : `Olá! Meu nome é ${nome}.\nInteresse: ${tipo}\nTelefone: ${tel}\nE-mail: ${email}\n`)
-    + (msg ? (isEN ? `Message: ${msg}` : `Mensagem: ${msg}`) : '')
-  );
-  e.target.style.display='none';
-  document.getElementById('formSuccess').style.display='block';
-  window.open(`https://wa.me/5585992252253?text=${texto}`,'_blank');
-}
-</script>
-</body>
-</html>
+           : `Olá! Meu nome é ${nome}.\nInteresse: ${tipo}\nTelefone: ${tel}\n
