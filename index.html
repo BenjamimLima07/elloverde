@@ -670,105 +670,10 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
   </svg>
 </a>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// ── HAMBURGER ─────────────────────────────────────────────────────────────────
-function toggleMobile() {
-  const menu = document.getElementById('mobileMenu');
-  const btn  = document.getElementById('hamburger');
-  menu.classList.toggle('open');
-  btn.classList.toggle('open');
-  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
-}
-function closeMobile() {
-  document.getElementById('mobileMenu').classList.remove('open');
-  document.getElementById('hamburger').classList.remove('open');
-  document.body.style.overflow = '';
-}
 
-// ── 4. WHATSAPP FLOAT — aparece após 4s ───────────────────────────────────────
-window.addEventListener('load', function () {
-  setTimeout(function () {
-    var btn = document.getElementById('whatsappFloat');
-    if (btn) btn.classList.add('visible');
-  }, 4000);
-});
-
-// ── 3. VALIDAÇÃO INLINE ───────────────────────────────────────────────────────
-var validationMessages = {
-  pt: {
-    nome:     { empty: 'Informe seu nome.', ok: 'Tudo certo.' },
-    telefone: { empty: 'Informe seu telefone.', invalid: 'Número incompleto (mínimo 10 dígitos).', ok: 'Tudo certo.' },
-    email:    { empty: 'Informe seu e-mail.', invalid: 'E-mail inválido.', ok: 'Tudo certo.' },
-    tipo:     { empty: 'Selecione o tipo de projeto.', ok: 'Tudo certo.' },
-  },
-  en: {
-    nome:     { empty: 'Please enter your name.', ok: 'Looks good.' },
-    telefone: { empty: 'Please enter your phone number.', invalid: 'Incomplete number (min. 10 digits).', ok: 'Looks good.' },
-    email:    { empty: 'Please enter your e-mail.', invalid: 'Invalid e-mail address.', ok: 'Looks good.' },
-    tipo:     { empty: 'Please select a project type.', ok: 'Looks good.' },
-  }
-};
-
-function getMsg(field, key) {
-  var lang = isEN ? 'en' : 'pt';
-  return (validationMessages[lang][field] || {})[key] || '';
-}
-
-function setFieldState(input, state, message) {
-  var name = input.name;
-  var msgEl = document.getElementById('msg-' + name);
-  input.classList.remove('field-error', 'field-ok');
-  if (msgEl) { msgEl.className = 'field-msg'; msgEl.textContent = ''; }
-  if (state === 'error') {
-    input.classList.add('field-error');
-    if (msgEl) { msgEl.classList.add('error'); msgEl.textContent = message || ''; }
-  } else if (state === 'ok') {
-    input.classList.add('field-ok');
-    if (msgEl) { msgEl.classList.add('ok'); msgEl.textContent = message || ''; }
-  }
-}
-
-function validateField(input) {
-  var name = input.name;
-  var val  = input.value.trim();
-
-  if (name === 'nome') {
-    if (!val) { setFieldState(input, 'error', getMsg('nome', 'empty')); return false; }
-    setFieldState(input, 'ok', getMsg('nome', 'ok')); return true;
-  }
-  if (name === 'telefone') {
-    var digits = val.replace(/\D/g, '');
-    if (!digits) { setFieldState(input, 'error', getMsg('telefone', 'empty')); return false; }
-    if (digits.length < 10) { setFieldState(input, 'error', getMsg('telefone', 'invalid')); return false; }
-    setFieldState(input, 'ok', getMsg('telefone', 'ok')); return true;
-  }
-  if (name === 'email') {
-    if (!val) { setFieldState(input, 'error', getMsg('email', 'empty')); return false; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) { setFieldState(input, 'error', getMsg('email', 'invalid')); return false; }
-    setFieldState(input, 'ok', getMsg('email', 'ok')); return true;
-  }
-  if (name === 'tipo') {
-    if (!val) { setFieldState(input, 'error', getMsg('tipo', 'empty')); return false; }
-    setFieldState(input, 'ok', getMsg('tipo', 'ok')); return true;
-  }
-  return true;
-}
-
-function maskPhone(input) {
-  var v = input.value.replace(/\D/g, '').slice(0, 11);
-  if (v.length <= 2) {
-    input.value = v.length ? '(' + v : '';
-  } else if (v.length <= 6) {
-    input.value = '(' + v.slice(0,2) + ') ' + v.slice(2);
-  } else if (v.length <= 10) {
-    input.value = '(' + v.slice(0,2) + ') ' + v.slice(2,6) + '-' + v.slice(6);
-  } else {
-    input.value = '(' + v.slice(0,2) + ') ' + v.slice(2,3) + ' ' + v.slice(3,7) + '-' + v.slice(7);
-  }
-}
-
+<script>
 // ── TRADUÇÕES ─────────────────────────────────────────────────────────────────
-const i18n = {
+var i18n = {
   pt: {
     'nav.manifesto':'Manifesto','nav.services':'Serviços','nav.pillars':'Pilares',
     'nav.partners':'Parceiros','nav.quote':'Orçamento','nav.contact':'Contato','nav.cta':'Fale Conosco',
@@ -875,7 +780,7 @@ const i18n = {
     'form.opt3':'Periodic Maintenance','form.opt4':'Pruning, Extraction & Supplies','form.opt5':'Other',
     'form.message':'Message','form.messagePh':'Briefly describe your space and what you envision for it...',
     'form.submit':'Request a quote via WhatsApp','form.success':'Thank you! Opening WhatsApp now… 🌿',
-    'contact.label':'Contact','contact.h2':'Let\'s create your<br><em>ideal garden.</em>',
+    'contact.label':'Contact','contact.h2':"Let's create your<br><em>ideal garden.</em>",
     'contact.desc':'Get in touch and schedule a site visit. Every project begins with a conversation about your space, your climate, and your way of living outdoors.',
     'contact.locLabel':'Location',
     'footer.copy':'© 2026 Elloverde Paisagismo & Flora. All rights reserved.',
@@ -883,53 +788,176 @@ const i18n = {
   }
 };
 
-let currentLang = 'pt';
-let isEN = false;
+// ── ESTADO GLOBAL ─────────────────────────────────────────────────────────────
+var currentLang = 'pt';
+var isEN = false;
 
+// ── HAMBURGER ─────────────────────────────────────────────────────────────────
+function toggleMobile() {
+  var menu = document.getElementById('mobileMenu');
+  var btn  = document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  btn.classList.toggle('open');
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+}
+function closeMobile() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ── TRADUÇÃO ──────────────────────────────────────────────────────────────────
 function setLang(lang) {
   currentLang = lang;
-  isEN = lang === 'en';
-  document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+  isEN = (lang === 'en');
+  document.documentElement.lang = isEN ? 'en' : 'pt-BR';
   var btnPT = document.getElementById('btnPT');
   var btnEN = document.getElementById('btnEN');
-  if (btnPT) btnPT.classList.toggle('active', lang === 'pt');
-  if (btnEN) btnEN.classList.toggle('active', lang === 'en');
-  const dict = i18n[lang];
+  if (btnPT) btnPT.classList.toggle('active', !isEN);
+  if (btnEN) btnEN.classList.toggle('active', isEN);
+  var dict = i18n[lang];
   if (!dict) return;
-  document.querySelectorAll('[data-i18n]').forEach(el => { const v = dict[el.getAttribute('data-i18n')]; if (v !== undefined) el.textContent = v; });
-  document.querySelectorAll('[data-i18n-html]').forEach(el => { const v = dict[el.getAttribute('data-i18n-html')]; if (v !== undefined) el.innerHTML = v; });
-  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { const v = dict[el.getAttribute('data-i18n-placeholder')]; if (v !== undefined) el.placeholder = v; });
-  document.querySelectorAll('option[data-i18n]').forEach(el => { const v = dict[el.getAttribute('data-i18n')]; if (v !== undefined) el.textContent = v; });
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var v = dict[el.getAttribute('data-i18n')];
+    if (v !== undefined) el.textContent = v;
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
+    var v = dict[el.getAttribute('data-i18n-html')];
+    if (v !== undefined) el.innerHTML = v;
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+    var v = dict[el.getAttribute('data-i18n-placeholder')];
+    if (v !== undefined) el.placeholder = v;
+  });
+  document.querySelectorAll('option[data-i18n]').forEach(function(el) {
+    var v = dict[el.getAttribute('data-i18n')];
+    if (v !== undefined) el.textContent = v;
+  });
+}
+
+// ── 4. WHATSAPP FLOAT — aparece após 4s ───────────────────────────────────────
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    var btn = document.getElementById('whatsappFloat');
+    if (btn) btn.classList.add('visible');
+  }, 4000);
+});
+
+// ── VALIDAÇÃO INLINE ─────────────────────────────────────────────────────────
+var validationMessages = {
+  pt: {
+    nome:     { empty: 'Informe seu nome.', ok: 'Tudo certo.' },
+    telefone: { empty: 'Informe seu telefone.', invalid: 'Número incompleto (mínimo 10 dígitos).', ok: 'Tudo certo.' },
+    email:    { empty: 'Informe seu e-mail.', invalid: 'E-mail inválido.', ok: 'Tudo certo.' },
+    tipo:     { empty: 'Selecione o tipo de projeto.', ok: 'Tudo certo.' }
+  },
+  en: {
+    nome:     { empty: 'Please enter your name.', ok: 'Looks good.' },
+    telefone: { empty: 'Please enter your phone number.', invalid: 'Incomplete number (min. 10 digits).', ok: 'Looks good.' },
+    email:    { empty: 'Please enter your e-mail.', invalid: 'Invalid e-mail address.', ok: 'Looks good.' },
+    tipo:     { empty: 'Please select a project type.', ok: 'Looks good.' }
+  }
+};
+
+function getMsg(field, key) {
+  var lang = isEN ? 'en' : 'pt';
+  return (validationMessages[lang][field] || {})[key] || '';
+}
+
+function setFieldState(input, state, message) {
+  var name = input.name;
+  var msgEl = document.getElementById('msg-' + name);
+  input.classList.remove('field-error', 'field-ok');
+  if (msgEl) { msgEl.className = 'field-msg'; msgEl.textContent = ''; }
+  if (state === 'error') {
+    input.classList.add('field-error');
+    if (msgEl) { msgEl.classList.add('error'); msgEl.textContent = message || ''; }
+  } else if (state === 'ok') {
+    input.classList.add('field-ok');
+    if (msgEl) { msgEl.classList.add('ok'); msgEl.textContent = message || ''; }
+  }
+}
+
+function validateField(input) {
+  var name = input.name;
+  var val  = input.value.trim();
+  if (name === 'nome') {
+    if (!val) { setFieldState(input, 'error', getMsg('nome', 'empty')); return false; }
+    setFieldState(input, 'ok', getMsg('nome', 'ok')); return true;
+  }
+  if (name === 'telefone') {
+    var digits = val.replace(/\D/g, '');
+    if (!digits) { setFieldState(input, 'error', getMsg('telefone', 'empty')); return false; }
+    if (digits.length < 10) { setFieldState(input, 'error', getMsg('telefone', 'invalid')); return false; }
+    setFieldState(input, 'ok', getMsg('telefone', 'ok')); return true;
+  }
+  if (name === 'email') {
+    if (!val) { setFieldState(input, 'error', getMsg('email', 'empty')); return false; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) { setFieldState(input, 'error', getMsg('email', 'invalid')); return false; }
+    setFieldState(input, 'ok', getMsg('email', 'ok')); return true;
+  }
+  if (name === 'tipo') {
+    if (!val) { setFieldState(input, 'error', getMsg('tipo', 'empty')); return false; }
+    setFieldState(input, 'ok', getMsg('tipo', 'ok')); return true;
+  }
+  return true;
+}
+
+function maskPhone(input) {
+  var v = input.value.replace(/\D/g, '').slice(0, 11);
+  if (v.length <= 2) {
+    input.value = v.length ? '(' + v : '';
+  } else if (v.length <= 6) {
+    input.value = '(' + v.slice(0,2) + ') ' + v.slice(2);
+  } else if (v.length <= 10) {
+    input.value = '(' + v.slice(0,2) + ') ' + v.slice(2,6) + '-' + v.slice(6);
+  } else {
+    input.value = '(' + v.slice(0,2) + ') ' + v.slice(2,3) + ' ' + v.slice(3,7) + '-' + v.slice(7);
+  }
 }
 
 // ── TRACKING ─────────────────────────────────────────────────────────────────
-function trackWhatsApp(origem) { if (typeof fbq!=='undefined') fbq('track','Contact',{content_name:'WhatsApp',origem}); }
-function trackInstagram() { if (typeof fbq!=='undefined') fbq('track','Contact',{content_name:'Instagram'}); }
-function trackEmail() { if (typeof fbq!=='undefined') fbq('track','Contact',{content_name:'Email'}); }
+function trackWhatsApp(origem) { if (typeof fbq !== 'undefined') fbq('track','Contact',{content_name:'WhatsApp',origem:origem}); }
+function trackInstagram() { if (typeof fbq !== 'undefined') fbq('track','Contact',{content_name:'Instagram'}); }
+function trackEmail() { if (typeof fbq !== 'undefined') fbq('track','Contact',{content_name:'Email'}); }
 
-const tracked = {};
-const scrollObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting && !tracked[e.target.id]) { tracked[e.target.id]=true; if (typeof fbq!=='undefined') fbq('trackCustom','SectionView',{section:e.target.id}); } });
+var tracked = {};
+var scrollObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting && !tracked[e.target.id]) {
+      tracked[e.target.id] = true;
+      if (typeof fbq !== 'undefined') fbq('trackCustom','SectionView',{section:e.target.id});
+    }
+  });
 }, { threshold: 0.4 });
-['manifesto','servicos','pilares','depoimentos','parceiros','orcamento','contato'].forEach(id => { const el=document.getElementById(id); if(el) scrollObserver.observe(el); });
+['manifesto','servicos','pilares','depoimentos','parceiros','orcamento','contato'].forEach(function(id) {
+  var el = document.getElementById(id);
+  if (el) scrollObserver.observe(el);
+});
 
 // ── FORMULÁRIO ────────────────────────────────────────────────────────────────
 function submitForm(e) {
   e.preventDefault();
-  const fields = ['f-nome','f-tel','f-email','f-tipo'];
-  const inputs = fields.map(id => document.getElementById(id));
-  const allValid = inputs.every(inp => validateField(inp));
+  var ids = ['f-nome','f-tel','f-email','f-tipo'];
+  var inputs = ids.map(function(id) { return document.getElementById(id); });
+  var allValid = inputs.every(function(inp) { return validateField(inp); });
   if (!allValid) {
-    // Foca o primeiro campo com erro
-    const first = inputs.find(inp => inp.classList.contains('field-error'));
+    var first = inputs.find(function(inp) { return inp.classList.contains('field-error'); });
     if (first) first.focus();
     return;
   }
-
-  const data = new FormData(e.target);
-  const nome=data.get('nome'), tipo=data.get('tipo'), tel=data.get('telefone'), email=data.get('email'), msg=data.get('mensagem')||'';
-  if (typeof fbq!=='undefined') fbq('track','Lead',{content_name:tipo,content_category:'Orçamento'});
-  const texto = encodeURIComponent(
+  var data = new FormData(e.target);
+  var nome = data.get('nome'), tipo = data.get('tipo'), tel = data.get('telefone'), email = data.get('email'), msg = data.get('mensagem') || '';
+  if (typeof fbq !== 'undefined') fbq('track','Lead',{content_name:tipo,content_category:'Orcamento'});
+  var texto = encodeURIComponent(
     isEN
-      ? `Hello! My name is ${nome}.\nInterest: ${tipo}\nPhone: ${tel}\nEmail: ${email}\n${msg ? 'Message: '+msg : ''}`
-      : `Olá! Meu nome é ${nome}.\nInteresse: ${tipo}\nTelefone: ${tel}\nEmail: ${email}\n${msg ? 'Mensagem: '+ms
+      ? 'Hello! My name is ' + nome + '.\nInterest: ' + tipo + '\nPhone: ' + tel + '\nEmail: ' + email + (msg ? '\nMessage: ' + msg : '')
+      : 'Ola! Meu nome e ' + nome + '.\nInteresse: ' + tipo + '\nTelefone: ' + tel + '\nEmail: ' + email + (msg ? '\nMensagem: ' + msg : '')
+  );
+  document.getElementById('orcamentoForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+  setTimeout(function() { window.open('https://wa.me/5585992252253?text=' + texto, '_blank'); }, 800);
+}
+</script>
+</body>
+</html>
