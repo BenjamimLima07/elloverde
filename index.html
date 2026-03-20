@@ -1352,24 +1352,36 @@ function animateCounter(el) {
   requestAnimationFrame(step);
 }
 
-// Set initial values so they're not blank before animation
+function runCounters(container) {
+  container.querySelectorAll('.count-num').forEach(function(el) {
+    animateCounter(el);
+  });
+}
+
+// Set real values immediately as fallback
 document.querySelectorAll('.count-num').forEach(function(el) {
   el.textContent = el.getAttribute('data-target') || '0';
 });
 
-var counterObserver = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      entry.target.querySelectorAll('.count-num').forEach(function(el) {
-        el.textContent = '0';
-        animateCounter(el);
-      });
-      counterObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.2 });
 var numerosEl = document.querySelector('.numeros');
-if (numerosEl) counterObserver.observe(numerosEl);
+if (numerosEl) {
+  var rect = numerosEl.getBoundingClientRect();
+  if (rect.top < window.innerHeight) {
+    // Already visible on load — animate right away
+    runCounters(numerosEl);
+  } else {
+    // Wait until scrolled into view
+    var counterObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          runCounters(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    counterObserver.observe(numerosEl);
+  }
+}
 
 // ── CARROSSEL DEPOIMENTOS ─────────────────────────────────────────────────────
 function scrollDepo(index) {
