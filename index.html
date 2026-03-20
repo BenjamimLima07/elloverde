@@ -1338,9 +1338,10 @@ document.querySelectorAll('.fade-in').forEach(function(el) {
 // ── COUNTER ANIMATION ─────────────────────────────────────────────────────────
 function animateCounter(el) {
   var target = parseInt(el.getAttribute('data-target'), 10);
-  if (isNaN(target)) return;
-  var duration = 1600;
+  if (isNaN(target)) { el.textContent = '0'; return; }
+  var duration = 1800;
   var start = null;
+  el.textContent = '0';
   function step(ts) {
     if (!start) start = ts;
     var progress = Math.min((ts - start) / duration, 1);
@@ -1352,36 +1353,11 @@ function animateCounter(el) {
   requestAnimationFrame(step);
 }
 
-function runCounters(container) {
-  container.querySelectorAll('.count-num').forEach(function(el) {
-    animateCounter(el);
-  });
-}
-
-// Set real values immediately as fallback
-document.querySelectorAll('.count-num').forEach(function(el) {
-  el.textContent = el.getAttribute('data-target') || '0';
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    document.querySelectorAll('.count-num').forEach(animateCounter);
+  }, 300);
 });
-
-var numerosEl = document.querySelector('.numeros');
-if (numerosEl) {
-  var rect = numerosEl.getBoundingClientRect();
-  if (rect.top < window.innerHeight) {
-    // Already visible on load — animate right away
-    runCounters(numerosEl);
-  } else {
-    // Wait until scrolled into view
-    var counterObserver = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          runCounters(entry.target);
-          counterObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-    counterObserver.observe(numerosEl);
-  }
-}
 
 // ── CARROSSEL DEPOIMENTOS ─────────────────────────────────────────────────────
 function scrollDepo(index) {
