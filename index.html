@@ -195,7 +195,6 @@ nav.scrolled { height: 60px; box-shadow: 0 2px 40px rgba(44,40,32,0.08); }
   position: relative; z-index: 2;
   padding: 0 56px 80px;
   max-width: 1200px; width: 100%;
-  display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 40px;
 }
 .hero-main { max-width: 640px; }
 
@@ -266,29 +265,7 @@ nav.scrolled { height: 60px; box-shadow: 0 2px 40px rgba(44,40,32,0.08); }
 }
 .hero-cta-secondary:hover { color: rgba(240,235,224,0.88); border-bottom-color: rgba(240,235,224,0.4); }
 
-/* Side stats in hero */
-.hero-side {
-  display: flex; flex-direction: column; gap: 2px;
-  padding-bottom: 4px;
-  animation: heroFadeUp 1.1s 0.45s cubic-bezier(0.22,1,0.36,1) both;
-}
-.hero-side-item {
-  padding: 16px 20px;
-  border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(15,25,15,0.4);
-  backdrop-filter: blur(12px);
-  border-radius: 4px;
-}
-.hero-side-val {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 26px; font-weight: 300; color: var(--off-white);
-  line-height: 1;
-}
-.hero-side-val sup { font-size: 0.5em; vertical-align: super; }
-.hero-side-lbl {
-  font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
-  color: rgba(168,197,160,0.5); margin-top: 5px; font-weight: 300;
-}
+
 
 .hero-scroll {
   position: absolute; bottom: 36px; right: 56px; z-index: 2;
@@ -758,7 +735,6 @@ footer {
   .services-grid { grid-template-columns: repeat(2,1fr); }
   .numeros-grid { grid-template-columns: repeat(2,1fr); }
   .parceiros-grid { grid-template-columns: repeat(3,1fr); }
-  .hero-side { display: none; }
 }
 @media (max-width: 768px) {
   nav { padding: 0 20px; }
@@ -848,20 +824,7 @@ footer {
         <a href="#servicos" class="hero-cta-secondary" data-i18n="hero.ctaSecondary">Ver serviços</a>
       </div>
     </div>
-    <div class="hero-side">
-      <div class="hero-side-item">
-        <div class="hero-side-val"><sup>+</sup><span class="count-num" data-target="5">0</span></div>
-        <div class="hero-side-lbl" data-i18n="numeros.anos">Anos de experiência</div>
-      </div>
-      <div class="hero-side-item">
-        <div class="hero-side-val"><sup>+</sup><span class="count-num" data-target="200">0</span></div>
-        <div class="hero-side-lbl" data-i18n="numeros.projetos">Projetos realizados</div>
-      </div>
-      <div class="hero-side-item">
-        <div class="hero-side-val"><span class="count-num" data-target="100">0</span><sup>%</sup></div>
-        <div class="hero-side-lbl" data-i18n="numeros.dedicacao">Dedicação e qualidade</div>
-      </div>
-    </div>
+
   </div>
   <div class="hero-scroll" aria-hidden="true">
     <div class="hero-scroll-line"></div>
@@ -1171,11 +1134,11 @@ footer {
           </div>
           <div><p class="contact-lbl">Instagram</p><p class="contact-val">@elloverde</p></div>
         </a>
-        <a href="mailto:vamosconversar@elloverdepaisagismo.com.br" class="contact-item" aria-label="Enviar e-mail">
+        <a href="/cdn-cgi/l/email-protection#3345525e5c40505c5d45564140524173565f5f5c455641575643525a4052545a405e5c1d505c5e1d5141" class="contact-item" aria-label="Enviar e-mail">
           <div class="contact-icon">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="1" stroke="currentColor" stroke-width="1" fill="none"/><path d="M2 5l7 6 7-6" stroke="currentColor" stroke-width="1"/></svg>
           </div>
-          <div><p class="contact-lbl">E-mail</p><p class="contact-val">vamosconversar@elloverdepaisagismo.com.br</p></div>
+          <div><p class="contact-lbl">E-mail</p><p class="contact-val"><span class="__cf_email__" data-cfemail="4b3d2a2624382824253d2e39382a390b2e2727243d2e392f2e3b2a22382a2c2238262465282426652939">[email&#160;protected]</span></p></div>
         </a>
         <div class="contact-item">
           <div class="contact-icon">
@@ -1207,7 +1170,7 @@ footer {
   </svg>
 </a>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── TRADUÇÕES ─────────────────────────────────────────────────────────────────
 var i18n = {
   pt: {
@@ -1392,7 +1355,7 @@ var counterObserver = new IntersectionObserver(function(entries) {
     }
   });
 }, { threshold: 0.3 });
-document.querySelectorAll('.numeros, .hero-side').forEach(function(el) { counterObserver.observe(el); });
+document.querySelectorAll('.numeros').forEach(function(el) { counterObserver.observe(el); });
 
 // ── CARROSSEL DEPOIMENTOS ─────────────────────────────────────────────────────
 function scrollDepo(index) {
@@ -1460,11 +1423,4 @@ function submitForm(e) {
   if (!allValid) { var first = inputs.find(function(inp){ return inp.classList.contains('field-error'); }); if (first) first.focus(); return; }
   var data = new FormData(e.target);
   var nome = data.get('nome'), tipo = data.get('tipo'), tel = data.get('telefone'), email = data.get('email'), msg = data.get('mensagem')||'';
-  var texto = encodeURIComponent(isEN ? 'Hello! My name is '+nome+'.\nInterest: '+tipo+'\nPhone: '+tel+'\nEmail: '+email+(msg?'\nMessage: '+msg:'') : 'Ola! Meu nome e '+nome+'.\nInteresse: '+tipo+'\nTelefone: '+tel+'\nEmail: '+email+(msg?'\nMensagem: '+msg:''));
-  document.getElementById('orcamentoForm').style.display = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
-  setTimeout(function(){ window.open('https://wa.me/5585992252253?text='+texto,'_blank'); }, 800);
-}
-</script>
-</body>
-</html>
+  var texto = encodeURIComponent(isEN ? 'Hello! My name is '+nome+'.\nInterest: '+tipo+'\nPhone: '+tel+'\nEmail: '+email+(msg?'\nMessage: '+msg:'') : 'Ola! Meu nome e '+nome+'.\nInteresse: '+tipo+'\nTelefone: '+tel+'\nEmail: '+email+(ms
