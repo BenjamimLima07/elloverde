@@ -6,337 +6,784 @@
 <title>Elloverde Paisagismo & Flora | Fortaleza, Ceará</title>
 <meta name="description" content="Paisagismo sofisticado criado para o clima e a estética do Ceará. Elegância natural, com raízes no território." />
 <meta name="robots" content="index, follow" />
-<meta name="author" content="Elloverde Paisagismo & Flora" />
-<meta name="keywords" content="paisagismo Fortaleza, paisagismo Ceará, jardim Fortaleza, flora Ceará, projeto paisagístico, manutenção jardim, plantas Fortaleza, Elloverde" />
-<link rel="canonical" href="https://www.elloverdepaisagismo.com.br/" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.elloverdepaisagismo.com.br/" />
-<meta property="og:title" content="Elloverde Paisagismo & Flora | Fortaleza, Ceará" />
-<meta property="og:description" content="Paisagismo sofisticado criado para o clima e a estética do Ceará. Elegância natural, com raízes no território." />
-<meta property="og:image" content="https://www.elloverdepaisagismo.com.br/og-image.png" />
-<meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" />
-<meta property="og:locale" content="pt_BR" /><meta property="og:site_name" content="Elloverde Paisagismo & Flora" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Elloverde Paisagismo & Flora | Fortaleza, Ceará" />
-<meta name="twitter:description" content="Paisagismo sofisticado criado para o clima e a estética do Ceará. Elegância natural, com raízes no território." />
-<meta name="twitter:image" content="https://www.elloverdepaisagismo.com.br/og-image.png" />
-<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
-<link rel="apple-touch-icon" href="/favicon-192.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Elloverde Paisagismo & Flora",
-  "description": "Paisagismo sofisticado criado para o clima e a estética do Ceará. Elegância natural, com raízes no território.",
-  "url": "https://www.elloverdepaisagismo.com.br",
-  "telephone": "+5585992252253",
-  "email": "vamosconversar@elloverdepaisagismo.com.br",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Fortaleza",
-    "addressRegion": "CE",
-    "addressCountry": "BR"
-  },
-  "geo": { "@type": "GeoCoordinates", "latitude": -3.7172, "longitude": -38.5434 },
-  "sameAs": ["https://instagram.com/elloverde"],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Serviços de Paisagismo",
-    "itemListElement": [
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Criação e Execução de Paisagismo"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Paisagismo Condominial"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Manutenção Periódica"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Poda, Extração e Insumos"}}
-    ]
-  }
-}
-</script>
-
-<!-- META PIXEL -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1222074994976228');fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1222074994976228&ev=PageView&noscript=1"/></noscript>
-<!-- GOOGLE ANALYTICS 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GJQD6MMGW7"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-GJQD6MMGW7');</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 
 <style>
+/* ── RESET & BASE ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: 'Jost', sans-serif; background: #F5F0E8; color: #2C2820; overflow-x: hidden; }
+
+:root {
+  --cream:    #F4EFE5;
+  --cream-2:  #EDE7DA;
+  --cream-3:  #E5DDD0;
+  --bark:     #2C2820;
+  --bark-60:  rgba(44,40,32,0.6);
+  --bark-20:  rgba(44,40,32,0.12);
+  --moss:     #2C5F2E;
+  --moss-d:   #1E4520;
+  --moss-l:   #A8C5A0;
+  --sage:     #8BA88B;
+  --sand:     #8B7355;
+  --sand-l:   #C9B99A;
+  --forest:   #2C3828;
+  --off-white:#F0EBE0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--bark);
+  overflow-x: hidden;
+}
+
+/* Grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.022;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ── TYPOGRAPHY ── */
+.serif { font-family: 'Cormorant Garamond', serif; }
+.label-text {
+  font-size: 10px;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--sand);
+  font-weight: 400;
+}
 
 /* ── NAV ── */
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(245,240,232,0.95); backdrop-filter: blur(10px); border-bottom: 0.5px solid rgba(44,40,32,0.12); padding: 12px 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 0 56px;
+  height: 68px;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  background: rgba(244,239,229,0.92);
+  backdrop-filter: blur(20px) saturate(1.4);
+  border-bottom: 1px solid rgba(44,40,32,0.07);
+  transition: height 0.4s ease, box-shadow 0.4s ease;
+}
+nav.scrolled { height: 60px; box-shadow: 0 2px 40px rgba(44,40,32,0.08); }
+
 .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
-.nav-logo-img { height: 36px; width: auto; display: block; }
+.nav-logo-img { height: 34px; width: auto; }
 
-.nav-links { display: flex; gap: 32px; list-style: none; }
-.nav-links a { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #7A6F5E; text-decoration: none; transition: color 0.3s; }
-.nav-links a:hover { color: #2C5F2E; }
-.nav-btn { background: #2C5F2E; color: #F5F0E8; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; padding: 10px 24px; text-decoration: none; font-family: 'Jost', sans-serif; font-weight: 400; transition: background 0.3s; flex-shrink: 0; border-radius: 8px; }
-.nav-btn:hover { background: #1F4820; }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a {
+  font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--bark-60); text-decoration: none;
+  transition: color 0.25s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute; bottom: -4px; left: 0; right: 0;
+  height: 1px; background: var(--moss);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
+}
+.nav-links a:hover { color: var(--moss); }
+.nav-links a:hover::after { transform: scaleX(1); }
 
-/* LANGUAGE TOGGLE */
-.lang-toggle { display: flex; align-items: center; border: 0.5px solid rgba(44,40,32,0.18); overflow: hidden; flex-shrink: 0; border-radius: 8px; }
-.lang-toggle button { font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; padding: 7px 13px; border: none; cursor: pointer; transition: background 0.25s, color 0.25s; background: transparent; color: #8B7355; line-height: 1; }
-.lang-toggle button.active { background: #2C5F2E; color: #F5F0E8; }
-.lang-toggle button:not(.active):hover { background: rgba(44,95,46,0.08); color: #2C5F2E; }
-.lang-toggle .lang-sep { width: 0.5px; height: 18px; background: rgba(44,40,32,0.15); flex-shrink: 0; }
+.nav-btn {
+  background: var(--moss); color: var(--cream);
+  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 10px 22px; text-decoration: none;
+  font-family: 'DM Sans', sans-serif; font-weight: 400;
+  border-radius: 6px;
+  transition: background 0.3s, transform 0.2s;
+  flex-shrink: 0;
+}
+.nav-btn:hover { background: var(--moss-d); transform: translateY(-1px); }
 
-/* HAMBURGER */
-.nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
-.nav-hamburger span { display: block; width: 22px; height: 1.5px; background: #2C2820; transition: all 0.3s; transform-origin: center; }
+.lang-toggle {
+  display: flex; align-items: center;
+  border: 1px solid rgba(44,40,32,0.14); border-radius: 6px;
+  overflow: hidden; flex-shrink: 0;
+}
+.lang-toggle button {
+  font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 7px 12px; border: none; cursor: pointer;
+  background: transparent; color: var(--sand);
+  transition: background 0.22s, color 0.22s;
+}
+.lang-toggle button.active { background: var(--moss); color: var(--cream); }
+.lang-toggle .lang-sep { width: 1px; height: 16px; background: rgba(44,40,32,0.12); flex-shrink: 0; }
+
+.nav-hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+}
+.nav-hamburger span {
+  display: block; width: 22px; height: 1.5px;
+  background: var(--bark); transition: all 0.3s; transform-origin: center;
+}
 .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
 .nav-hamburger.open span:nth-child(2) { opacity: 0; }
 .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-/* MOBILE MENU DRAWER */
-.mobile-menu { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 99; background: #F5F0E8; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 36px; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
+.mobile-menu {
+  position: fixed; inset: 0; z-index: 99;
+  background: var(--cream);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 32px;
+  transform: translateX(100%);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
 .mobile-menu.open { transform: translateX(0); }
-.mobile-menu a { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: #2C2820; text-decoration: none; letter-spacing: 0.05em; transition: color 0.3s; }
-.mobile-menu a:hover { color: #2C5F2E; }
-.mobile-menu .mobile-cta { background: #2C5F2E; color: #F5F0E8 !important; font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; padding: 14px 32px; margin-top: 8px; border-radius: 10px; }
+.mobile-menu a {
+  font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 300;
+  color: var(--bark); text-decoration: none; letter-spacing: 0.04em;
+  transition: color 0.3s;
+}
+.mobile-menu a:hover { color: var(--moss); }
+.mobile-menu .mobile-cta {
+  background: var(--moss); color: var(--cream) !important;
+  font-family: 'DM Sans', sans-serif; font-size: 11px;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 14px 36px; margin-top: 8px; border-radius: 8px;
+}
+.mobile-lang {
+  display: flex; align-items: center;
+  border: 1px solid rgba(44,40,32,0.15); border-radius: 6px; overflow: hidden;
+}
+.mobile-lang button {
+  font-family: 'DM Sans', sans-serif; font-size: 12px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 9px 16px; border: none; cursor: pointer;
+  background: transparent; color: var(--sand);
+  transition: background 0.25s, color 0.25s;
+}
+.mobile-lang button.active { background: var(--moss); color: var(--cream); }
+.mobile-lang .lang-sep { width: 1px; height: 20px; background: rgba(44,40,32,0.15); }
 
 /* ── HERO ── */
-.hero { position: relative; height: 100vh; min-height: 600px; display: flex; align-items: flex-end; overflow: hidden; }
-.hero-bg { position: absolute; inset: 0; background: url('hero.jpg') center top/cover no-repeat; }
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,30,22,0.92) 0%, rgba(20,40,20,0.60) 55%, rgba(0,0,0,0.30) 100%); }
-.hero-content { position: relative; z-index: 2; padding: 0 48px 72px; max-width: 1200px; width: 100%; animation: heroFadeUp 1.1s cubic-bezier(0.22,1,0.36,1) both; }
-@keyframes heroFadeUp { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
-.hero-eyebrow { font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; color: #C9B99A; margin-bottom: 16px; animation: heroFadeUp 1.1s 0.1s cubic-bezier(0.22,1,0.36,1) both; }
-.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(38px,6vw,72px); font-weight: 300; line-height: 1.08; color: #F0EBE0; max-width: 600px; animation: heroFadeUp 1.1s 0.18s cubic-bezier(0.22,1,0.36,1) both; }
-.hero h1 em { font-style: italic; color: #A8C5A0; }
-.hero-sub { font-size: 14px; color: rgba(240,235,224,0.6); margin-top: 18px; max-width: 400px; line-height: 1.75; font-weight: 300; animation: heroFadeUp 1.1s 0.26s cubic-bezier(0.22,1,0.36,1) both; }
-.hero-cta { display: flex; align-items: center; gap: 20px; margin-top: 36px; animation: heroFadeUp 1.1s 0.36s cubic-bezier(0.22,1,0.36,1) both; }
-.hero-cta-primary { display: inline-flex; align-items: center; gap: 10px; background: #2C5F2E; color: #F5F0E8; font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.25em; text-transform: uppercase; text-decoration: none; padding: 14px 28px; transition: background 0.3s, transform 0.2s; position: relative; overflow: hidden; border-radius: 10px; }
-.hero-cta-primary::after { content:''; position:absolute; inset:0; background:rgba(255,255,255,0.06); opacity:0; transition:opacity 0.3s; }
-.hero-cta-primary:hover { background:#1F4820; transform:translateY(-1px); }
-.hero-cta-primary:hover::after { opacity:1; }
-.hero-cta-primary svg { width:14px; height:14px; transition:transform 0.3s cubic-bezier(0.22,1,0.36,1); }
-.hero-cta-primary:hover svg { transform:translateX(4px); }
-.hero-cta-divider { width:0.5px; height:32px; background:rgba(240,235,224,0.2); }
-.hero-cta-secondary { display:inline-flex; align-items:center; color:rgba(240,235,224,0.55); font-family:'Jost',sans-serif; font-size:10px; font-weight:300; letter-spacing:0.25em; text-transform:uppercase; text-decoration:none; transition:color 0.3s,border-color 0.3s; padding:4px 0; border-bottom:0.5px solid rgba(240,235,224,0.15); }
-.hero-cta-secondary:hover { color:rgba(240,235,224,0.9); border-bottom-color:rgba(240,235,224,0.4); }
-.hero-scroll { position:absolute; bottom:32px; right:48px; z-index:2; display:flex; flex-direction:column; align-items:center; gap:8px; animation:heroFadeUp 1.2s 0.6s cubic-bezier(0.22,1,0.36,1) both; }
-.hero-scroll-line { width:0.5px; height:40px; background:linear-gradient(to bottom,transparent,rgba(240,235,224,0.3)); animation:scrollPulse 2.2s ease-in-out infinite; }
-@keyframes scrollPulse { 0%,100%{transform:scaleY(1);opacity:0.4;}50%{transform:scaleY(1.15);opacity:0.8;} }
-.hero-scroll span { font-size:9px; letter-spacing:0.3em; text-transform:uppercase; color:rgba(240,235,224,0.3); writing-mode:vertical-rl; }
+.hero {
+  position: relative; height: 100vh; min-height: 620px;
+  display: flex; align-items: flex-end; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: url('hero.jpg') center top/cover no-repeat;
+}
+/* Multi-layer overlay for depth */
+.hero-overlay {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to right, rgba(10,20,10,0.55) 0%, transparent 60%),
+    linear-gradient(to top, rgba(15,25,15,0.95) 0%, rgba(15,30,15,0.55) 45%, rgba(0,0,0,0.15) 100%);
+}
 
-/* ── SECTIONS ── */
-section { padding: 88px 48px; }
+/* Decorative vertical rule */
+.hero-rule {
+  position: absolute; left: 56px; top: 50%; bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(168,197,160,0.35), rgba(168,197,160,0.15));
+  z-index: 2;
+  animation: heroFadeUp 1.4s 0.4s cubic-bezier(0.22,1,0.36,1) both;
+}
+
+.hero-content {
+  position: relative; z-index: 2;
+  padding: 0 56px 80px;
+  max-width: 1200px; width: 100%;
+  display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 40px;
+}
+.hero-main { max-width: 640px; }
+
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-size: 9.5px; letter-spacing: 0.42em; text-transform: uppercase;
+  color: var(--moss-l); margin-bottom: 24px;
+  animation: heroFadeUp 1.1s cubic-bezier(0.22,1,0.36,1) both;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: block; width: 28px; height: 1px; background: var(--moss-l);
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 6.5vw, 78px);
+  font-weight: 300; line-height: 1.06;
+  color: var(--off-white);
+  animation: heroFadeUp 1.1s 0.1s cubic-bezier(0.22,1,0.36,1) both;
+}
+.hero h1 em { font-style: italic; color: var(--moss-l); }
+
+.hero-divider {
+  width: 40px; height: 1px; background: rgba(240,235,224,0.25);
+  margin: 28px 0;
+  animation: heroFadeUp 1.1s 0.18s cubic-bezier(0.22,1,0.36,1) both;
+}
+
+.hero-sub {
+  font-size: 14px; color: rgba(240,235,224,0.55);
+  max-width: 400px; line-height: 1.8; font-weight: 300;
+  animation: heroFadeUp 1.1s 0.22s cubic-bezier(0.22,1,0.36,1) both;
+}
+
+.hero-cta {
+  display: flex; align-items: center; gap: 20px; margin-top: 40px;
+  animation: heroFadeUp 1.1s 0.32s cubic-bezier(0.22,1,0.36,1) both;
+}
+
+.hero-cta-primary {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: var(--moss); color: var(--cream);
+  font-family: 'DM Sans', sans-serif; font-size: 10.5px; font-weight: 400;
+  letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none;
+  padding: 15px 30px; border-radius: 6px;
+  transition: background 0.3s, transform 0.25s, box-shadow 0.3s;
+  box-shadow: 0 4px 24px rgba(44,95,46,0.35);
+}
+.hero-cta-primary:hover {
+  background: var(--moss-d); transform: translateY(-2px);
+  box-shadow: 0 8px 36px rgba(44,95,46,0.45);
+}
+.hero-cta-primary svg { width: 14px; height: 14px; transition: transform 0.3s cubic-bezier(0.22,1,0.36,1); }
+.hero-cta-primary:hover svg { transform: translateX(5px); }
+
+.hero-cta-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: rgba(240,235,224,0.5); font-size: 10px; font-weight: 300;
+  letter-spacing: 0.25em; text-transform: uppercase; text-decoration: none;
+  padding: 4px 0; border-bottom: 1px solid rgba(240,235,224,0.15);
+  transition: color 0.3s, border-color 0.3s;
+}
+.hero-cta-secondary:hover { color: rgba(240,235,224,0.88); border-bottom-color: rgba(240,235,224,0.4); }
+
+/* Side stats in hero */
+.hero-side {
+  display: flex; flex-direction: column; gap: 2px;
+  padding-bottom: 4px;
+  animation: heroFadeUp 1.1s 0.45s cubic-bezier(0.22,1,0.36,1) both;
+}
+.hero-side-item {
+  padding: 16px 20px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(15,25,15,0.4);
+  backdrop-filter: blur(12px);
+  border-radius: 4px;
+}
+.hero-side-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 300; color: var(--off-white);
+  line-height: 1;
+}
+.hero-side-val sup { font-size: 0.5em; vertical-align: super; }
+.hero-side-lbl {
+  font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(168,197,160,0.5); margin-top: 5px; font-weight: 300;
+}
+
+.hero-scroll {
+  position: absolute; bottom: 36px; right: 56px; z-index: 2;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  animation: heroFadeUp 1.2s 0.6s cubic-bezier(0.22,1,0.36,1) both;
+}
+.hero-scroll-line {
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, transparent, rgba(240,235,224,0.28));
+  animation: scrollPulse 2.4s ease-in-out infinite;
+}
+@keyframes scrollPulse { 0%,100%{opacity:0.3;transform:scaleY(1);} 50%{opacity:0.8;transform:scaleY(1.12);} }
+.hero-scroll span {
+  font-size: 8.5px; letter-spacing: 0.32em; text-transform: uppercase;
+  color: rgba(240,235,224,0.28); writing-mode: vertical-rl;
+}
+
+/* ── SECTIONS BASE ── */
+section { padding: 100px 56px; }
 .container { max-width: 1200px; margin: 0 auto; }
-.section-label { font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:#8B7355; margin-bottom:20px; }
-.section-h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,4vw,46px); font-weight:300; line-height:1.2; color:#2C2820; }
-.section-h2 em { color:#2C5F2E; font-style:italic; }
+
+.section-label {
+  font-size: 9.5px; letter-spacing: 0.42em; text-transform: uppercase;
+  color: var(--sand); margin-bottom: 18px; display: block;
+}
+.section-h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(30px, 4vw, 50px); font-weight: 300;
+  line-height: 1.18; color: var(--bark);
+}
+.section-h2 em { color: var(--moss); font-style: italic; }
 
 /* ── MANIFESTO ── */
-.manifesto { background:#F5F0E8; }
-.manifesto-header { text-align:center; margin-bottom:56px; }
-.manifesto-header .section-h2 { max-width:580px; margin:0 auto; }
-.manifesto-grid { display:grid; grid-template-columns:1fr 1fr; gap:56px; }
-.body-text { font-size:14px; line-height:1.95; color:#6B5F50; font-weight:300; }
-.body-text + .body-text { margin-top:20px; }
-.quote-block { border-top:0.5px solid rgba(44,40,32,0.15); padding-top:24px; margin-top:28px; }
-.quote-text { font-family:'Cormorant Garamond',serif; font-size:21px; font-style:italic; color:#2C5F2E; line-height:1.5; }
+.manifesto { background: var(--cream); }
+.manifesto-header { margin-bottom: 64px; }
 
-/* ── NÚMEROS / EXPERIÊNCIA ── */
-.numeros { background:#2C5F2E; padding:64px 48px; }
-.numeros-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(255,255,255,0.1); max-width:1200px; margin:0 auto; }
-.numero-item { background:#2C5F2E; padding:40px 28px; text-align:center; }
-.numero-val { font-family:'Cormorant Garamond',serif; font-size:clamp(40px,5vw,64px); font-weight:300; color:#F0EBE0; line-height:1; }
-.numero-val sup { font-size:0.45em; vertical-align:super; }
-.numero-lbl { font-size:10px; letter-spacing:0.25em; text-transform:uppercase; color:rgba(240,235,224,0.5); margin-top:10px; font-weight:300; }
+/* Decorative eyebrow line */
+.manifesto-header-inner {
+  display: flex; align-items: flex-start; gap: 32px;
+}
+.manifesto-accent-line {
+  width: 1px; min-height: 80px; flex-shrink: 0;
+  background: linear-gradient(to bottom, var(--moss-l), transparent);
+  margin-top: 4px;
+}
+
+.manifesto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; }
+.body-text {
+  font-size: 14.5px; line-height: 2; color: #6B5F50; font-weight: 300;
+  letter-spacing: 0.01em;
+}
+.body-text + .body-text { margin-top: 22px; }
+
+.quote-block {
+  margin-top: 36px; padding: 28px 32px;
+  border-left: 2px solid var(--moss);
+  background: rgba(44,95,46,0.04);
+  border-radius: 0 8px 8px 0;
+}
+.quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-style: italic; color: var(--moss); line-height: 1.5;
+}
+
+/* ── NÚMEROS ── */
+.numeros { background: var(--forest); padding: 0; }
+.numeros-grid {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  max-width: 100%;
+}
+.numero-item {
+  padding: 56px 40px; text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  position: relative; overflow: hidden;
+  transition: background 0.4s;
+}
+.numero-item:last-child { border-right: none; }
+.numero-item::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(to right, transparent, var(--sage), transparent);
+  opacity: 0; transition: opacity 0.4s;
+}
+.numero-item:hover { background: rgba(255,255,255,0.025); }
+.numero-item:hover::before { opacity: 1; }
+
+.numero-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(44px, 5vw, 68px); font-weight: 300;
+  color: var(--off-white); line-height: 1;
+}
+.numero-val sup { font-size: 0.42em; vertical-align: super; }
+.numero-lbl {
+  font-size: 9.5px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: rgba(168,197,160,0.4); margin-top: 12px; font-weight: 300;
+}
 
 /* ── DIVIDER ── */
-.divider { padding:0; height:55vh; min-height:320px; background:url('divider.jpg') center center/cover no-repeat; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
-.divider::before { content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(10,20,10,0.65); z-index:0; }
-.divider-text { font-family:'Cormorant Garamond',serif; font-size:clamp(24px,4vw,38px); font-weight:300; font-style:italic; color:#F0EBE0; text-align:center; position:relative; z-index:2; text-shadow:0 2px 16px rgba(0,0,0,0.5); }
+.divider {
+  padding: 0; height: 52vh; min-height: 300px;
+  background: url('divider.jpg') center/cover no-repeat;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.divider::before {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(10,20,10,0.62); z-index: 0;
+}
+/* Decorative frame */
+.divider::after {
+  content: '';
+  position: absolute; inset: 24px;
+  border: 1px solid rgba(255,255,255,0.08);
+  z-index: 1; pointer-events: none;
+}
+.divider-inner { position: relative; z-index: 2; text-align: center; }
+.divider-sub {
+  font-size: 9px; letter-spacing: 0.45em; text-transform: uppercase;
+  color: rgba(168,197,160,0.5); display: block; margin-bottom: 16px;
+}
+.divider-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 4.5vw, 44px); font-weight: 300; font-style: italic;
+  color: var(--off-white); text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+  line-height: 1.3;
+}
 
 /* ── SERVICES ── */
-.services { background:#EFEBE1; }
-.services-header { text-align:center; margin-bottom:52px; }
-.services-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
-.service-card { background:#F5F0E8; border:0.5px solid rgba(44,40,32,0.1); overflow:hidden; transition:transform 0.3s, box-shadow 0.3s; border-radius: 14px; }
-.service-card:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(44,40,32,0.08); }
-.service-card-img-placeholder { width:100%; height:200px; background-size:cover; background-position:center; }
-.service-card-body { padding:24px 24px 28px; }
-.service-card h3 { font-family:'Cormorant Garamond',serif; font-size:19px; font-weight:400; color:#2C2820; margin-bottom:10px; }
-.service-card p { font-size:13px; line-height:1.8; color:#7A6F5E; font-weight:300; }
+.services { background: var(--cream-2); }
+.services-header { text-align: center; margin-bottom: 60px; }
+.services-header-rule {
+  width: 40px; height: 1px; background: var(--moss-l);
+  margin: 20px auto 0;
+}
+
+.services-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+
+.service-card {
+  background: var(--cream); border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(44,40,32,0.07);
+  transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s;
+  position: relative;
+}
+.service-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(to right, var(--moss), var(--moss-l));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
+}
+.service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(44,40,32,0.1); }
+.service-card:hover::after { transform: scaleX(1); }
+
+.service-card-img-placeholder {
+  width: 100%; height: 200px;
+  background-size: cover; background-position: center;
+  position: relative; overflow: hidden;
+}
+.service-card-img-placeholder::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 60px;
+  background: linear-gradient(to top, var(--cream), transparent);
+}
+/* Placeholder when no image */
+.service-card-img-placeholder:not([style*="url"]) {
+  background: linear-gradient(135deg, #d9d4c8, #ccc8be);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.service-num {
+  position: absolute; top: 16px; left: 16px; z-index: 2;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px; color: rgba(168,197,160,0.8);
+  letter-spacing: 0.1em;
+  background: rgba(20,35,20,0.55);
+  backdrop-filter: blur(8px);
+  padding: 4px 10px; border-radius: 4px;
+}
+
+.service-card-body { padding: 24px 26px 30px; }
+.service-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 400; color: var(--bark); margin-bottom: 10px;
+}
+.service-card p {
+  font-size: 13px; line-height: 1.85; color: #7A6F5E; font-weight: 300;
+}
+
+.service-cta-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 16px; font-size: 10px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--moss); text-decoration: none;
+  border-bottom: 1px solid rgba(44,95,46,0.25);
+  padding-bottom: 2px;
+  transition: gap 0.3s, border-color 0.3s;
+}
+.service-cta-link:hover { gap: 10px; border-color: var(--moss); }
+.service-cta-link svg { width: 12px; height: 12px; }
 
 /* ── PILARES ── */
-.pilares { background:#2C3828; padding:88px 48px; }
-.pilares .section-label { color:#8BA88B; }
-.pilares .section-h2 { color:#E8E0D0; }
-.pilares .section-h2 em { color:#A8C5A0; }
-.pilares-header { text-align:center; margin-bottom:52px; }
-.pilares-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(255,255,255,0.06); }
-.pilar { background:#2C3828; padding:36px 28px; border:0.5px solid rgba(255,255,255,0.06); transition:background 0.4s; }
-.pilar:hover { background:#354030; }
-.pilar-title { font-family:'Cormorant Garamond',serif; font-size:18px; color:#D4CAB8; margin-bottom:10px; font-weight:400; }
-.pilar-desc { font-size:12px; line-height:1.85; color:rgba(212,202,184,0.5); font-weight:300; }
-.pilar-num { font-family:'Cormorant Garamond',serif; font-size:13px; color:rgba(168,197,160,0.45); margin-bottom:16px; letter-spacing:0.1em; }
+.pilares { background: var(--forest); padding: 100px 56px; }
+.pilares-header { text-align: center; margin-bottom: 64px; }
+.pilares-header .section-label { color: var(--sage); }
+.pilares-header .section-h2 { color: #E8E0D0; }
+.pilares-header .section-h2 em { color: var(--moss-l); }
+.pilares-header-rule { width: 40px; height: 1px; background: var(--sage); margin: 20px auto 0; opacity: 0.5; }
+
+.pilares-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; }
+
+.pilar {
+  background: rgba(44,56,40,0.5);
+  padding: 40px 36px; border: 1px solid rgba(255,255,255,0.05);
+  transition: background 0.4s;
+  position: relative; overflow: hidden;
+}
+.pilar::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(to right, transparent, rgba(168,197,160,0.3), transparent);
+  opacity: 0; transition: opacity 0.4s;
+}
+.pilar:hover { background: rgba(44,56,40,0.8); }
+.pilar:hover::before { opacity: 1; }
+
+.pilar-num {
+  font-family: 'Cormorant Garamond', serif; font-size: 12px;
+  color: rgba(168,197,160,0.3); margin-bottom: 20px; letter-spacing: 0.15em;
+}
+.pilar-title {
+  font-family: 'Cormorant Garamond', serif; font-size: 19px;
+  color: #D8CEBC; margin-bottom: 12px; font-weight: 400; line-height: 1.3;
+}
+.pilar-desc {
+  font-size: 12.5px; line-height: 1.9;
+  color: rgba(212,202,184,0.45); font-weight: 300;
+}
 
 /* ── DEPOIMENTOS ── */
-.depoimentos { background:#F5F0E8; }
-.depoimentos-header { text-align:center; margin-bottom:52px; }
-.depoimentos-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-.depo-card { background:#fff; border:0.5px solid rgba(44,40,32,0.08); padding:32px 28px 28px; position:relative; border-radius: 14px; }
-.depo-card::before { content:'\201C'; font-family:'Cormorant Garamond',serif; font-size:72px; color:rgba(44,95,46,0.12); position:absolute; top:16px; left:24px; line-height:1; }
-.depo-text { font-size:14px; line-height:1.85; color:#6B5F50; font-weight:300; margin-bottom:20px; padding-top:16px; }
-.depo-author { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:#8B7355; }
-.depo-role { font-size:11px; color:rgba(44,40,32,0.35); margin-top:3px; font-weight:300; }
-.depo-stars { color:#2C5F2E; font-size:13px; margin-bottom:12px; letter-spacing:2px; }
+.depoimentos { background: var(--cream); }
+.depoimentos-header { text-align: center; margin-bottom: 60px; }
+.depoimentos-header-rule { width: 40px; height: 1px; background: var(--moss-l); margin: 20px auto 0; }
+
+.depoimentos-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+
+.depo-card {
+  background: #fff;
+  border: 1px solid rgba(44,40,32,0.07);
+  padding: 36px 32px 30px;
+  border-radius: 12px;
+  position: relative; overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s;
+}
+.depo-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(44,40,32,0.08); }
+.depo-card::before {
+  content: '\201C';
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 96px; color: rgba(44,95,46,0.07);
+  position: absolute; top: 8px; left: 20px;
+  line-height: 1; pointer-events: none;
+}
+
+.depo-stars { color: var(--moss); font-size: 12px; margin-bottom: 16px; letter-spacing: 3px; }
+.depo-text {
+  font-size: 14px; line-height: 1.9; color: #6B5F50; font-weight: 300;
+  margin-bottom: 24px; padding-top: 10px; position: relative; z-index: 1;
+}
+.depo-footer { display: flex; align-items: center; gap: 14px; }
+.depo-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--moss-l), var(--sage));
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif; font-size: 15px; color: #fff;
+}
+.depo-author {
+  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sand);
+}
+.depo-role { font-size: 11px; color: rgba(44,40,32,0.3); margin-top: 2px; font-weight: 300; }
+
+.depo-dots {
+  display: none; justify-content: center; gap: 8px; margin-top: 28px;
+}
+.depo-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(44,40,32,0.15); border: none; cursor: pointer; padding: 0;
+  transition: background 0.3s, transform 0.3s;
+}
+.depo-dot.active { background: var(--moss); transform: scale(1.3); }
 
 /* ── PARCEIROS ── */
-.parceiros { background:#EFEBE1; }
-.parceiros-header { text-align:center; margin-bottom:52px; }
-.parceiros-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:rgba(44,40,32,0.08); }
-.parceiro-item { background:#EFEBE1; padding:28px 20px; display:flex; align-items:center; justify-content:center; transition:background 0.3s; min-height:110px; }
-.parceiro-item:hover { background:#E8E3D8; }
-.parceiro-name { font-family:'Cormorant Garamond',serif; font-size:15px; font-weight:400; color:#6B5F50; text-align:center; letter-spacing:0.05em; }
-.parceiro-name small { display:block; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:#8B7355; margin-top:4px; font-family:'Jost',sans-serif; font-weight:300; }
-.parceiro-logo { max-width:150px; max-height:72px; width:100%; height:auto; object-fit:contain; filter:grayscale(100%); opacity:0.5; transition:filter 0.3s, opacity 0.3s; }
-.parceiro-item:hover .parceiro-logo { filter:grayscale(0%); opacity:1; }
+.parceiros { background: var(--cream-2); }
+.parceiros-header { text-align: center; margin-bottom: 60px; }
+.parceiros-header-rule { width: 40px; height: 1px; background: var(--sand-l); margin: 20px auto 0; }
+
+.parceiros-grid {
+  display: grid; grid-template-columns: repeat(5,1fr);
+  gap: 1px; background: rgba(44,40,32,0.07); border-radius: 12px; overflow: hidden;
+}
+.parceiro-item {
+  background: var(--cream-2);
+  padding: 30px 24px; display: flex; align-items: center; justify-content: center;
+  min-height: 110px; transition: background 0.3s;
+}
+.parceiro-item:hover { background: var(--cream); }
+.parceiro-logo {
+  max-width: 140px; max-height: 64px;
+  width: 100%; height: auto; object-fit: contain;
+  filter: grayscale(100%); opacity: 0.4;
+  transition: filter 0.4s, opacity 0.4s;
+}
+.parceiro-item:hover .parceiro-logo { filter: grayscale(0%); opacity: 0.9; }
 
 /* ── SIGNATURE ── */
-.signature { background:#F5F0E8; text-align:center; }
-.sig-line { width:48px; height:0.5px; background:#8B7355; margin:0 auto 32px; }
-.sig-quote { font-family:'Cormorant Garamond',serif; font-size:clamp(22px,3.5vw,34px); font-style:italic; font-weight:300; color:#2C2820; max-width:520px; margin:0 auto 20px; line-height:1.3; }
-.sig-sub { font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:#8B7355; }
+.signature { background: var(--cream); text-align: center; padding: 88px 56px; }
+.sig-ornament {
+  display: flex; align-items: center; gap: 20px;
+  justify-content: center; margin-bottom: 36px;
+}
+.sig-ornament-line { flex: 1; max-width: 80px; height: 1px; background: rgba(44,40,32,0.15); }
+.sig-ornament-diamond {
+  width: 8px; height: 8px;
+  border: 1px solid rgba(44,40,32,0.2);
+  transform: rotate(45deg);
+}
+.sig-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(24px, 3.5vw, 38px); font-style: italic; font-weight: 300;
+  color: var(--bark); max-width: 540px; margin: 0 auto 22px; line-height: 1.3;
+}
+.sig-sub {
+  font-size: 9.5px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--sand);
+}
 
 /* ── FORMULÁRIO ── */
-.orcamento { background:#2C3828; padding:88px 48px; }
-.orcamento .section-label { color:#8BA88B; }
-.orcamento-header { text-align:center; margin-bottom:52px; }
-.orcamento-header .section-h2 { color:#E8E0D0; }
-.orcamento-header .section-h2 em { color:#A8C5A0; }
-.orcamento-header p { font-size:13px; color:rgba(212,202,184,0.6); margin-top:16px; font-weight:300; line-height:1.75; }
-.form-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; max-width:680px; margin:0 auto; }
-.form-full { grid-column:1/-1; }
-.form-group { display:flex; flex-direction:column; gap:8px; }
-.form-group label { font-size:10px; letter-spacing:0.25em; text-transform:uppercase; color:rgba(212,202,184,0.5); }
-.form-group input,.form-group select,.form-group textarea { background:rgba(255,255,255,0.05); border:0.5px solid rgba(255,255,255,0.12); color:#E8E0D0; font-family:'Jost',sans-serif; font-size:13px; font-weight:300; padding:12px 16px; outline:none; transition:border-color 0.3s; width:100%; border-radius: 8px; }
-.form-group input::placeholder,.form-group textarea::placeholder { color:rgba(212,202,184,0.3); }
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus { border-color:rgba(168,197,160,0.5); }
-/* 3. VALIDAÇÃO INLINE: estados de erro e sucesso por campo */
-.form-group input.field-error,
-.form-group select.field-error,
-.form-group textarea.field-error { border-color:rgba(220,80,60,0.7); }
-.form-group input.field-ok,
-.form-group select.field-ok { border-color:rgba(168,197,160,0.6); }
-.field-msg { font-size:10px; letter-spacing:0.05em; min-height:14px; transition:opacity 0.25s; }
-.field-msg.error { color:rgba(220,120,100,0.9); }
-.field-msg.ok { color:rgba(168,197,160,0.8); }
-.form-group select option { background:#2C3828; color:#E8E0D0; }
-.form-group textarea { resize:vertical; min-height:100px; }
-.form-submit { margin-top:24px; text-align:center; }
-.form-submit button { background:#2C5F2E; color:#F5F0E8; border:none; cursor:pointer; font-family:'Jost',sans-serif; font-size:11px; letter-spacing:0.25em; text-transform:uppercase; font-weight:400; padding:14px 40px; transition:background 0.3s; border-radius: 10px; }
-.form-submit button:hover { background:#1F4820; }
-.form-success { display:none; text-align:center; padding:32px; }
-.form-success p { font-family:'Cormorant Garamond',serif; font-size:22px; font-style:italic; color:#A8C5A0; }
+.orcamento { background: var(--forest); padding: 100px 56px; }
+.orcamento-header { text-align: center; margin-bottom: 60px; }
+.orcamento-header .section-label { color: var(--sage); }
+.orcamento-header .section-h2 { color: #E8E0D0; }
+.orcamento-header .section-h2 em { color: var(--moss-l); }
+.orcamento-header p { font-size: 13px; color: rgba(212,202,184,0.5); margin-top: 18px; font-weight: 300; line-height: 1.8; }
+.orcamento-header-rule { width: 40px; height: 1px; background: var(--sage); margin: 20px auto 0; opacity: 0.5; }
+
+.form-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  max-width: 680px; margin: 0 auto;
+}
+.form-full { grid-column: 1/-1; }
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+.form-group label {
+  font-size: 9.5px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: rgba(212,202,184,0.45);
+}
+.form-group input, .form-group select, .form-group textarea {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #E8E0D0; font-family: 'DM Sans', sans-serif;
+  font-size: 13.5px; font-weight: 300; padding: 13px 18px;
+  outline: none; transition: border-color 0.3s, background 0.3s;
+  width: 100%; border-radius: 8px;
+}
+.form-group input::placeholder, .form-group textarea::placeholder { color: rgba(212,202,184,0.25); }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  border-color: rgba(168,197,160,0.45);
+  background: rgba(255,255,255,0.06);
+}
+.form-group input.field-error, .form-group select.field-error, .form-group textarea.field-error {
+  border-color: rgba(220,80,60,0.6);
+}
+.form-group input.field-ok, .form-group select.field-ok { border-color: rgba(168,197,160,0.5); }
+.field-msg { font-size: 10px; letter-spacing: 0.05em; min-height: 14px; transition: opacity 0.25s; }
+.field-msg.error { color: rgba(220,120,100,0.85); }
+.field-msg.ok { color: rgba(168,197,160,0.75); }
+.form-group select option { background: var(--forest); color: #E8E0D0; }
+.form-group textarea { resize: vertical; min-height: 110px; }
+
+.form-submit { margin-top: 28px; text-align: center; }
+.form-submit button {
+  background: var(--moss); color: var(--cream);
+  border: none; cursor: pointer;
+  font-family: 'DM Sans', sans-serif; font-size: 10.5px;
+  letter-spacing: 0.22em; text-transform: uppercase; font-weight: 400;
+  padding: 15px 44px; border-radius: 8px;
+  transition: background 0.3s, transform 0.25s, box-shadow 0.3s;
+  box-shadow: 0 4px 24px rgba(44,95,46,0.3);
+}
+.form-submit button:hover {
+  background: var(--moss-d); transform: translateY(-2px);
+  box-shadow: 0 8px 36px rgba(44,95,46,0.4);
+}
+
+.form-success { display: none; text-align: center; padding: 56px 32px; }
+.form-success-icon {
+  width: 60px; height: 60px; border-radius: 50%;
+  background: rgba(168,197,160,0.1); border: 1px solid rgba(168,197,160,0.35);
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 22px;
+}
+.form-success-icon svg { width: 26px; height: 26px; stroke: var(--moss-l); }
+.form-success h3 {
+  font-family: 'Cormorant Garamond', serif; font-size: 28px;
+  font-style: italic; color: var(--moss-l); margin-bottom: 12px;
+}
+.form-success p { font-size: 13px; color: rgba(212,202,184,0.55); font-weight: 300; line-height: 1.8; }
 
 /* ── CONTACT ── */
-.contact { background:#EFEBE1; }
-.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; }
-.contact-item { display:flex; align-items:center; gap:16px; margin-bottom:28px; text-decoration:none; color:inherit; }
-.contact-icon { width:44px; height:44px; border:0.5px solid rgba(44,40,32,0.2); display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:background 0.3s,color 0.3s; border-radius: 10px; }
-.contact-item:hover .contact-icon { background:#2C5F2E; color:#F5F0E8; }
-.contact-lbl { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:#8B7355; margin-bottom:3px; }
-.contact-val { font-size:13px; color:#2C2820; }
+.contact { background: var(--cream-2); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+
+.contact-item {
+  display: flex; align-items: center; gap: 18px;
+  margin-bottom: 24px; text-decoration: none; color: inherit;
+  padding: 16px; border-radius: 10px;
+  border: 1px solid transparent;
+  transition: background 0.3s, border-color 0.3s;
+}
+.contact-item:hover {
+  background: rgba(44,95,46,0.04);
+  border-color: rgba(44,95,46,0.12);
+}
+.contact-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  border: 1px solid rgba(44,40,32,0.14);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  color: var(--sand); transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+.contact-item:hover .contact-icon { background: var(--moss); color: var(--cream); border-color: var(--moss); }
+.contact-lbl { font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sand); margin-bottom: 3px; }
+.contact-val { font-size: 13.5px; color: var(--bark); }
 
 /* ── FOOTER ── */
-footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+footer {
+  background: #1E3020;
+  padding: 32px 56px;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;
+}
 .footer-logo { display: flex; align-items: center; }
-.footer-logo-img { height: 40px; width: auto; display: block; }
-.footer-copy { font-size:11px; color:rgba(208,232,208,0.45); }
-.footer-tag { font-family:'Cormorant Garamond',serif; font-size:13px; font-style:italic; color:rgba(208,232,208,0.4); }
+.footer-logo-img { height: 38px; width: auto; }
+.footer-copy { font-size: 11px; color: rgba(168,197,160,0.3); }
+.footer-tag {
+  font-family: 'Cormorant Garamond', serif; font-size: 13px;
+  font-style: italic; color: rgba(168,197,160,0.3);
+}
 
-/* ── WHATSAPP FLOAT ──
-   4. DELAY: oculto por padrão, aparece via JS após 4s */
+/* ── WHATSAPP FLOAT ── */
 .whatsapp-float {
-  position:fixed; bottom:28px; right:28px; z-index:200;
-  width:56px; height:56px; border-radius:50%; background:#25D366;
-  display:flex; align-items:center; justify-content:center;
-  box-shadow:0 4px 20px rgba(37,211,102,0.4); text-decoration:none;
-  opacity:0; transform:scale(0.7) translateY(8px);
-  transition:opacity 0.4s cubic-bezier(0.22,1,0.36,1), transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s;
-  pointer-events:none;
+  position: fixed; bottom: 28px; right: 28px; z-index: 200;
+  width: 56px; height: 56px; border-radius: 50%; background: #25D366;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 24px rgba(37,211,102,0.38); text-decoration: none;
+  opacity: 0; transform: scale(0.7) translateY(8px);
+  transition: opacity 0.4s cubic-bezier(0.22,1,0.36,1), transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s;
+  pointer-events: none;
 }
-.whatsapp-float.visible { opacity:1; transform:scale(1) translateY(0); pointer-events:auto; }
-.whatsapp-float:hover { transform:scale(1.08); box-shadow:0 6px 28px rgba(37,211,102,0.55); }
-.whatsapp-float svg { width:28px; height:28px; fill:#fff; }
+.whatsapp-float.visible { opacity: 1; transform: scale(1) translateY(0); pointer-events: auto; }
+.whatsapp-float:hover { transform: scale(1.08) !important; box-shadow: 0 6px 32px rgba(37,211,102,0.55); }
+.whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
 
-/* ── RESPONSIVE ── */
-@media (max-width: 1024px) {
-  .services-grid { grid-template-columns:repeat(2,1fr); }
-  .numeros-grid { grid-template-columns:repeat(2,1fr); }
-  .parceiros-grid { grid-template-columns:repeat(3,1fr); }
-}
-@media (max-width: 768px) {
-  nav { padding:12px 20px; }
-  .nav-links,.nav-btn { display:none; }
-  .nav-hamburger { display:flex; }
-  section,.pilares,.orcamento,.numeros { padding:64px 24px; }
-  .hero-content { padding:0 24px 56px; }
-  .manifesto-grid,.pilares-grid,.contact-grid,.form-grid,.depoimentos-grid { grid-template-columns:1fr; gap:28px; }
-  .services-grid { grid-template-columns:1fr; gap:20px; }
-  .numeros-grid { grid-template-columns:repeat(2,1fr); }
-  .parceiros-grid { grid-template-columns:repeat(2,1fr); }
-  .pilares-grid { gap:1px; }
-  .form-full { grid-column:1; }
-  footer { padding:24px; flex-direction:column; text-align:center; }
-  .whatsapp-float { bottom:20px; right:20px; }
-  .hero-cta { flex-wrap:wrap; gap:16px; }
-  .hero-cta-divider { display:none; }
-  .hero-scroll { right:20px; }
-  .contact-grid { gap:40px; }
-}
-
-/* ── SCROLL FADE-IN ── */
-.fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+/* ── SCROLL FADE ── */
+.fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1); }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 .fade-in-delay-1 { transition-delay: 0.1s; }
 .fade-in-delay-2 { transition-delay: 0.2s; }
 .fade-in-delay-3 { transition-delay: 0.3s; }
 .fade-in-delay-4 { transition-delay: 0.4s; }
 
-/* ── CARROSSEL DEPOIMENTOS (mobile) ── */
-.depo-carousel-wrap { position: relative; }
-.depo-dots { display: none; justify-content: center; gap: 8px; margin-top: 24px; }
-.depo-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(44,40,32,0.2); border: none; cursor: pointer; padding: 0; transition: background 0.3s, transform 0.3s; }
-.depo-dot.active { background: #2C5F2E; transform: scale(1.3); }
-
-/* ── TOGGLE IDIOMA NO MOBILE MENU ── */
-.mobile-lang { display: flex; align-items: center; border: 0.5px solid rgba(44,40,32,0.18); overflow: hidden; border-radius: 8px; }
-.mobile-lang button { font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; padding: 9px 16px; border: none; cursor: pointer; background: transparent; color: #8B7355; transition: background 0.25s, color 0.25s; }
-.mobile-lang button.active { background: #2C5F2E; color: #F5F0E8; }
-.mobile-lang .lang-sep { width: 0.5px; height: 20px; background: rgba(44,40,32,0.15); }
-
-/* ── FORM SUCCESS ELABORADO ── */
-.form-success { display: none; text-align: center; padding: 48px 32px; }
-.form-success-icon { width: 56px; height: 56px; border-radius: 50%; background: rgba(168,197,160,0.15); border: 1px solid rgba(168,197,160,0.4); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
-.form-success-icon svg { width: 24px; height: 24px; stroke: #A8C5A0; }
-.form-success h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-style: italic; color: #A8C5A0; margin-bottom: 10px; }
-.form-success p { font-size: 13px; color: rgba(212,202,184,0.6); font-weight: 300; line-height: 1.75; }
-
-/* ── PARCEIROS width/height (CLS fix) ── */
-.parceiro-logo { width: 150px; height: 72px; object-fit: contain; filter: grayscale(100%); opacity: 0.5; transition: filter 0.3s, opacity 0.3s; }
-
+/* ── RESPONSIVE ── */
+@media (max-width: 1100px) {
+  .services-grid { grid-template-columns: repeat(2,1fr); }
+  .numeros-grid { grid-template-columns: repeat(2,1fr); }
+  .parceiros-grid { grid-template-columns: repeat(3,1fr); }
+  .hero-side { display: none; }
+}
 @media (max-width: 768px) {
-  .depo-dots { display: flex; }
-  .depoimentos-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; padding-bottom: 8px; scrollbar-width: none; }
+  nav { padding: 0 20px; }
+  .nav-links, .nav-btn, .lang-toggle { display: none; }
+  .nav-hamburger { display: flex; }
+  section, .pilares, .orcamento, .numeros { padding: 64px 24px; }
+  .hero-content { padding: 0 24px 60px; grid-template-columns: 1fr; }
+  .manifesto-grid, .contact-grid, .form-grid { grid-template-columns: 1fr; gap: 28px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .numeros-grid { grid-template-columns: repeat(2,1fr); }
+  .parceiros-grid { grid-template-columns: repeat(2,1fr); }
+  .pilares-grid { grid-template-columns: 1fr; gap: 1px; }
+  .depoimentos-grid {
+    display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
+    gap: 16px; padding-bottom: 8px; scrollbar-width: none;
+  }
   .depoimentos-grid::-webkit-scrollbar { display: none; }
-  .depo-card { min-width: 80vw; scroll-snap-align: start; flex-shrink: 0; }
+  .depo-card { min-width: 82vw; scroll-snap-align: start; flex-shrink: 0; }
+  .depo-dots { display: flex; }
+  .form-full { grid-column: 1; }
+  footer { padding: 24px 20px; flex-direction: column; text-align: center; }
+  .hero-rule { display: none; }
+  .hero-cta { flex-wrap: wrap; gap: 14px; }
+  .hero-scroll { right: 20px; }
+  .divider::after { display: none; }
 }
 </style>
 </head>
@@ -350,7 +797,7 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
   <a href="#parceiros" onclick="closeMobile()" data-i18n="nav.partners">Parceiros</a>
   <a href="#orcamento" onclick="closeMobile()" data-i18n="nav.quote">Orçamento</a>
   <a href="#contato" onclick="closeMobile()" data-i18n="nav.contact">Contato</a>
-  <a href="https://wa.me/5585992252253" target="_blank" class="mobile-cta" onclick="trackWhatsApp('mobile')" data-i18n="nav.cta">Fale Conosco</a>
+  <a href="https://wa.me/5585992252253" target="_blank" class="mobile-cta" data-i18n="nav.cta">Fale Conosco</a>
   <div class="mobile-lang">
     <button id="mobileBtnPT" class="active" onclick="setLang('pt')">PT</button>
     <div class="lang-sep"></div>
@@ -359,7 +806,7 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
 </div>
 
 <!-- NAV -->
-<nav>
+<nav id="mainNav">
   <button class="nav-hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -374,30 +821,46 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
     <li><a href="#orcamento" data-i18n="nav.quote">Orçamento</a></li>
     <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
   </ul>
-  <a href="https://wa.me/5585992252253" target="_blank" class="nav-btn" onclick="trackWhatsApp('nav')" data-i18n="nav.cta">Fale Conosco</a>
-  <div class="lang-toggle" id="langToggle">
+  <a href="https://wa.me/5585992252253" target="_blank" class="nav-btn" data-i18n="nav.cta">Fale Conosco</a>
+  <div class="lang-toggle">
     <button id="btnPT" class="active" onclick="setLang('pt')">PT</button>
     <div class="lang-sep"></div>
     <button id="btnEN" onclick="setLang('en')">EN</button>
   </div>
 </nav>
 
-<!-- HERO
-     1. PERFORMANCE: <picture> com AVIF → WebP → JPG fallback. Hero é above-the-fold, sem lazy. -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
+  <div class="hero-rule"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow" data-i18n="hero.eyebrow">Paisagismo &amp; Flora — Ceará</p>
-    <h1 data-i18n-html="hero.h1">Elegância natural,<br><em>com raízes no território.</em></h1>
-    <p class="hero-sub" data-i18n="hero.sub">Criamos jardins que pertencem ao lugar. Paisagismo sofisticado, criado para o clima e a estética do Ceará.</p>
-    <div class="hero-cta">
-      <a href="#orcamento" class="hero-cta-primary" onclick="if(typeof fbq!=='undefined'){fbq('trackCustom','HeroCTA')}" data-i18n="hero.ctaPrimary">
-        Solicitar visita técnica
-        <svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <div class="hero-cta-divider" aria-hidden="true"></div>
-      <a href="#servicos" class="hero-cta-secondary" data-i18n="hero.ctaSecondary">Ver serviços</a>
+    <div class="hero-main">
+      <p class="hero-eyebrow" data-i18n="hero.eyebrow">Paisagismo &amp; Flora — Ceará</p>
+      <h1 data-i18n-html="hero.h1">Elegância natural,<br><em>com raízes no território.</em></h1>
+      <div class="hero-divider"></div>
+      <p class="hero-sub" data-i18n="hero.sub">Criamos jardins que pertencem ao lugar. Paisagismo sofisticado, criado para o clima e a estética do Ceará.</p>
+      <div class="hero-cta">
+        <a href="#orcamento" class="hero-cta-primary" data-i18n="hero.ctaPrimary">
+          Solicitar visita técnica
+          <svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#servicos" class="hero-cta-secondary" data-i18n="hero.ctaSecondary">Ver serviços</a>
+      </div>
+    </div>
+    <div class="hero-side">
+      <div class="hero-side-item">
+        <div class="hero-side-val"><sup>+</sup><span class="count-num" data-target="5">0</span></div>
+        <div class="hero-side-lbl" data-i18n="numeros.anos">Anos de experiência</div>
+      </div>
+      <div class="hero-side-item">
+        <div class="hero-side-val"><sup>+</sup><span class="count-num" data-target="200">0</span></div>
+        <div class="hero-side-lbl" data-i18n="numeros.projetos">Projetos realizados</div>
+      </div>
+      <div class="hero-side-item">
+        <div class="hero-side-val"><span class="count-num" data-target="100">0</span><sup>%</sup></div>
+        <div class="hero-side-lbl" data-i18n="numeros.dedicacao">Dedicação e qualidade</div>
+      </div>
     </div>
   </div>
   <div class="hero-scroll" aria-hidden="true">
@@ -410,19 +873,19 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
 <div class="numeros">
   <div class="numeros-grid">
     <div class="numero-item">
-      <div class="numero-val"><sup>+</sup>5</div>
+      <div class="numero-val"><sup>+</sup><span class="count-num" data-target="5">0</span></div>
       <div class="numero-lbl" data-i18n="numeros.anos">Anos de experiência</div>
     </div>
     <div class="numero-item">
-      <div class="numero-val"><sup>+</sup>200</div>
+      <div class="numero-val"><sup>+</sup><span class="count-num" data-target="200">0</span></div>
       <div class="numero-lbl" data-i18n="numeros.projetos">Projetos realizados</div>
     </div>
     <div class="numero-item">
-      <div class="numero-val"><sup>+</sup>10</div>
+      <div class="numero-val"><sup>+</sup><span class="count-num" data-target="10">0</span></div>
       <div class="numero-lbl" data-i18n="numeros.parceiros">Grandes parceiros</div>
     </div>
     <div class="numero-item">
-      <div class="numero-val">100<sup>%</sup></div>
+      <div class="numero-val"><span class="count-num" data-target="100">0</span><sup>%</sup></div>
       <div class="numero-lbl" data-i18n="numeros.dedicacao">Dedicação e qualidade</div>
     </div>
   </div>
@@ -432,8 +895,13 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
 <section class="manifesto" id="manifesto">
   <div class="container">
     <div class="manifesto-header fade-in">
-      <p class="section-label" data-i18n="manifesto.label">Manifesto</p>
-      <h2 class="section-h2" data-i18n-html="manifesto.h2">A Elloverde nasce de um olhar que sempre <em>reconheceu valor no natural.</em></h2>
+      <div class="manifesto-header-inner">
+        <div class="manifesto-accent-line"></div>
+        <div>
+          <p class="section-label" data-i18n="manifesto.label">Manifesto</p>
+          <h2 class="section-h2" data-i18n-html="manifesto.h2">A Elloverde nasce de um olhar que sempre <em>reconheceu valor no natural.</em></h2>
+        </div>
+      </div>
     </div>
     <div class="manifesto-grid">
       <div class="fade-in fade-in-delay-1">
@@ -450,47 +918,63 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
   </div>
 </section>
 
-<!-- DIVIDER
-     1. PERFORMANCE: <picture> com AVIF → WebP → JPG + loading=lazy (abaixo do fold) -->
+<!-- DIVIDER -->
 <div class="divider">
-  <p class="divider-text" data-i18n="divider.text">O exterior como experiência.</p>
+  <div class="divider-inner">
+    <span class="divider-sub">Elloverde — Fortaleza, CE</span>
+    <p class="divider-text" data-i18n="divider.text">O exterior como experiência.</p>
+  </div>
 </div>
 
-<!-- SERVIÇOS
-     1. PERFORMANCE + 2. ACESSIBILIDADE: <picture><img> com alt descritivo e loading=lazy -->
+<!-- SERVIÇOS -->
 <section class="services" id="servicos">
   <div class="container">
     <div class="services-header fade-in">
       <p class="section-label" data-i18n="services.label">Serviços</p>
       <h2 class="section-h2" data-i18n-html="services.h2">Natureza sofisticada,<br><em>criada para o nosso clima.</em></h2>
+      <div class="services-header-rule"></div>
     </div>
     <div class="services-grid">
       <div class="service-card fade-in fade-in-delay-1">
-        <div class="service-card-img-placeholder" style="background-image:url('servico-criacao.jpg');"></div>
+        <div class="service-card-img-placeholder" style="background-image:url('servico-criacao.jpg');">
+          <span class="service-num">01</span>
+        </div>
         <div class="service-card-body">
           <h3 data-i18n="services.card1.title">Criação e Execução de Paisagismo</h3>
           <p data-i18n="services.card1.desc">Projetos personalizados residenciais e corporativos. Do levantamento à obra, com profissionais qualificados, insumos selecionados e acompanhamento próximo.</p>
+          <a href="#orcamento" class="service-cta-link">
+            Saiba mais <svg viewBox="0 0 12 12" fill="none"><path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </div>
       <div class="service-card fade-in fade-in-delay-2">
-        <div class="service-card-img-placeholder" style="background-image:url('servico-condominial.jpg');"></div>
+        <div class="service-card-img-placeholder" style="background-image:url('servico-condominial.jpg');">
+          <span class="service-num">02</span>
+        </div>
         <div class="service-card-body">
           <h3 data-i18n="services.card2.title">Paisagismo Condominial</h3>
           <p data-i18n="services.card2.desc">Valorização dos espaços compartilhados e da fachada. Jardins, entradas e áreas comuns que transmitem organização e identidade ao condomínio.</p>
+          <a href="#orcamento" class="service-cta-link">Saiba mais <svg viewBox="0 0 12 12" fill="none"><path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
       <div class="service-card fade-in fade-in-delay-3">
-        <div class="service-card-img-placeholder" style="background-image:url('servico-manutencao.jpg');"></div>
+        <div class="service-card-img-placeholder" style="background-image:url('servico-manutencao.jpg');">
+          <span class="service-num">03</span>
+        </div>
         <div class="service-card-body">
           <h3 data-i18n="services.card3.title">Manutenção Periódica</h3>
           <p data-i18n="services.card3.desc">Visitas regulares para manter o jardim sempre bonito e saudável — poda, preservação de espécies e cuidado com cada detalhe ao longo do tempo.</p>
+          <a href="#orcamento" class="service-cta-link">Saiba mais <svg viewBox="0 0 12 12" fill="none"><path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
       <div class="service-card fade-in fade-in-delay-4">
-        <div class="service-card-img-placeholder" style="background-image:url('servico-poda.jpg');"></div>
+        <div class="service-card-img-placeholder" style="background-image:url('servico-poda.jpg');">
+          <span class="service-num">04</span>
+        </div>
         <div class="service-card-body">
           <h3 data-i18n="services.card4.title">Poda, Extração e Insumos</h3>
           <p data-i18n="services.card4.desc">Poda e extração de árvores de grande porte com equipamentos adequados. Fornecimento de plantas e insumos selecionados para cada ambiente.</p>
+          <a href="#orcamento" class="service-cta-link">Saiba mais <svg viewBox="0 0 12 12" fill="none"><path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
     </div>
@@ -503,6 +987,7 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
     <div class="pilares-header fade-in">
       <p class="section-label" data-i18n="pillars.label">Pilares Criativos</p>
       <h2 class="section-h2" data-i18n-html="pillars.h2">O que nos <em>move.</em></h2>
+      <div class="pilares-header-rule"></div>
     </div>
     <div class="pilares-grid">
       <div class="pilar fade-in fade-in-delay-1"><p class="pilar-num">01</p><p class="pilar-title" data-i18n="pillars.p1.title">Brasilidade Contemporânea</p><p class="pilar-desc" data-i18n="pillars.p1.desc">Uma visão moderna do Brasil: textura, luz, clima, naturalidade. A brasilidade aqui é sofisticada.</p></div>
@@ -521,26 +1006,42 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
     <div class="depoimentos-header fade-in">
       <p class="section-label" data-i18n="depo.label">Depoimentos</p>
       <h2 class="section-h2" data-i18n-html="depo.h2">O que nossos <em>clientes dizem.</em></h2>
+      <div class="depoimentos-header-rule"></div>
     </div>
     <div class="depo-carousel-wrap">
       <div class="depoimentos-grid" id="depoGrid">
         <div class="depo-card fade-in fade-in-delay-1">
           <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
           <p class="depo-text" data-i18n="depo.d1.text">A Elloverde transformou completamente o jardim do nosso condomínio. Profissionalismo impecável do início ao fim, com plantas bem escolhidas para o nosso clima. O resultado superou todas as expectativas.</p>
-          <p class="depo-author" data-i18n="depo.d1.author">Solange Alves</p>
-          <p class="depo-role" data-i18n="depo.d1.role">Paisagismo Residencial</p>
+          <div class="depo-footer">
+            <div class="depo-avatar">S</div>
+            <div>
+              <p class="depo-author" data-i18n="depo.d1.author">Solange Alves</p>
+              <p class="depo-role" data-i18n="depo.d1.role">Paisagismo Residencial</p>
+            </div>
+          </div>
         </div>
         <div class="depo-card fade-in fade-in-delay-2">
           <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
           <p class="depo-text" data-i18n="depo.d2.text">Contratamos a Elloverde para a execução do paisagismo do nosso empreendimento e ficamos muito satisfeitos. Equipe comprometida, prazo cumprido e resultado de altíssima qualidade.</p>
-          <p class="depo-author" data-i18n="depo.d2.author">Construtora Tenda</p>
-          <p class="depo-role" data-i18n="depo.d2.role">Paisagismo Condominial</p>
+          <div class="depo-footer">
+            <div class="depo-avatar">T</div>
+            <div>
+              <p class="depo-author" data-i18n="depo.d2.author">Construtora Tenda</p>
+              <p class="depo-role" data-i18n="depo.d2.role">Paisagismo Condominial</p>
+            </div>
+          </div>
         </div>
         <div class="depo-card fade-in fade-in-delay-3">
           <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
           <p class="depo-text" data-i18n="depo.d3.text">A manutenção periódica que a Elloverde realiza no nosso espaço é exemplar. Cada visita deixa o jardim ainda mais bonito. Profissionais que realmente entendem e respeitam o verde.</p>
-          <p class="depo-author" data-i18n="depo.d3.author">Condomínio Belas Artes</p>
-          <p class="depo-role" data-i18n="depo.d3.role">Manutenção Periódica</p>
+          <div class="depo-footer">
+            <div class="depo-avatar">B</div>
+            <div>
+              <p class="depo-author" data-i18n="depo.d3.author">Condomínio Belas Artes</p>
+              <p class="depo-role" data-i18n="depo.d3.role">Manutenção Periódica</p>
+            </div>
+          </div>
         </div>
       </div>
       <div class="depo-dots" id="depoDots">
@@ -558,19 +1059,20 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
     <div class="parceiros-header fade-in">
       <p class="section-label" data-i18n="partners.label">Parceiros</p>
       <h2 class="section-h2" data-i18n-html="partners.h2">Empresas que <em>confiam no nosso trabalho.</em></h2>
+      <div class="parceiros-header-rule"></div>
     </div>
     <div class="parceiros-grid">
-      <div class="parceiro-item fade-in fade-in-delay-1"><img src="TendaLogo.png" alt="Construtora Tenda" class="parceiro-logo" width="150" height="72" loading="lazy" decoding="async" /></div>
-      <div class="parceiro-item fade-in fade-in-delay-1"><img src="DeloitteLogo.jpg" alt="Deloitte" class="parceiro-logo" width="150" height="72" loading="lazy" decoding="async" /></div>
-      <div class="parceiro-item fade-in fade-in-delay-2"><img src="FortalezaLogo.png" alt="Prefeitura de Fortaleza" class="parceiro-logo" width="150" height="72" loading="lazy" decoding="async" /></div>
-      <div class="parceiro-item fade-in fade-in-delay-2"><img src="CREMECLogo.png" alt="CREMEC — Conselho Regional de Medicina do Ceará" class="parceiro-logo" width="150" height="72" loading="lazy" decoding="async" /></div>
-      <div class="parceiro-item fade-in fade-in-delay-3"><img src="FUNAILogo.png" alt="FUNAI — Fundação Nacional dos Povos Indígenas" class="parceiro-logo" width="150" height="72" loading="lazy" decoding="async" /></div>
-      <div class="parceiro-item fade-in fade-in-delay-3"><img src="UPALogo.png" alt="UPA 24h" class="parceiro-logo" width="150" height="72" loading="lazy" decoding="async" /></div>
-      <div class="parceiro-item fade-in fade-in-delay-4"><img src="ISGHLogo.png" alt="ISGH — Instituto de Saúde e Gestão Hospitalar" class="parceiro-logo" width="150" height="72" loading="lazy" decoding="async" /></div>
-      <div class="parceiro-item fade-in fade-in-delay-4"><img src="LogLogo.webp" alt="Log" class="parceiro-logo" width="150" height="72" loading="lazy" decoding="async" /></div>
-      <div class="parceiro-item fade-in fade-in-delay-1"><img src="ToledoLogo.png" alt="Toledo do Brasil" class="parceiro-logo" width="150" height="72" loading="lazy" decoding="async" /></div>
-      <div class="parceiro-item fade-in fade-in-delay-2"><img src="TodeschiniLogo.png" alt="Todeschini" class="parceiro-logo" width="150" height="72" loading="lazy" decoding="async" /></div>
-      <div class="parceiro-item fade-in fade-in-delay-3"><img src="GovLogo.png" alt="Governo do Estado do Ceará" class="parceiro-logo" width="150" height="72" loading="lazy" decoding="async" /></div>
+      <div class="parceiro-item fade-in fade-in-delay-1"><img src="TendaLogo.png" alt="Construtora Tenda" class="parceiro-logo" width="150" height="72" loading="lazy" /></div>
+      <div class="parceiro-item fade-in fade-in-delay-1"><img src="DeloitteLogo.jpg" alt="Deloitte" class="parceiro-logo" width="150" height="72" loading="lazy" /></div>
+      <div class="parceiro-item fade-in fade-in-delay-2"><img src="FortalezaLogo.png" alt="Prefeitura de Fortaleza" class="parceiro-logo" width="150" height="72" loading="lazy" /></div>
+      <div class="parceiro-item fade-in fade-in-delay-2"><img src="CREMECLogo.png" alt="CREMEC" class="parceiro-logo" width="150" height="72" loading="lazy" /></div>
+      <div class="parceiro-item fade-in fade-in-delay-3"><img src="FUNAILogo.png" alt="FUNAI" class="parceiro-logo" width="150" height="72" loading="lazy" /></div>
+      <div class="parceiro-item fade-in fade-in-delay-3"><img src="UPALogo.png" alt="UPA 24h" class="parceiro-logo" width="150" height="72" loading="lazy" /></div>
+      <div class="parceiro-item fade-in fade-in-delay-4"><img src="ISGHLogo.png" alt="ISGH" class="parceiro-logo" width="150" height="72" loading="lazy" /></div>
+      <div class="parceiro-item fade-in fade-in-delay-4"><img src="LogLogo.webp" alt="Log" class="parceiro-logo" width="150" height="72" loading="lazy" /></div>
+      <div class="parceiro-item fade-in fade-in-delay-1"><img src="ToledoLogo.png" alt="Toledo do Brasil" class="parceiro-logo" width="150" height="72" loading="lazy" /></div>
+      <div class="parceiro-item fade-in fade-in-delay-2"><img src="TodeschiniLogo.png" alt="Todeschini" class="parceiro-logo" width="150" height="72" loading="lazy" /></div>
+      <div class="parceiro-item fade-in fade-in-delay-3"><img src="GovLogo.png" alt="Governo do Ceará" class="parceiro-logo" width="150" height="72" loading="lazy" /></div>
     </div>
   </div>
 </section>
@@ -578,51 +1080,45 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
 <!-- ASSINATURA -->
 <section class="signature">
   <div class="container">
-    <div class="sig-line"></div>
+    <div class="sig-ornament">
+      <div class="sig-ornament-line"></div>
+      <div class="sig-ornament-diamond"></div>
+      <div class="sig-ornament-line"></div>
+    </div>
     <p class="sig-quote" data-i18n="signature.quote">"Paisagismo que pertence ao lugar."</p>
     <p class="sig-sub" data-i18n="signature.sub">Elloverde — Fortaleza, Ceará</p>
   </div>
 </section>
 
-<!-- FORMULÁRIO
-     3. VALIDAÇÃO INLINE: feedback por campo antes de abrir o WhatsApp -->
+<!-- FORMULÁRIO -->
 <section class="orcamento" id="orcamento">
   <div class="container">
     <div class="orcamento-header fade-in">
       <p class="section-label" data-i18n="form.label">Orçamento</p>
       <h2 class="section-h2" data-i18n-html="form.h2">Conte-nos sobre o seu <em>projeto.</em></h2>
+      <div class="orcamento-header-rule"></div>
       <p data-i18n="form.intro">Preencha o formulário e entraremos em contato via WhatsApp para agendar uma visita técnica.</p>
     </div>
     <form id="orcamentoForm" onsubmit="submitForm(event)" novalidate>
       <div class="form-grid">
         <div class="form-group">
           <label for="f-nome" data-i18n="form.name">Nome</label>
-          <input type="text" id="f-nome" name="nome"
-                 data-i18n-placeholder="form.namePh" placeholder="Seu nome completo"
-                 autocomplete="name"
-                 oninput="validateField(this)" onblur="validateField(this)" />
+          <input type="text" id="f-nome" name="nome" placeholder="Seu nome completo" autocomplete="name" oninput="validateField(this)" onblur="validateField(this)" />
           <span class="field-msg" id="msg-nome" aria-live="polite"></span>
         </div>
         <div class="form-group">
           <label for="f-tel" data-i18n="form.phone">Telefone / WhatsApp</label>
-          <input type="tel" id="f-tel" name="telefone"
-                 placeholder="(85) 9 0000-0000"
-                 autocomplete="tel"
-                 oninput="maskPhone(this); validateField(this)" onblur="validateField(this)" />
+          <input type="tel" id="f-tel" name="telefone" placeholder="(85) 9 0000-0000" autocomplete="tel" oninput="maskPhone(this); validateField(this)" onblur="validateField(this)" />
           <span class="field-msg" id="msg-telefone" aria-live="polite"></span>
         </div>
         <div class="form-group">
           <label for="f-email" data-i18n="form.email">E-mail</label>
-          <input type="email" id="f-email" name="email"
-                 placeholder="seu@email.com"
-                 autocomplete="email"
-                 oninput="validateField(this)" onblur="validateField(this)" />
+          <input type="email" id="f-email" name="email" placeholder="seu@email.com" autocomplete="email" oninput="validateField(this)" onblur="validateField(this)" />
           <span class="field-msg" id="msg-email" aria-live="polite"></span>
         </div>
         <div class="form-group">
           <label for="f-tipo" data-i18n="form.type">Tipo de projeto</label>
-          <select id="f-tipo" name="tipo"
-                  onchange="validateField(this)" onblur="validateField(this)">
+          <select id="f-tipo" name="tipo" onchange="validateField(this)" onblur="validateField(this)">
             <option value="" disabled selected data-i18n="form.typeSelect">Selecione</option>
             <option value="Criação e Execução de Paisagismo" data-i18n="form.opt1">Criação e Execução de Paisagismo</option>
             <option value="Paisagismo Condominial" data-i18n="form.opt2">Paisagismo Condominial</option>
@@ -634,9 +1130,7 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
         </div>
         <div class="form-group form-full">
           <label for="f-msg" data-i18n="form.message">Mensagem</label>
-          <textarea id="f-msg" name="mensagem"
-                    data-i18n-placeholder="form.messagePh"
-                    placeholder="Descreva brevemente o seu espaço e o que imagina para ele..."></textarea>
+          <textarea id="f-msg" name="mensagem" placeholder="Descreva brevemente o seu espaço e o que imagina para ele..."></textarea>
         </div>
       </div>
       <div class="form-submit">
@@ -655,54 +1149,37 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
   </div>
 </section>
 
-<!-- CONTATO
-     2. ACESSIBILIDADE: aria-label descritivos nos ícones SVG de contato -->
+<!-- CONTATO -->
 <section class="contact" id="contato">
   <div class="container">
     <div class="contact-grid">
       <div class="fade-in">
         <p class="section-label" data-i18n="contact.label">Contato</p>
-        <h2 class="section-h2" style="margin-bottom:20px;" data-i18n-html="contact.h2">Vamos criar o seu<br><em>jardim ideal.</em></h2>
-        <p class="body-text" style="max-width:360px;" data-i18n="contact.desc">Entre em contato e agende uma visita técnica. Cada projeto começa com uma conversa sobre o seu espaço, o seu clima e a sua forma de viver ao ar livre.</p>
+        <h2 class="section-h2" style="margin-bottom:24px;" data-i18n-html="contact.h2">Vamos criar o seu<br><em>jardim ideal.</em></h2>
+        <p class="body-text" style="max-width:380px;" data-i18n="contact.desc">Entre em contato e agende uma visita técnica. Cada projeto começa com uma conversa sobre o seu espaço, o seu clima e a sua forma de viver ao ar livre.</p>
       </div>
-      <div style="padding-top:40px;">
-        <a href="https://wa.me/5585992252253" target="_blank" rel="noopener noreferrer"
-           class="contact-item" onclick="trackWhatsApp('contato')"
-           aria-label="Falar pelo WhatsApp: (85) 9 9225-2253">
-          <div class="contact-icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
-              <path d="M3 3c0 0 2 0 3 2s0 3 1 4 3 2 4 3 2-1 4 0 0 4 0 4-5 1-10-6C0 4 3 3 3 3z" stroke="currentColor" stroke-width="1" fill="none"/>
-            </svg>
+      <div style="padding-top:44px;">
+        <a href="https://wa.me/5585992252253" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="Falar pelo WhatsApp">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 3c0 0 2 0 3 2s0 3 1 4 3 2 4 3 2-1 4 0 0 4 0 4-5 1-10-6C0 4 3 3 3 3z" stroke="currentColor" stroke-width="1" fill="none"/></svg>
           </div>
           <div><p class="contact-lbl">WhatsApp</p><p class="contact-val">(85) 9 9225-2253</p></div>
         </a>
-        <a href="https://instagram.com/elloverde" target="_blank" rel="noopener noreferrer"
-           class="contact-item" onclick="trackInstagram()"
-           aria-label="Visitar o Instagram @elloverde">
-          <div class="contact-icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
-              <rect x="3" y="3" width="12" height="12" rx="3" stroke="currentColor" stroke-width="1" fill="none"/>
-              <circle cx="9" cy="9" r="3" stroke="currentColor" stroke-width="1" fill="none"/>
-              <circle cx="13" cy="5" r="0.8" fill="currentColor"/>
-            </svg>
+        <a href="https://instagram.com/elloverde" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="Instagram @elloverde">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="3" width="12" height="12" rx="3" stroke="currentColor" stroke-width="1" fill="none"/><circle cx="9" cy="9" r="3" stroke="currentColor" stroke-width="1" fill="none"/><circle cx="13" cy="5" r="0.8" fill="currentColor"/></svg>
           </div>
           <div><p class="contact-lbl">Instagram</p><p class="contact-val">@elloverde</p></div>
         </a>
-        <a href="/cdn-cgi/l/email-protection#2056414d4f53434f4e56455253415260454c4c4f564552444550414953414749534d4f0e434f4d0e4252" class="contact-item" onclick="trackEmail()" aria-label="Enviar e-mail para vamosconversar@elloverdepaisagismo.com.br">
-          <div class="contact-icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
-              <rect x="2" y="4" width="14" height="10" rx="1" stroke="currentColor" stroke-width="1" fill="none"/>
-              <path d="M2 5l7 6 7-6" stroke="currentColor" stroke-width="1"/>
-            </svg>
+        <a href="mailto:vamosconversar@elloverdepaisagismo.com.br" class="contact-item" aria-label="Enviar e-mail">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="1" stroke="currentColor" stroke-width="1" fill="none"/><path d="M2 5l7 6 7-6" stroke="currentColor" stroke-width="1"/></svg>
           </div>
-          <div><p class="contact-lbl">E-mail</p><p class="contact-val"><span class="__cf_email__" data-cfemail="dcaabdb1b3afbfb3b2aab9aeafbdae9cb9b0b0b3aab9aeb8b9acbdb5afbdbbb5afb1b3f2bfb3b1f2beae">[email&#160;protected]</span></p></div>
+          <div><p class="contact-lbl">E-mail</p><p class="contact-val">vamosconversar@elloverdepaisagismo.com.br</p></div>
         </a>
         <div class="contact-item">
-          <div class="contact-icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
-              <path d="M9 2C6 2 4 4.5 4 7c0 4 5 9 5 9s5-5 5-9c0-2.5-2-5-5-5z" stroke="currentColor" stroke-width="1" fill="none"/>
-              <circle cx="9" cy="7" r="2" stroke="currentColor" stroke-width="1" fill="none"/>
-            </svg>
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2C6 2 4 4.5 4 7c0 4 5 9 5 9s5-5 5-9c0-2.5-2-5-5-5z" stroke="currentColor" stroke-width="1" fill="none"/><circle cx="9" cy="7" r="2" stroke="currentColor" stroke-width="1" fill="none"/></svg>
           </div>
           <div><p class="contact-lbl" data-i18n="contact.locLabel">Localização</p><p class="contact-val">Fortaleza, Ceará — Brasil</p></div>
         </div>
@@ -720,18 +1197,15 @@ footer { background:#2C5F2E; padding:28px 48px; display:flex; align-items:center
   <p class="footer-tag" data-i18n="footer.tag">Elegância natural, com raízes no território.</p>
 </footer>
 
-<!-- WHATSAPP FLOAT
-     4. DELAY: aparece após 4s via JS, com transição suave -->
+<!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/5585992252253?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
    target="_blank" rel="noopener noreferrer"
    class="whatsapp-float" id="whatsappFloat"
-   onclick="trackWhatsApp('float')"
    aria-label="Fale conosco pelo WhatsApp">
-  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <path d="M16 2C8.268 2 2 8.268 2 16c0 2.482.676 4.805 1.854 6.797L2 30l7.418-1.818A13.94 13.94 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.56 11.56 0 0 1-5.89-1.608l-.422-.252-4.402 1.08 1.114-4.28-.276-.44A11.56 11.56 0 0 1 4.4 16C4.4 9.59 9.59 4.4 16 4.4S27.6 9.59 27.6 16 22.41 27.6 16 27.6zm6.34-8.64c-.348-.174-2.06-1.016-2.38-1.132-.318-.116-.55-.174-.78.174-.23.348-.894 1.132-1.096 1.364-.202.232-.404.26-.752.086-.348-.174-1.47-.542-2.8-1.726-1.034-.922-1.732-2.06-1.936-2.408-.202-.348-.022-.536.152-.71.156-.154.348-.404.522-.606.174-.202.232-.348.348-.58.116-.232.058-.436-.03-.61-.086-.174-.78-1.878-1.07-2.572-.282-.676-.568-.584-.78-.594l-.664-.012c-.232 0-.61.086-.928.434-.318.348-1.214 1.186-1.214 2.892s1.242 3.354 1.416 3.586c.174.232 2.444 3.732 5.922 5.234.828.358 1.474.572 1.978.732.832.264 1.588.226 2.186.138.668-.1 2.06-.842 2.35-1.656.29-.814.29-1.512.202-1.656-.086-.144-.318-.232-.666-.406z"/>
   </svg>
 </a>
-
 
 <script>
 // ── TRADUÇÕES ─────────────────────────────────────────────────────────────────
@@ -779,12 +1253,11 @@ var i18n = {
     'signature.quote':'"Paisagismo que pertence ao lugar."','signature.sub':'Elloverde — Fortaleza, Ceará',
     'form.label':'Orçamento','form.h2':'Conte-nos sobre o seu <em>projeto.</em>',
     'form.intro':'Preencha o formulário e entraremos em contato via WhatsApp para agendar uma visita técnica.',
-    'form.name':'Nome','form.namePh':'Seu nome completo',
-    'form.phone':'Telefone / WhatsApp','form.email':'E-mail',
+    'form.name':'Nome','form.phone':'Telefone / WhatsApp','form.email':'E-mail',
     'form.type':'Tipo de projeto','form.typeSelect':'Selecione',
     'form.opt1':'Criação e Execução de Paisagismo','form.opt2':'Paisagismo Condominial',
     'form.opt3':'Manutenção Periódica','form.opt4':'Poda, Extração e Insumos','form.opt5':'Outro',
-    'form.message':'Mensagem','form.messagePh':'Descreva brevemente o seu espaço e o que imagina para ele...',
+    'form.message':'Mensagem',
     'form.submit':'Solicitar orçamento via WhatsApp','form.success':'Abrindo o WhatsApp agora… 🌿',
     'form.successTitle':'Recebemos seu contato!',
     'contact.label':'Contato','contact.h2':'Vamos criar o seu<br><em>jardim ideal.</em>',
@@ -836,12 +1309,11 @@ var i18n = {
     'signature.quote':'"Landscaping that belongs to its place."','signature.sub':'Elloverde — Fortaleza, Ceará',
     'form.label':'Get a Quote','form.h2':'Tell us about your <em>project.</em>',
     'form.intro':'Fill out the form and we will reach out via WhatsApp to schedule a site visit.',
-    'form.name':'Name','form.namePh':'Your full name',
-    'form.phone':'Phone / WhatsApp','form.email':'E-mail',
+    'form.name':'Name','form.phone':'Phone / WhatsApp','form.email':'E-mail',
     'form.type':'Project type','form.typeSelect':'Select',
     'form.opt1':'Landscape Design & Execution','form.opt2':'Condominium Landscaping',
     'form.opt3':'Periodic Maintenance','form.opt4':'Pruning, Extraction & Supplies','form.opt5':'Other',
-    'form.message':'Message','form.messagePh':'Briefly describe your space and what you envision for it...',
+    'form.message':'Message',
     'form.submit':'Request a quote via WhatsApp','form.success':'Opening WhatsApp now… 🌿',
     'form.successTitle':'We received your message!',
     'contact.label':'Contact','contact.h2':"Let's create your<br><em>ideal garden.</em>",
@@ -852,14 +1324,19 @@ var i18n = {
   }
 };
 
-// ── ESTADO GLOBAL ─────────────────────────────────────────────────────────────
 var currentLang = 'pt';
 var isEN = false;
 
-// ── HAMBURGER ─────────────────────────────────────────────────────────────────
+// ── NAV SCROLL ────────────────────────────────────────────────────────────────
+window.addEventListener('scroll', function() {
+  var nav = document.getElementById('mainNav');
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ── HAMBURGER ────────────────────────────────────────────────────────────────
 function toggleMobile() {
   var menu = document.getElementById('mobileMenu');
-  var btn  = document.getElementById('hamburger');
+  var btn = document.getElementById('hamburger');
   menu.classList.toggle('open');
   btn.classList.toggle('open');
   document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
@@ -870,86 +1347,75 @@ function closeMobile() {
   document.body.style.overflow = '';
 }
 
-// ── TRADUÇÃO ──────────────────────────────────────────────────────────────────
+// ── TRADUÇÃO ─────────────────────────────────────────────────────────────────
 function setLang(lang) {
-  currentLang = lang;
-  isEN = (lang === 'en');
+  currentLang = lang; isEN = (lang === 'en');
   document.documentElement.lang = isEN ? 'en' : 'pt-BR';
-  // nav buttons
-  var btnPT = document.getElementById('btnPT');
-  var btnEN = document.getElementById('btnEN');
-  if (btnPT) btnPT.classList.toggle('active', !isEN);
-  if (btnEN) btnEN.classList.toggle('active', isEN);
-  // mobile menu buttons
-  var mobilePT = document.getElementById('mobileBtnPT');
-  var mobileEN = document.getElementById('mobileBtnEN');
-  if (mobilePT) mobilePT.classList.toggle('active', !isEN);
-  if (mobileEN) mobileEN.classList.toggle('active', isEN);
-  var dict = i18n[lang];
-  if (!dict) return;
-  document.querySelectorAll('[data-i18n]').forEach(function(el) {
-    var v = dict[el.getAttribute('data-i18n')];
-    if (v !== undefined) el.textContent = v;
-  });
-  document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
-    var v = dict[el.getAttribute('data-i18n-html')];
-    if (v !== undefined) el.innerHTML = v;
-  });
-  document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
-    var v = dict[el.getAttribute('data-i18n-placeholder')];
-    if (v !== undefined) el.placeholder = v;
-  });
-  document.querySelectorAll('option[data-i18n]').forEach(function(el) {
-    var v = dict[el.getAttribute('data-i18n')];
-    if (v !== undefined) el.textContent = v;
-  });
+  ['btnPT','mobileBtnPT'].forEach(function(id) { var el = document.getElementById(id); if(el) el.classList.toggle('active', !isEN); });
+  ['btnEN','mobileBtnEN'].forEach(function(id) { var el = document.getElementById(id); if(el) el.classList.toggle('active', isEN); });
+  var dict = i18n[lang]; if (!dict) return;
+  document.querySelectorAll('[data-i18n]').forEach(function(el) { var v = dict[el.getAttribute('data-i18n')]; if (v !== undefined) el.textContent = v; });
+  document.querySelectorAll('[data-i18n-html]').forEach(function(el) { var v = dict[el.getAttribute('data-i18n-html')]; if (v !== undefined) el.innerHTML = v; });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) { var v = dict[el.getAttribute('data-i18n-placeholder')]; if (v !== undefined) el.placeholder = v; });
+  document.querySelectorAll('option[data-i18n]').forEach(function(el) { var v = dict[el.getAttribute('data-i18n')]; if (v !== undefined) el.textContent = v; });
 }
 
 // ── SCROLL FADE-IN ────────────────────────────────────────────────────────────
 var fadeObserver = new IntersectionObserver(function(entries) {
   entries.forEach(function(entry) {
+    if (entry.isIntersecting) { entry.target.classList.add('visible'); fadeObserver.unobserve(entry.target); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(function(el) { fadeObserver.observe(el); });
+
+// ── COUNTER ANIMATION ─────────────────────────────────────────────────────────
+function animateCounter(el) {
+  var target = parseInt(el.getAttribute('data-target'), 10);
+  var duration = 1600;
+  var start = null;
+  function step(ts) {
+    if (!start) start = ts;
+    var progress = Math.min((ts - start) / duration, 1);
+    var ease = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(ease * target);
+    if (progress < 1) requestAnimationFrame(step);
+    else el.textContent = target;
+  }
+  requestAnimationFrame(step);
+}
+
+var counterObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
     if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      fadeObserver.unobserve(entry.target);
+      entry.target.querySelectorAll('.count-num').forEach(animateCounter);
+      counterObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.3 });
+document.querySelectorAll('.numeros, .hero-side').forEach(function(el) { counterObserver.observe(el); });
 
-document.querySelectorAll('.fade-in').forEach(function(el) {
-  fadeObserver.observe(el);
-});
-
-// ── CARROSSEL DOTS (mobile) ───────────────────────────────────────────────────
+// ── CARROSSEL DEPOIMENTOS ─────────────────────────────────────────────────────
 function scrollDepo(index) {
   var grid = document.getElementById('depoGrid');
   if (!grid) return;
   var card = grid.children[index];
   if (card) grid.scrollTo({ left: card.offsetLeft - grid.offsetLeft, behavior: 'smooth' });
-  document.querySelectorAll('.depo-dot').forEach(function(dot, i) {
-    dot.classList.toggle('active', i === index);
-  });
+  document.querySelectorAll('.depo-dot').forEach(function(dot, i) { dot.classList.toggle('active', i === index); });
 }
-
-// Sync dots on scroll
 (function() {
   var grid = document.getElementById('depoGrid');
   if (!grid) return;
   grid.addEventListener('scroll', function() {
-    var cards = grid.children;
-    var scrollLeft = grid.scrollLeft;
-    var closest = 0;
-    var minDist = Infinity;
-    for (var i = 0; i < cards.length; i++) {
-      var dist = Math.abs(cards[i].offsetLeft - grid.offsetLeft - scrollLeft);
+    var closest = 0, minDist = Infinity;
+    for (var i = 0; i < grid.children.length; i++) {
+      var dist = Math.abs(grid.children[i].offsetLeft - grid.offsetLeft - grid.scrollLeft);
       if (dist < minDist) { minDist = dist; closest = i; }
     }
-    document.querySelectorAll('.depo-dot').forEach(function(dot, i) {
-      dot.classList.toggle('active', i === closest);
-    });
+    document.querySelectorAll('.depo-dot').forEach(function(dot, i) { dot.classList.toggle('active', i === closest); });
   });
 })();
 
-// ── 4. WHATSAPP FLOAT — aparece após 4s ───────────────────────────────────────
+// ── WHATSAPP FLOAT ────────────────────────────────────────────────────────────
 window.addEventListener('load', function() {
   setTimeout(function() {
     var btn = document.getElementById('whatsappFloat');
@@ -957,120 +1423,47 @@ window.addEventListener('load', function() {
   }, 4000);
 });
 
-// ── VALIDAÇÃO INLINE ─────────────────────────────────────────────────────────
+// ── VALIDAÇÃO ────────────────────────────────────────────────────────────────
 var validationMessages = {
-  pt: {
-    nome:     { empty: 'Informe seu nome.', ok: 'Tudo certo.' },
-    telefone: { empty: 'Informe seu telefone.', invalid: 'Número incompleto (mínimo 10 dígitos).', ok: 'Tudo certo.' },
-    email:    { empty: 'Informe seu e-mail.', invalid: 'E-mail inválido.', ok: 'Tudo certo.' },
-    tipo:     { empty: 'Selecione o tipo de projeto.', ok: 'Tudo certo.' }
-  },
-  en: {
-    nome:     { empty: 'Please enter your name.', ok: 'Looks good.' },
-    telefone: { empty: 'Please enter your phone number.', invalid: 'Incomplete number (min. 10 digits).', ok: 'Looks good.' },
-    email:    { empty: 'Please enter your e-mail.', invalid: 'Invalid e-mail address.', ok: 'Looks good.' },
-    tipo:     { empty: 'Please select a project type.', ok: 'Looks good.' }
-  }
+  pt: { nome:{empty:'Informe seu nome.',ok:'Tudo certo.'}, telefone:{empty:'Informe seu telefone.',invalid:'Número incompleto (mínimo 10 dígitos).',ok:'Tudo certo.'}, email:{empty:'Informe seu e-mail.',invalid:'E-mail inválido.',ok:'Tudo certo.'}, tipo:{empty:'Selecione o tipo de projeto.',ok:'Tudo certo.'} },
+  en:  { nome:{empty:'Please enter your name.',ok:'Looks good.'}, telefone:{empty:'Please enter your phone.',invalid:'Incomplete number (min. 10 digits).',ok:'Looks good.'}, email:{empty:'Please enter your e-mail.',invalid:'Invalid e-mail address.',ok:'Looks good.'}, tipo:{empty:'Please select a project type.',ok:'Looks good.'} }
 };
-
-function getMsg(field, key) {
-  var lang = isEN ? 'en' : 'pt';
-  return (validationMessages[lang][field] || {})[key] || '';
-}
-
+function getMsg(field, key) { return ((validationMessages[isEN?'en':'pt']||{})[field]||{})[key]||''; }
 function setFieldState(input, state, message) {
-  var name = input.name;
-  var msgEl = document.getElementById('msg-' + name);
-  input.classList.remove('field-error', 'field-ok');
+  var msgEl = document.getElementById('msg-' + input.name);
+  input.classList.remove('field-error','field-ok');
   if (msgEl) { msgEl.className = 'field-msg'; msgEl.textContent = ''; }
-  if (state === 'error') {
-    input.classList.add('field-error');
-    if (msgEl) { msgEl.classList.add('error'); msgEl.textContent = message || ''; }
-  } else if (state === 'ok') {
-    input.classList.add('field-ok');
-    if (msgEl) { msgEl.classList.add('ok'); msgEl.textContent = message || ''; }
-  }
+  if (state === 'error') { input.classList.add('field-error'); if (msgEl) { msgEl.classList.add('error'); msgEl.textContent = message||''; } }
+  else if (state === 'ok') { input.classList.add('field-ok'); if (msgEl) { msgEl.classList.add('ok'); msgEl.textContent = message||''; } }
 }
-
 function validateField(input) {
-  var name = input.name;
-  var val  = input.value.trim();
-  if (name === 'nome') {
-    if (!val) { setFieldState(input, 'error', getMsg('nome', 'empty')); return false; }
-    setFieldState(input, 'ok', getMsg('nome', 'ok')); return true;
-  }
-  if (name === 'telefone') {
-    var digits = val.replace(/\D/g, '');
-    if (!digits) { setFieldState(input, 'error', getMsg('telefone', 'empty')); return false; }
-    if (digits.length < 10) { setFieldState(input, 'error', getMsg('telefone', 'invalid')); return false; }
-    setFieldState(input, 'ok', getMsg('telefone', 'ok')); return true;
-  }
-  if (name === 'email') {
-    if (!val) { setFieldState(input, 'error', getMsg('email', 'empty')); return false; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) { setFieldState(input, 'error', getMsg('email', 'invalid')); return false; }
-    setFieldState(input, 'ok', getMsg('email', 'ok')); return true;
-  }
-  if (name === 'tipo') {
-    if (!val) { setFieldState(input, 'error', getMsg('tipo', 'empty')); return false; }
-    setFieldState(input, 'ok', getMsg('tipo', 'ok')); return true;
-  }
+  var name = input.name, val = input.value.trim();
+  if (name === 'nome') { if (!val) { setFieldState(input,'error',getMsg('nome','empty')); return false; } setFieldState(input,'ok',getMsg('nome','ok')); return true; }
+  if (name === 'telefone') { var d = val.replace(/\D/g,''); if (!d) { setFieldState(input,'error',getMsg('telefone','empty')); return false; } if (d.length < 10) { setFieldState(input,'error',getMsg('telefone','invalid')); return false; } setFieldState(input,'ok',getMsg('telefone','ok')); return true; }
+  if (name === 'email') { if (!val) { setFieldState(input,'error',getMsg('email','empty')); return false; } if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) { setFieldState(input,'error',getMsg('email','invalid')); return false; } setFieldState(input,'ok',getMsg('email','ok')); return true; }
+  if (name === 'tipo') { if (!val) { setFieldState(input,'error',getMsg('tipo','empty')); return false; } setFieldState(input,'ok',getMsg('tipo','ok')); return true; }
   return true;
 }
-
 function maskPhone(input) {
-  var v = input.value.replace(/\D/g, '').slice(0, 11);
-  if (v.length <= 2) {
-    input.value = v.length ? '(' + v : '';
-  } else if (v.length <= 6) {
-    input.value = '(' + v.slice(0,2) + ') ' + v.slice(2);
-  } else if (v.length <= 10) {
-    input.value = '(' + v.slice(0,2) + ') ' + v.slice(2,6) + '-' + v.slice(6);
-  } else {
-    input.value = '(' + v.slice(0,2) + ') ' + v.slice(2,3) + ' ' + v.slice(3,7) + '-' + v.slice(7);
-  }
+  var v = input.value.replace(/\D/g,'').slice(0,11);
+  if (v.length <= 2) input.value = v.length ? '('+v : '';
+  else if (v.length <= 6) input.value = '('+v.slice(0,2)+') '+v.slice(2);
+  else if (v.length <= 10) input.value = '('+v.slice(0,2)+') '+v.slice(2,6)+'-'+v.slice(6);
+  else input.value = '('+v.slice(0,2)+') '+v.slice(2,3)+' '+v.slice(3,7)+'-'+v.slice(7);
 }
-
-// ── TRACKING ─────────────────────────────────────────────────────────────────
-function trackWhatsApp(origem) { if (typeof fbq !== 'undefined') fbq('track','Contact',{content_name:'WhatsApp',origem:origem}); }
-function trackInstagram() { if (typeof fbq !== 'undefined') fbq('track','Contact',{content_name:'Instagram'}); }
-function trackEmail() { if (typeof fbq !== 'undefined') fbq('track','Contact',{content_name:'Email'}); }
-
-var tracked = {};
-var scrollObserver = new IntersectionObserver(function(entries) {
-  entries.forEach(function(e) {
-    if (e.isIntersecting && !tracked[e.target.id]) {
-      tracked[e.target.id] = true;
-      if (typeof fbq !== 'undefined') fbq('trackCustom','SectionView',{section:e.target.id});
-    }
-  });
-}, { threshold: 0.4 });
-['manifesto','servicos','pilares','depoimentos','parceiros','orcamento','contato'].forEach(function(id) {
-  var el = document.getElementById(id);
-  if (el) scrollObserver.observe(el);
-});
 
 // ── FORMULÁRIO ────────────────────────────────────────────────────────────────
 function submitForm(e) {
   e.preventDefault();
-  var ids = ['f-nome','f-tel','f-email','f-tipo'];
-  var inputs = ids.map(function(id) { return document.getElementById(id); });
-  var allValid = inputs.every(function(inp) { return validateField(inp); });
-  if (!allValid) {
-    var first = inputs.find(function(inp) { return inp.classList.contains('field-error'); });
-    if (first) first.focus();
-    return;
-  }
+  var inputs = ['f-nome','f-tel','f-email','f-tipo'].map(function(id){ return document.getElementById(id); });
+  var allValid = inputs.every(function(inp){ return validateField(inp); });
+  if (!allValid) { var first = inputs.find(function(inp){ return inp.classList.contains('field-error'); }); if (first) first.focus(); return; }
   var data = new FormData(e.target);
-  var nome = data.get('nome'), tipo = data.get('tipo'), tel = data.get('telefone'), email = data.get('email'), msg = data.get('mensagem') || '';
-  if (typeof fbq !== 'undefined') fbq('track','Lead',{content_name:tipo,content_category:'Orcamento'});
-  var texto = encodeURIComponent(
-    isEN
-      ? 'Hello! My name is ' + nome + '.\nInterest: ' + tipo + '\nPhone: ' + tel + '\nEmail: ' + email + (msg ? '\nMessage: ' + msg : '')
-      : 'Ola! Meu nome e ' + nome + '.\nInteresse: ' + tipo + '\nTelefone: ' + tel + '\nEmail: ' + email + (msg ? '\nMensagem: ' + msg : '')
-  );
+  var nome = data.get('nome'), tipo = data.get('tipo'), tel = data.get('telefone'), email = data.get('email'), msg = data.get('mensagem')||'';
+  var texto = encodeURIComponent(isEN ? 'Hello! My name is '+nome+'.\nInterest: '+tipo+'\nPhone: '+tel+'\nEmail: '+email+(msg?'\nMessage: '+msg:'') : 'Ola! Meu nome e '+nome+'.\nInteresse: '+tipo+'\nTelefone: '+tel+'\nEmail: '+email+(msg?'\nMensagem: '+msg:''));
   document.getElementById('orcamentoForm').style.display = 'none';
   document.getElementById('formSuccess').style.display = 'block';
-  setTimeout(function() { window.open('https://wa.me/5585992252253?text=' + texto, '_blank'); }, 800);
+  setTimeout(function(){ window.open('https://wa.me/5585992252253?text='+texto,'_blank'); }, 800);
 }
 </script>
 </body>
