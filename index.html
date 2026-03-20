@@ -1176,7 +1176,7 @@ footer {
   </svg>
 </a>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // ── TRADUÇÕES ─────────────────────────────────────────────────────────────────
 var i18n = {
   pt: {
@@ -1474,4 +1474,14 @@ function submitForm(e) {
   if (!allValid) { var first = inputs.find(function(inp){ return inp.classList.contains('field-error'); }); if (first) first.focus(); return; }
   var data = new FormData(e.target);
   var nome = data.get('nome'), tipo = data.get('tipo'), tel = data.get('telefone'), email = data.get('email'), msg = data.get('mensagem')||'';
-  var texto = encodeURIComponent(isEN ? 'Hello! My name is '+nome+'.\nInterest: '+tipo+'\nPhone: '+tel+'\nEmail: '+email+(msg?'\nMessage: '+msg:'') : 'Ola! Meu nome e '+nome+'.\nInteresse: '+tipo+'\nTelefone: '+tel+'\nEmail: '+email+(ms
+  var texto = encodeURIComponent(isEN
+    ? 'Hello! My name is '+nome+'.\nInterest: '+tipo+'\nPhone: '+tel+'\nEmail: '+email+(msg?'\nMessage: '+msg:'')
+    : 'Ola! Meu nome e '+nome+'.\nInteresse: '+tipo+'\nTelefone: '+tel+'\nEmail: '+email+(msg?'\nMensagem: '+msg:'')
+  );
+  document.getElementById('orcamentoForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+  setTimeout(function(){ window.open('https://wa.me/5585992252253?text='+texto,'_blank'); }, 800);
+}
+</script>
+</body>
+</html>
