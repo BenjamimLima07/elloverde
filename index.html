@@ -152,18 +152,19 @@ nav.scrolled { height: 60px; box-shadow: 0 2px 40px rgba(44,40,32,0.08); }
   padding: 14px 36px; margin-top: 8px; border-radius: 8px;
 }
 .mobile-lang {
-  display: flex; align-items: center;
-  border: 1px solid rgba(44,40,32,0.15); border-radius: 6px; overflow: hidden;
+  display: flex !important; align-items: center;
+  border: 1px solid rgba(44,40,32,0.18); border-radius: 8px; overflow: hidden;
+  margin-top: 8px;
 }
 .mobile-lang button {
-  font-family: 'DM Sans', sans-serif; font-size: 12px;
+  font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 400;
   letter-spacing: 0.18em; text-transform: uppercase;
-  padding: 9px 16px; border: none; cursor: pointer;
+  padding: 10px 20px; border: none; cursor: pointer;
   background: transparent; color: var(--sand);
   transition: background 0.25s, color 0.25s;
 }
 .mobile-lang button.active { background: var(--moss); color: var(--cream); }
-.mobile-lang .lang-sep { width: 1px; height: 20px; background: rgba(44,40,32,0.15); }
+.mobile-lang .lang-sep { width: 1px; height: 20px; background: rgba(44,40,32,0.15); flex-shrink: 0; }
 
 /* ── HERO ── */
 .hero {
@@ -772,23 +773,23 @@ footer {
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#manifesto" onclick="closeMobile()" data-i18n="nav.manifesto">Manifesto</a>
-  <a href="#servicos" onclick="closeMobile()" data-i18n="nav.services">Serviços</a>
-  <a href="#pilares" onclick="closeMobile()" data-i18n="nav.pillars">Pilares</a>
-  <a href="#parceiros" onclick="closeMobile()" data-i18n="nav.partners">Parceiros</a>
-  <a href="#orcamento" onclick="closeMobile()" data-i18n="nav.quote">Orçamento</a>
-  <a href="#contato" onclick="closeMobile()" data-i18n="nav.contact">Contato</a>
+  <a href="#manifesto" class="mobile-link" data-i18n="nav.manifesto">Manifesto</a>
+  <a href="#servicos" class="mobile-link" data-i18n="nav.services">Serviços</a>
+  <a href="#pilares" class="mobile-link" data-i18n="nav.pillars">Pilares</a>
+  <a href="#parceiros" class="mobile-link" data-i18n="nav.partners">Parceiros</a>
+  <a href="#orcamento" class="mobile-link" data-i18n="nav.quote">Orçamento</a>
+  <a href="#contato" class="mobile-link" data-i18n="nav.contact">Contato</a>
   <a href="https://wa.me/5585992252253" target="_blank" class="mobile-cta" data-i18n="nav.cta">Fale Conosco</a>
   <div class="mobile-lang">
-    <button id="mobileBtnPT" class="active" onclick="setLang('pt')">PT</button>
+    <button id="mobileBtnPT" class="active">PT</button>
     <div class="lang-sep"></div>
-    <button id="mobileBtnEN" onclick="setLang('en')">EN</button>
+    <button id="mobileBtnEN">EN</button>
   </div>
 </div>
 
 <!-- NAV -->
 <nav id="mainNav">
-  <button class="nav-hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
   <a href="#" class="nav-logo" aria-label="Elloverde Paisagismo & Flora">
@@ -804,9 +805,9 @@ footer {
   </ul>
   <a href="https://wa.me/5585992252253" target="_blank" class="nav-btn" data-i18n="nav.cta">Fale Conosco</a>
   <div class="lang-toggle">
-    <button id="btnPT" class="active" onclick="setLang('pt')">PT</button>
+    <button id="btnPT" class="active">PT</button>
     <div class="lang-sep"></div>
-    <button id="btnEN" onclick="setLang('en')">EN</button>
+    <button id="btnEN">EN</button>
   </div>
 </nav>
 
@@ -1315,23 +1316,75 @@ function closeMobile() {
   document.body.style.overflow = '';
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+  // Hamburger
+  var hamburger = document.getElementById('hamburger');
+  if (hamburger) hamburger.addEventListener('click', toggleMobile);
+
+  // Mobile menu links fecham o menu
+  document.querySelectorAll('.mobile-link').forEach(function(el) {
+    el.addEventListener('click', closeMobile);
+  });
+
+  // Botões de idioma desktop
+  var bPT = document.getElementById('btnPT');
+  var bEN = document.getElementById('btnEN');
+  if (bPT) bPT.addEventListener('click', function() { setLang('pt'); });
+  if (bEN) bEN.addEventListener('click', function() { setLang('en'); });
+
+  // Botões de idioma mobile
+  var mPT = document.getElementById('mobileBtnPT');
+  var mEN = document.getElementById('mobileBtnEN');
+  if (mPT) mPT.addEventListener('click', function() { setLang('pt'); });
+  if (mEN) mEN.addEventListener('click', function() { setLang('en'); });
+
+  // Contadores
+  document.querySelectorAll('.count-num').forEach(animateCounter);
+});
+
 // ── TRADUÇÃO ─────────────────────────────────────────────────────────────────
 function setLang(lang) {
-  currentLang = lang; isEN = (lang === 'en');
+  currentLang = lang;
+  isEN = (lang === 'en');
   document.documentElement.lang = isEN ? 'en' : 'pt-BR';
-  ['btnPT','mobileBtnPT'].forEach(function(id) { var el = document.getElementById(id); if(el) el.classList.toggle('active', !isEN); });
-  ['btnEN','mobileBtnEN'].forEach(function(id) { var el = document.getElementById(id); if(el) el.classList.toggle('active', isEN); });
-  var dict = i18n[lang]; if (!dict) return;
+
+  // Atualiza botões desktop
+  var bPT = document.getElementById('btnPT');
+  var bEN = document.getElementById('btnEN');
+  var mPT = document.getElementById('mobileBtnPT');
+  var mEN = document.getElementById('mobileBtnEN');
+  if (bPT) { bPT.classList.toggle('active', !isEN); }
+  if (bEN) { bEN.classList.toggle('active', isEN); }
+  if (mPT) { mPT.classList.toggle('active', !isEN); }
+  if (mEN) { mEN.classList.toggle('active', isEN); }
+
+  var dict = i18n[lang];
+  if (!dict) return;
+
+  // Textos simples
   document.querySelectorAll('[data-i18n]').forEach(function(el) {
-    // skip count-num elements inside numero-val
     if (el.classList.contains('count-num')) return;
-    var v = dict[el.getAttribute('data-i18n')]; if (v !== undefined) el.textContent = v;
+    var key = el.getAttribute('data-i18n');
+    if (dict[key] !== undefined) el.textContent = dict[key];
   });
-  document.querySelectorAll('[data-i18n-html]').forEach(function(el) { var v = dict[el.getAttribute('data-i18n-html')]; if (v !== undefined) el.innerHTML = v; });
-  document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) { var v = dict[el.getAttribute('data-i18n-placeholder')]; if (v !== undefined) el.placeholder = v; });
-  document.querySelectorAll('option[data-i18n]').forEach(function(el) { var v = dict[el.getAttribute('data-i18n')]; if (v !== undefined) el.textContent = v; });
-  // update numero labels
-  document.querySelectorAll('.numero-lbl[data-i18n]').forEach(function(el) { var v = dict[el.getAttribute('data-i18n')]; if (v !== undefined) el.textContent = v; });
+
+  // Textos com HTML (itálico, etc)
+  document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n-html');
+    if (dict[key] !== undefined) el.innerHTML = dict[key];
+  });
+
+  // Placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n-placeholder');
+    if (dict[key] !== undefined) el.placeholder = dict[key];
+  });
+
+  // Options do select
+  document.querySelectorAll('option[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (dict[key] !== undefined) el.textContent = dict[key];
+  });
 }
 
 // ── SCROLL FADE-IN ────────────────────────────────────────────────────────────
@@ -1361,9 +1414,7 @@ function animateCounter(el) {
   requestAnimationFrame(step);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.count-num').forEach(animateCounter);
-});
+
 
 // ── CARROSSEL DEPOIMENTOS ─────────────────────────────────────────────────────
 function scrollDepo(index) {
