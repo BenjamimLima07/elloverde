@@ -741,6 +741,10 @@ footer {
   nav { padding: 0 20px; }
   .nav-links, .nav-btn, .lang-toggle { display: none; }
   .nav-hamburger { display: flex; }
+  .mobile-lang { display: flex; align-items: center; border: 1px solid rgba(44,40,32,0.18); border-radius: 8px; overflow: hidden; }
+  .mobile-lang button { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; padding: 10px 18px; border: none; cursor: pointer; background: transparent; color: var(--sand); transition: background 0.25s, color 0.25s; }
+  .mobile-lang button.active { background: var(--moss); color: var(--cream); }
+  .mobile-lang .lang-sep { width: 1px; height: 20px; background: rgba(44,40,32,0.15); flex-shrink: 0; }
   section, .pilares, .orcamento, .numeros { padding: 64px 24px; }
   .hero-content { padding: 0 24px 60px; grid-template-columns: 1fr; }
   .manifesto-grid, .contact-grid, .form-grid { grid-template-columns: 1fr; gap: 28px; }
@@ -1318,10 +1322,16 @@ function setLang(lang) {
   ['btnPT','mobileBtnPT'].forEach(function(id) { var el = document.getElementById(id); if(el) el.classList.toggle('active', !isEN); });
   ['btnEN','mobileBtnEN'].forEach(function(id) { var el = document.getElementById(id); if(el) el.classList.toggle('active', isEN); });
   var dict = i18n[lang]; if (!dict) return;
-  document.querySelectorAll('[data-i18n]').forEach(function(el) { var v = dict[el.getAttribute('data-i18n')]; if (v !== undefined) el.textContent = v; });
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    // skip count-num elements inside numero-val
+    if (el.classList.contains('count-num')) return;
+    var v = dict[el.getAttribute('data-i18n')]; if (v !== undefined) el.textContent = v;
+  });
   document.querySelectorAll('[data-i18n-html]').forEach(function(el) { var v = dict[el.getAttribute('data-i18n-html')]; if (v !== undefined) el.innerHTML = v; });
   document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) { var v = dict[el.getAttribute('data-i18n-placeholder')]; if (v !== undefined) el.placeholder = v; });
   document.querySelectorAll('option[data-i18n]').forEach(function(el) { var v = dict[el.getAttribute('data-i18n')]; if (v !== undefined) el.textContent = v; });
+  // update numero labels
+  document.querySelectorAll('.numero-lbl[data-i18n]').forEach(function(el) { var v = dict[el.getAttribute('data-i18n')]; if (v !== undefined) el.textContent = v; });
 }
 
 // ── SCROLL FADE-IN ────────────────────────────────────────────────────────────
