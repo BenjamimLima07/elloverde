@@ -172,7 +172,7 @@ nav.scrolled { height: 60px; box-shadow: 0 2px 40px rgba(44,40,32,0.08); }
 }
 .hero-bg {
   position: absolute; inset: 0;
-  background: url('hero.jpg') center top/cover no-repeat;
+  background: #1a2e1a url('hero.jpg') center top/cover no-repeat;
 }
 /* Multi-layer overlay for depth */
 .hero-overlay {
@@ -723,8 +723,9 @@ footer {
 .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
 
 /* ── SCROLL FADE ── */
-.fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1); }
-.fade-in.visible { opacity: 1; transform: translateY(0); }
+.fade-in { opacity: 1; transform: translateY(0); transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1); }
+.fade-in.will-animate { opacity: 0; transform: translateY(28px); }
+.fade-in.will-animate.visible { opacity: 1; transform: translateY(0); }
 .fade-in-delay-1 { transition-delay: 0.1s; }
 .fade-in-delay-2 { transition-delay: 0.2s; }
 .fade-in-delay-3 { transition-delay: 0.3s; }
@@ -1329,7 +1330,10 @@ var fadeObserver = new IntersectionObserver(function(entries) {
     if (entry.isIntersecting) { entry.target.classList.add('visible'); fadeObserver.unobserve(entry.target); }
   });
 }, { threshold: 0.1 });
-document.querySelectorAll('.fade-in').forEach(function(el) { fadeObserver.observe(el); });
+document.querySelectorAll('.fade-in').forEach(function(el) {
+  el.classList.add('will-animate');
+  fadeObserver.observe(el);
+});
 
 // ── COUNTER ANIMATION ─────────────────────────────────────────────────────────
 function animateCounter(el) {
