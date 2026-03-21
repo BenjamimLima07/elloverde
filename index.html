@@ -104,6 +104,18 @@ nav.scrolled { height: 60px; box-shadow: 0 2px 40px rgba(44,40,32,0.08); }
 }
 .nav-btn:hover { background: var(--moss-d); transform: translateY(-1px); }
 
+/* botão fantasma — Privacidade */
+.nav-btn--ghost {
+  background: transparent;
+  color: var(--bark-60);
+  border: 1px solid rgba(44,40,32,0.18);
+}
+.nav-btn--ghost:hover {
+  background: rgba(44,40,32,0.05);
+  color: var(--bark);
+  transform: translateY(-1px);
+}
+
 .lang-toggle {
   display: flex; align-items: center;
   border: 1px solid rgba(44,40,32,0.14); border-radius: 6px;
@@ -145,6 +157,11 @@ nav.scrolled { height: 60px; box-shadow: 0 2px 40px rgba(44,40,32,0.08); }
   transition: color 0.3s;
 }
 .mobile-menu a:hover { color: var(--moss); }
+.mobile-menu .mobile-link--privacy {
+  font-size: 16px;
+  color: var(--sand);
+  letter-spacing: 0.12em;
+}
 .mobile-menu .mobile-cta {
   background: var(--moss); color: var(--cream) !important;
   font-family: 'DM Sans', sans-serif; font-size: 11px;
@@ -784,6 +801,7 @@ footer {
   <a href="#parceiros" class="mobile-link" data-i18n="nav.partners">Parceiros</a>
   <a href="#orcamento" class="mobile-link" data-i18n="nav.quote">Orçamento</a>
   <a href="#contato" class="mobile-link" data-i18n="nav.contact">Contato</a>
+  <a href="politica-privacidade-elloverde.html" class="mobile-link mobile-link--privacy" data-i18n="nav.privacy">Privacidade</a>
   <a href="https://wa.me/5585992252253" target="_blank" class="mobile-cta" data-i18n="nav.cta">Fale Conosco</a>
   <div class="mobile-lang">
     <button id="mobileBtnPT" class="active">PT</button>
@@ -808,6 +826,7 @@ footer {
     <li><a href="#orcamento" data-i18n="nav.quote">Orçamento</a></li>
     <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
   </ul>
+  <a href="politica-privacidade-elloverde.html" class="nav-btn nav-btn--ghost" data-i18n="nav.privacy">Privacidade</a>
   <a href="https://wa.me/5585992252253" target="_blank" class="nav-btn" data-i18n="nav.cta">Fale Conosco</a>
   <div class="lang-toggle">
     <button id="btnPT" class="active">PT</button>
@@ -1186,7 +1205,7 @@ footer {
 var i18n = {
   pt: {
     'nav.manifesto':'Manifesto','nav.services':'Serviços','nav.pillars':'Pilares',
-    'nav.partners':'Parceiros','nav.quote':'Orçamento','nav.contact':'Contato','nav.cta':'Fale Conosco',
+    'nav.partners':'Parceiros','nav.quote':'Orçamento','nav.contact':'Contato','nav.cta':'Fale Conosco','nav.privacy':'Privacidade',
     'hero.eyebrow':'Paisagismo & Flora — Ceará',
     'hero.h1':'Elegância natural,<br><em>com raízes no território.</em>',
     'hero.sub':'Criamos jardins que pertencem ao lugar. Paisagismo sofisticado, criado para o clima e a estética do Ceará.',
@@ -1242,7 +1261,7 @@ var i18n = {
   },
   en: {
     'nav.manifesto':'Manifesto','nav.services':'Services','nav.pillars':'Pillars',
-    'nav.partners':'Partners','nav.quote':'Get a Quote','nav.contact':'Contact','nav.cta':'Talk to Us',
+    'nav.partners':'Partners','nav.quote':'Get a Quote','nav.contact':'Contact','nav.cta':'Talk to Us','nav.privacy':'Privacy',
     'hero.eyebrow':'Landscaping & Flora — Ceará',
     'hero.h1':'Natural elegance,<br><em>rooted in the territory.</em>',
     'hero.sub':'We create gardens that belong to their place. Sophisticated landscaping designed for the climate and aesthetics of Ceará.',
