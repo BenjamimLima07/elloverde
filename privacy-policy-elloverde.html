@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Elloverde</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #F0EDE6;
+  --text:      #222;
+  --green:     #2D5A27;
+  --gray:      #888;
+  --gray-line: #C8C4BC;
+  --card-bg:   #E8E4DC;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.78;
+  letter-spacing: 0.15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 56px;
+}
+
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--gray-line);
+}
+.nav__inner {
+  max-width: 780px; margin: 0 auto;
+  padding: 14px 56px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.nav__brand {
+  font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--green); font-weight: 500; text-decoration: none;
+}
+.nav__tag {
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray);
+}
+.nav__back {
+  font-size: 10px; letter-spacing: 0.08em;
+  color: var(--gray); text-decoration: none;
+  transition: color 0.2s;
+}
+.nav__back:hover { color: var(--green); }
+
+.hero { padding: 96px 0 80px; border-bottom: 1px solid var(--gray-line); }
+
+.eyebrow {
+  display: flex; align-items: center; gap: 16px; margin-bottom: 50px;
+  opacity: 0; animation: up .65s .05s ease both;
+}
+.eyebrow__dash { width: 44px; height: 1px; background: var(--gray-line); }
+.eyebrow__text { font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray); }
+
+.hero__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 58px; font-weight: 400; line-height: 1.06;
+  margin-bottom: 34px;
+  opacity: 0; animation: up .65s .14s ease both;
+}
+.hero__title em { font-style: italic; color: var(--green); }
+
+.rule { width: 44px; height: 1px; background: var(--gray-line); margin-bottom: 26px; }
+.hero .rule { opacity: 0; animation: up .65s .22s ease both; }
+
+.hero__desc {
+  max-width: 420px;
+  font-size: 13.5px; line-height: 1.78; color: #555;
+  opacity: 0; animation: up .65s .28s ease both;
+}
+
+.hero__meta {
+  margin-top: 38px; display: flex; flex-direction: column; gap: 10px;
+  opacity: 0; animation: up .65s .36s ease both;
+}
+.meta-item { display: flex; flex-direction: column; gap: 1px; }
+.meta-label { font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
+.meta-value { font-size: 14px; font-weight: 400; color: var(--text); }
+
+.quote-block {
+  margin-top: 74px; text-align: center;
+  opacity: 0; animation: up .65s .44s ease both;
+}
+.drow { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.drow__line { flex: 1; height: 1px; background: var(--gray-line); }
+.drow__gem {
+  width: 9px; height: 9px;
+  border: 1px solid var(--gray-line);
+  transform: rotate(45deg); background: var(--bg);
+}
+.quote-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-size: 17px; color: var(--text); margin-bottom: 10px;
+}
+.quote-brand { font-size: 8.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray); }
+
+.sec { padding: 74px 0; border-bottom: 1px solid var(--gray-line); }
+.sec__num { font-size: 11px; letter-spacing: 1.5px; color: var(--gray); margin-bottom: 8px; }
+.sec__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 27px; font-weight: 400; line-height: 1.2; margin-bottom: 14px;
+}
+.sec .rule { margin-bottom: 22px; }
+
+.sec p { font-size: 14.5px; line-height: 1.82; color: #444; margin-bottom: 14px; max-width: 100%; text-align: justify; hyphens: auto; }
+.sec p:last-child { margin-bottom: 0; }
+
+.sub { font-size: 13px; font-weight: 500; color: var(--text); margin: 20px 0 8px; }
+
+.dl { list-style: none; max-width: 100%; }
+.dl li {
+  display: flex; gap: 11px;
+  font-size: 14.5px; line-height: 1.75; color: #444; padding: 2.5px 0;
+}
+.dl li::before { content: '—'; color: var(--gray); flex-shrink: 0; }
+
+.card {
+  background: var(--card-bg); border-left: 2px solid var(--green);
+  padding: 22px 22px 22px 24px; margin-top: 20px; max-width: 100%;
+}
+.ci { margin-bottom: 14px; }
+.ci:last-child { margin-bottom: 0; }
+.ci__t { font-size: 12.5px; font-weight: 500; color: var(--green); margin-bottom: 2px; }
+.ci__d { font-size: 13px; line-height: 1.7; color: #555; }
+
+.ccard {
+  background: var(--card-bg); border-left: 2px solid var(--green);
+  padding: 22px 22px 22px 24px; margin: 20px 0 18px; max-width: 100%;
+}
+.ccard__name {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px; font-weight: 400; color: var(--text); margin-bottom: 10px;
+}
+.ccard__info { font-size: 13.5px; line-height: 1.9; color: #555; }
+.ccard__info a { color: inherit; text-decoration: none; }
+.ccard__info a:hover { color: var(--green); }
+
+.footer { padding: 76px 0 96px; text-align: center; }
+.footer .drow { margin-bottom: 20px; }
+.footer__q { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17.5px; color: var(--text); margin-bottom: 10px; }
+.footer__b { font-size: 8.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray); }
+
+@keyframes up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 580px) {
+  .wrap { padding: 0 24px; }
+  .nav__inner { padding: 14px 24px; }
+  .hero { padding: 64px 0 52px; }
+  .hero__title { font-size: 40px; }
+  .sec { padding: 52px 0; }
+  .quote-text { font-size: 15px; }
+}
+@media print {
+  .nav { display: none; }
+  body { background: #fff; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__brand">Elloverde</a>
+    <span class="nav__tag">Privacy Policy</span>
+    <a href="index.html" class="nav__back">← Back to site</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <section class="hero">
+    <div class="eyebrow">
+      <span class="eyebrow__dash"></span>
+      <span class="eyebrow__text">Landscaping &amp; Flora — Ceará</span>
+    </div>
+
+    <h1 class="hero__title">
+      Privacy<br><em>Policy</em>
+    </h1>
+
+    <div class="rule"></div>
+
+    <p class="hero__desc">
+      This document describes how we collect, use, store and protect the personal information of our website visitors and clients.
+    </p>
+
+    <div class="hero__meta">
+      <div class="meta-item">
+        <span class="meta-label">Last updated</span>
+        <span class="meta-value">March 2025</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Location</span>
+        <span class="meta-value">Fortaleza, Ceará — Brazil</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Legal reference</span>
+        <span class="meta-value">Law No. 13,709/2018 — LGPD</span>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      <div class="drow">
+        <span class="drow__line"></span>
+        <span class="drow__gem"></span>
+        <span class="drow__line"></span>
+      </div>
+      <p class="quote-text">"We care for the green. We care for you."</p>
+      <p class="quote-brand">Elloverde — Fortaleza, Ceará</p>
+    </div>
+  </section>
+
+  <!-- 01 -->
+  <section class="sec">
+    <p class="sec__num">01</p>
+    <h2 class="sec__title">Who We Are</h2>
+    <div class="rule"></div>
+    <p>Elloverde Landscaping &amp; Flora is a company specialized in landscaping, gardening and the commercialization of ornamental plants, located in Fortaleza, Ceará. Our commitment goes beyond greenery: we value the trust you place in us when sharing your personal data.</p>
+    <p>This Privacy Policy describes how we collect, use, store and protect the personal information of visitors and clients of our website and services.</p>
+  </section>
+
+  <!-- 02 -->
+  <section class="sec">
+    <p class="sec__num">02</p>
+    <h2 class="sec__title">Data We Collect</h2>
+    <div class="rule"></div>
+    <p>We may collect the following categories of personal data:</p>
+    <p class="sub">2.1 Data provided by you</p>
+    <ul class="dl">
+      <li>Full name</li>
+      <li>Email address</li>
+      <li>Phone number or WhatsApp</li>
+      <li>Delivery or service address (for landscaping projects)</li>
+      <li>Messages sent through the contact form or email</li>
+      <li>Payment information (when applicable, processed by secure platforms)</li>
+    </ul>
+    <p class="sub">2.2 Automatically collected data</p>
+    <ul class="dl">
+      <li>IP address and device type</li>
+      <li>Browser and operating system</li>
+      <li>Pages visited and time spent on the site</li>
+      <li>Access source (links, social media, searches)</li>
+      <li>Cookies and similar technologies (see Section 07)</li>
+    </ul>
+  </section>
+
+  <!-- 03 -->
+  <section class="sec">
+    <p class="sec__num">03</p>
+    <h2 class="sec__title">How We Use Your Data</h2>
+    <div class="rule"></div>
+    <p>The data collected is used for the following purposes:</p>
+    <ul class="dl">
+      <li>Responding to your quote requests, inquiries and customer service</li>
+      <li>Processing orders and managing deliveries of products and services</li>
+      <li>Sending communications about our services, promotions and news (with consent)</li>
+      <li>Improving your browsing experience on our website</li>
+      <li>Analyzing website performance and usage for continuous improvement</li>
+      <li>Complying with applicable legal and regulatory obligations</li>
+      <li>Preventing fraud and ensuring information security</li>
+    </ul>
+  </section>
+
+  <!-- 04 -->
+  <section class="sec">
+    <p class="sec__num">04</p>
+    <h2 class="sec__title">Legal Basis for Processing</h2>
+    <div class="rule"></div>
+    <p>In accordance with Brazil's General Data Protection Law (Law No. 13,709/2018 — LGPD), the processing of your personal data is carried out based on the following legal grounds:</p>
+    <div class="card">
+      <div class="ci">
+        <p class="ci__t">Consent</p>
+        <p class="ci__d">When you expressly authorize the use of your data (e.g., newsletter sign-up)</p>
+      </div>
+      <div class="ci">
+        <p class="ci__t">Contract performance</p>
+        <p class="ci__d">When necessary for the provision of contracted services</p>
+      </div>
+      <div class="ci">
+        <p class="ci__t">Legitimate interest</p>
+        <p class="ci__d">For website improvements, security and institutional communications</p>
+      </div>
+      <div class="ci">
+        <p class="ci__t">Legal obligation</p>
+        <p class="ci__d">When required by law or competent authority</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 -->
+  <section class="sec">
+    <p class="sec__num">05</p>
+    <h2 class="sec__title">Data Sharing</h2>
+    <div class="rule"></div>
+    <p>Elloverde does not sell, rent or trade your personal data. We may share it only in the following situations:</p>
+    <ul class="dl">
+      <li>With logistics and delivery partners, for order fulfillment</li>
+      <li>With payment platforms, to process transactions securely</li>
+      <li>With digital marketing tools (e.g., Google Analytics, Meta Ads), anonymized whenever possible</li>
+      <li>With public authorities, when required by law or court order</li>
+    </ul>
+    <p style="margin-top:14px;">In all cases, we require third parties to respect the confidentiality and security of your data.</p>
+  </section>
+
+  <!-- 06 -->
+  <section class="sec">
+    <p class="sec__num">06</p>
+    <h2 class="sec__title">Storage &amp; Security</h2>
+    <div class="rule"></div>
+    <p>Your data is stored in a secure environment, with access restricted to authorized staff. We adopt appropriate technical and organizational measures to protect your information against unauthorized access, loss, alteration or improper disclosure.</p>
+    <p>Data will be retained for as long as necessary to fulfill the purposes for which it was collected, or as required by legal obligations. After that period, it will be securely deleted.</p>
+  </section>
+
+  <!-- 07 -->
+  <section class="sec">
+    <p class="sec__num">07</p>
+    <h2 class="sec__title">Cookies &amp; Tracking Technologies</h2>
+    <div class="rule"></div>
+    <p>Our website may use cookies to enhance your browsing experience. Cookies are small text files stored on your device. We use:</p>
+    <ul class="dl">
+      <li>Essential cookies: required for the basic functioning of the website</li>
+      <li>Analytical cookies: to understand how visitors use the site (e.g., Google Analytics)</li>
+      <li>Marketing cookies: to display relevant ads on other platforms</li>
+    </ul>
+    <p style="margin-top:14px;">You can manage or disable cookies in your browser settings. Disabling essential cookies may affect website functionality.</p>
+  </section>
+
+  <!-- 08 -->
+  <section class="sec">
+    <p class="sec__num">08</p>
+    <h2 class="sec__title">Your Rights as a Data Subject</h2>
+    <div class="rule"></div>
+    <p>Under the LGPD, you have the following rights regarding your personal data:</p>
+    <ul class="dl">
+      <li>Confirmation and access: to know whether we process your data and obtain a copy</li>
+      <li>Correction: to request updating of incomplete, inaccurate or outdated data</li>
+      <li>Anonymization, blocking or deletion: of unnecessary or non-compliant data</li>
+      <li>Portability: to receive your data in a structured, interoperable format</li>
+      <li>Deletion: to request erasure of data processed based on your consent</li>
+      <li>Withdrawal of consent: at any time, without prejudice to prior processing activities</li>
+      <li>Objection: to contest processing carried out on the basis of legitimate interest</li>
+    </ul>
+    <p style="margin-top:14px;">To exercise your rights, please contact us through the channels listed in Section 10.</p>
+  </section>
+
+  <!-- 09 -->
+  <section class="sec">
+    <p class="sec__num">09</p>
+    <h2 class="sec__title">Links to Third-Party Sites</h2>
+    <div class="rule"></div>
+    <p>Our website may contain links to external pages, such as social media or partner websites. Elloverde is not responsible for the privacy practices of those sites. We recommend that you read the privacy policy of each platform you visit.</p>
+  </section>
+
+  <!-- 10 -->
+  <section class="sec">
+    <p class="sec__num">10</p>
+    <h2 class="sec__title">Contact &amp; Data Protection Officer (DPO)</h2>
+    <div class="rule"></div>
+    <p>For questions, requests or to exercise your rights related to privacy and data protection, please get in touch:</p>
+    <div class="ccard">
+      <p class="ccard__name">Elloverde Landscaping &amp; Flora</p>
+      <div class="ccard__info">
+        Fortaleza, Ceará — Brazil<br>
+        <a href="https://www.elloverde.com.br">www.elloverde.com.br</a><br>
+        <a href="mailto:privacidade@elloverde.com.br">privacidade@elloverde.com.br</a><br>
+        WhatsApp: +55 (85) 9 9225-2253
+      </div>
+    </div>
+    <p>We will respond to your requests within a maximum of 15 (fifteen) business days, as provided for under the LGPD.</p>
+  </section>
+
+  <!-- 11 -->
+  <section class="sec">
+    <p class="sec__num">11</p>
+    <h2 class="sec__title">Changes to This Policy</h2>
+    <div class="rule"></div>
+    <p>Elloverde reserves the right to update this Privacy Policy periodically to reflect changes in our practices, applicable legislation or improvements to our services. The date of the latest update will always be indicated at the top of the document.</p>
+    <p>We recommend that you review this page regularly. Continued use of our website after the publication of any changes implies acceptance of the updated policy.</p>
+  </section>
+
+  <footer class="footer">
+    <div class="drow">
+      <span class="drow__line"></span>
+      <span class="drow__gem"></span>
+      <span class="drow__line"></span>
+    </div>
+    <p class="footer__q">"Natural elegance, rooted in the territory."</p>
+    <p class="footer__b">Elloverde — Fortaleza, Ceará — Brazil</p>
+  </footer>
+
+</div>
+</body>
+</html>
