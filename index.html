@@ -801,7 +801,7 @@ footer {
   <a href="#parceiros" class="mobile-link" data-i18n="nav.partners">Parceiros</a>
   <a href="#orcamento" class="mobile-link" data-i18n="nav.quote">Orçamento</a>
   <a href="#contato" class="mobile-link" data-i18n="nav.contact">Contato</a>
-  <a href="politica-privacidade-elloverde.html" class="mobile-link mobile-link--privacy" data-i18n="nav.privacy">Privacidade</a>
+  <a href="politica-privacidade-elloverde.html" id="privacyBtnMobile" class="mobile-link mobile-link--privacy" data-i18n="nav.privacy">Privacidade</a>
   <a href="https://wa.me/5585992252253" target="_blank" class="mobile-cta" data-i18n="nav.cta">Fale Conosco</a>
   <div class="mobile-lang">
     <button id="mobileBtnPT" class="active">PT</button>
@@ -826,7 +826,7 @@ footer {
     <li><a href="#orcamento" data-i18n="nav.quote">Orçamento</a></li>
     <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
   </ul>
-  <a href="politica-privacidade-elloverde.html" class="nav-btn nav-btn--ghost" data-i18n="nav.privacy">Privacidade</a>
+  <a href="politica-privacidade-elloverde.html" id="privacyBtn" class="nav-btn nav-btn--ghost" data-i18n="nav.privacy">Privacidade</a>
   <a href="https://wa.me/5585992252253" target="_blank" class="nav-btn" data-i18n="nav.cta">Fale Conosco</a>
   <div class="lang-toggle">
     <button id="btnPT" class="active">PT</button>
@@ -1355,6 +1355,13 @@ function setLang(lang) {
 
   var dict = i18n[lang];
   if (!dict) return;
+
+  // Troca URL do botão Privacidade conforme idioma
+  var privacyBtn = document.getElementById('privacyBtn');
+  var privacyBtnMobile = document.getElementById('privacyBtnMobile');
+  var privacyUrl = isEN ? 'privacy-policy-elloverde.html' : 'politica-privacidade-elloverde.html';
+  if (privacyBtn) privacyBtn.href = privacyUrl;
+  if (privacyBtnMobile) privacyBtnMobile.href = privacyUrl;
 
   document.querySelectorAll('[data-i18n]').forEach(function(el) {
     if (el.classList.contains('count-num')) return;
