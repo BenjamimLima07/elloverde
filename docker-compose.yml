@@ -1,0 +1,11 @@
+name: siteelloverde
+
+services:
+  web:
+    build: .
+    image: siteelloverde-web
+    container_name: siteelloverde-web
+    restart: unless-stopped
+    # Só no loopback — o nginx do host faz o proxy/TLS (não exposto à internet)
+    ports:
+      - "127.0.0.1:8090:80"
