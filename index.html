@@ -13,6 +13,23 @@
   gtag('config', 'G-GJQD6MMGW7');
 </script>
 
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1222074994976228');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1222074994976228&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+
 <title>Elloverde Paisagismo & Flora | Fortaleza, Ceará</title>
 <meta name="description" content="Paisagismo sofisticado criado para o clima e a estética do Ceará. Elegância natural, com raízes no território." />
 <meta name="robots" content="index, follow" />
@@ -1590,6 +1607,9 @@ function submitForm(e) {
       })
     }).catch(function(){});
   } catch (e) {}
+  // Conversão: marca o lead nos rastreadores (anúncios + analytics)
+  try { if (window.fbq) fbq('track', 'Lead'); } catch (e) {}
+  try { if (window.gtag) gtag('event', 'generate_lead'); } catch (e) {}
   document.getElementById('orcamentoForm').style.display = 'none';
   document.getElementById('formSuccess').style.display = 'block';
   setTimeout(function(){ window.open('https://wa.me/5585992252253?text='+texto,'_blank'); }, 800);
