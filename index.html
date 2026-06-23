@@ -573,6 +573,39 @@ section { padding: 100px 56px; }
 .service-cta-link:hover { gap: 10px; border-color: var(--moss); }
 .service-cta-link svg { width: 12px; height: 12px; }
 
+/* ── OBRAS (feed do Instagram) ── */
+.obras { background: var(--cream); }
+.obras-header { text-align: center; margin-bottom: 56px; }
+.obras-header-rule { width: 40px; height: 1px; background: var(--moss-l); margin: 20px auto 0; }
+.obras-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.obra-tile {
+  position: relative; display: block; aspect-ratio: 1 / 1; overflow: hidden;
+  border-radius: 10px; background: var(--cream-3); text-decoration: none;
+  border: 1px solid rgba(44,40,32,0.07);
+}
+.obra-tile img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+}
+.obra-tile:hover img { transform: scale(1.06); }
+.obra-tile-overlay {
+  position: absolute; inset: 0; display: flex; align-items: flex-end; padding: 16px;
+  opacity: 0; transition: opacity 0.4s;
+  background: linear-gradient(to top, rgba(20,33,15,0.85), rgba(20,33,15,0.1) 55%, transparent);
+}
+.obra-tile:hover .obra-tile-overlay { opacity: 1; }
+.obra-tile-cap {
+  color: var(--off-white); font-size: 12px; line-height: 1.5; font-weight: 300;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.obra-tile-badge {
+  position: absolute; top: 12px; right: 12px; width: 26px; height: 26px;
+  background: rgba(20,35,20,0.55); backdrop-filter: blur(8px); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.obra-tile-badge svg { width: 11px; height: 11px; fill: #fff; }
+.obras-cta { text-align: center; margin-top: 44px; }
+
 /* ── PILARES ── */
 .pilares { background: var(--forest); padding: 100px 56px; }
 .pilares-header { text-align: center; margin-bottom: 64px; }
@@ -856,6 +889,7 @@ footer {
   .hero-content { padding: 0 24px 60px; grid-template-columns: 1fr; }
   .manifesto-grid, .contact-grid, .form-grid { grid-template-columns: 1fr; gap: 28px; }
   .services-grid { grid-template-columns: 1fr; }
+  .obras-grid { grid-template-columns: repeat(2,1fr); gap: 10px; }
   .numeros-grid { grid-template-columns: repeat(2,1fr); }
   .parceiros-grid { grid-template-columns: repeat(2,1fr); }
   .pilares-grid { grid-template-columns: 1fr; gap: 1px; }
@@ -886,6 +920,7 @@ footer {
 <div class="mobile-menu" id="mobileMenu">
   <a href="#manifesto" class="mobile-link" data-i18n="nav.manifesto">Manifesto</a>
   <a href="#servicos" class="mobile-link" data-i18n="nav.services">Serviços</a>
+  <a href="#obras" class="mobile-link" data-i18n="nav.works">Obras</a>
   <a href="#pilares" class="mobile-link" data-i18n="nav.pillars">Pilares</a>
   <a href="#parceiros" class="mobile-link" data-i18n="nav.partners">Parceiros</a>
   <a href="#orcamento" class="mobile-link" data-i18n="nav.quote">Orçamento</a>
@@ -913,6 +948,7 @@ footer {
   <ul class="nav-links">
     <li><a href="#manifesto" data-i18n="nav.manifesto">Manifesto</a></li>
     <li><a href="#servicos" data-i18n="nav.services">Serviços</a></li>
+    <li><a href="#obras" data-i18n="nav.works">Obras</a></li>
     <li><a href="#pilares" data-i18n="nav.pillars">Pilares</a></li>
     <li><a href="#parceiros" data-i18n="nav.partners">Parceiros</a></li>
     <li><a href="#orcamento" data-i18n="nav.quote">Orçamento</a></li>
@@ -1062,6 +1098,24 @@ footer {
           <a href="#orcamento" class="service-cta-link">Saiba mais <svg viewBox="0 0 12 12" fill="none"><path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- OBRAS (galeria alimentada pelo feed do Instagram via /api/public/instagram-feed) -->
+<section class="obras" id="obras" hidden>
+  <div class="container">
+    <div class="obras-header fade-in">
+      <p class="section-label" data-i18n="obras.label">Obras</p>
+      <h2 class="section-h2" data-i18n-html="obras.h2">Do projeto à <em>realidade.</em></h2>
+      <div class="obras-header-rule"></div>
+    </div>
+    <div class="obras-grid" id="obrasGrid"></div>
+    <div class="obras-cta fade-in">
+      <a href="https://instagram.com/elloverde" target="_blank" rel="noopener noreferrer" class="service-cta-link">
+        <span data-i18n="obras.cta">Ver mais no Instagram @elloverde</span>
+        <svg viewBox="0 0 12 12" fill="none"><path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -1304,7 +1358,7 @@ footer {
 // ── TRADUÇÕES ─────────────────────────────────────────────────────────────────
 var i18n = {
   pt: {
-    'nav.manifesto':'Manifesto','nav.services':'Serviços','nav.pillars':'Pilares',
+    'nav.manifesto':'Manifesto','nav.services':'Serviços','nav.works':'Obras','nav.pillars':'Pilares',
     'nav.partners':'Parceiros','nav.quote':'Orçamento','nav.contact':'Contato','nav.cta':'Fale Conosco','nav.privacy':'Privacidade',
     'hero.eyebrow':'Paisagismo & Flora — Ceará',
     'hero.h1':'Elegância natural,<br><em>com raízes no território.</em>',
@@ -1328,6 +1382,7 @@ var i18n = {
     'services.card3.desc':'Visitas regulares para manter o jardim sempre bonito e saudável — poda, preservação de espécies e cuidado com cada detalhe ao longo do tempo.',
     'services.card4.title':'Poda, Extração e Insumos',
     'services.card4.desc':'Poda e extração de árvores de grande porte com equipamentos adequados. Fornecimento de plantas e insumos selecionados para cada ambiente.',
+    'obras.label':'Obras','obras.h2':'Do projeto à <em>realidade.</em>','obras.cta':'Ver mais no Instagram @elloverde',
     'pillars.label':'Pilares Criativos','pillars.h2':'O que nos <em>move.</em>',
     'pillars.p1.title':'Brasilidade Contemporânea','pillars.p1.desc':'Uma visão moderna do Brasil: textura, luz, clima, naturalidade. A brasilidade aqui é sofisticada.',
     'pillars.p2.title':'Ceará Arquitetônico','pillars.p2.desc':'O paisagismo acompanha a estética da região: linhas limpas, brises, sombra, ventilação, integração.',
@@ -1360,7 +1415,7 @@ var i18n = {
     'footer.tag':'Elegância natural, com raízes no território.',
   },
   en: {
-    'nav.manifesto':'Manifesto','nav.services':'Services','nav.pillars':'Pillars',
+    'nav.manifesto':'Manifesto','nav.services':'Services','nav.works':'Works','nav.pillars':'Pillars',
     'nav.partners':'Partners','nav.quote':'Get a Quote','nav.contact':'Contact','nav.cta':'Talk to Us','nav.privacy':'Privacy',
     'hero.eyebrow':'Landscaping & Flora — Ceará',
     'hero.h1':'Natural elegance,<br><em>rooted in the territory.</em>',
@@ -1384,6 +1439,7 @@ var i18n = {
     'services.card3.desc':'Regular visits to keep the garden beautiful and healthy — pruning, species preservation, and attention to every detail over time.',
     'services.card4.title':'Pruning, Extraction & Supplies',
     'services.card4.desc':'Pruning and extraction of large trees with proper equipment. Supply of selected plants and materials suited to each environment.',
+    'obras.label':'Works','obras.h2':'From design to <em>reality.</em>','obras.cta':'See more on Instagram @elloverde',
     'pillars.label':'Creative Pillars','pillars.h2':'What <em>drives us.</em>',
     'pillars.p1.title':'Contemporary Brazilianness','pillars.p1.desc':'A modern vision of Brazil: texture, light, climate, naturality. Brazilianness here is sophisticated.',
     'pillars.p2.title':'Architectural Ceará','pillars.p2.desc':'Landscaping follows the regional aesthetic: clean lines, brise-soleils, shade, ventilation, integration.',
@@ -1569,6 +1625,27 @@ window.addEventListener('load', function() {
     if (btn) btn.classList.add('visible');
   }, 4000);
 });
+
+// ── OBRAS (galeria alimentada pelo feed do Instagram) ─────────────────────────
+(function loadObras() {
+  fetch('/api/public/instagram-feed').then(function(r){ return r.json(); }).then(function(d){
+    if (!d || !d.ok || !d.posts || !d.posts.length) return;
+    var grid = document.getElementById('obrasGrid');
+    var sec = document.getElementById('obras');
+    if (!grid || !sec) return;
+    var play = '<span class="obra-tile-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>';
+    function esc(s){ return String(s||'').replace(/[<>&]/g, function(c){ return {'<':'&lt;','>':'&gt;','&':'&amp;'}[c]; }); }
+    grid.innerHTML = d.posts.map(function(p){
+      var badge = (p.tipo === 'VIDEO') ? play : '';
+      return '<a class="obra-tile" href="' + p.permalink + '" target="_blank" rel="noopener noreferrer" aria-label="Ver publicação no Instagram">'
+        + '<img src="' + p.img + '" alt="Obra da Elloverde" loading="lazy" />'
+        + badge
+        + '<span class="obra-tile-overlay"><span class="obra-tile-cap">' + esc(p.legenda) + '</span></span>'
+        + '</a>';
+    }).join('');
+    sec.hidden = false;
+  }).catch(function(){ /* silencioso: a seção permanece oculta */ });
+})();
 
 // ── VALIDAÇÃO ────────────────────────────────────────────────────────────────
 var validationMessages = {
