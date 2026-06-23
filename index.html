@@ -1741,19 +1741,26 @@ function submitForm(e) {
   var waUrl = 'https://wa.me/5585992252253?text=' + texto;
   // Abre o WhatsApp AINDA dentro do gesto do clique (evita bloqueio de popup no iOS/Safari)
   var waWin = window.open(waUrl, '_blank');
-  // Grava o lead no CRM do ERP (mesma origem; fire-and-forget, não bloqueia o WhatsApp)
+  // event_id compartilhado entre o pixel (browser) e a Conversions API (servidor) → dedup
+  var leadEventId = 'lead.' + Date.now() + '.' + Math.random().toString(36).slice(2, 10);
+  function cookie(n){ var m = document.cookie.match('(^|; )' + n + '=([^;]+)'); return m ? m[2] : ''; }
+  var consent = '';
+  try { consent = localStorage.getItem('elloverde_consent') || ''; } catch (e) {}
+  // Grava o lead no CRM do ERP (mesma origem; fire-and-forget) + alimenta a Conversions API
   try {
     fetch('/api/public/site-lead', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         nome: nome, telefone: tel, email: email, tipo: tipo, mensagem: msg,
-        website: (document.getElementById('f-website') || {}).value || ''
+        website: (document.getElementById('f-website') || {}).value || '',
+        event_id: leadEventId, fbp: cookie('_fbp'), fbc: cookie('_fbc'),
+        consent: consent, source_url: location.href
       })
     }).catch(function(){});
   } catch (e) {}
-  // Conversão: marca o lead nos rastreadores (anúncios + analytics)
-  try { if (window.fbq) fbq('track', 'Lead'); } catch (e) {}
+  // Conversão: pixel do navegador com o MESMO event_id (deduplica com a Conversions API)
+  try { if (window.fbq) fbq('track', 'Lead', {}, { eventID: leadEventId }); } catch (e) {}
   try { if (window.gtag) gtag('event', 'generate_lead'); } catch (e) {}
   document.getElementById('orcamentoForm').style.display = 'none';
   document.getElementById('formSuccess').style.display = 'block';
