@@ -1755,7 +1755,8 @@ function submitForm(e) {
         nome: nome, telefone: tel, email: email, tipo: tipo, mensagem: msg,
         website: (document.getElementById('f-website') || {}).value || '',
         event_id: leadEventId, fbp: cookie('_fbp'), fbc: cookie('_fbc'),
-        consent: consent, source_url: location.href
+        consent: consent, source_url: location.href,
+        origem_anuncio: origemAnuncio()
       })
     }).catch(function(){});
   } catch (e) {}
@@ -1769,6 +1770,28 @@ function submitForm(e) {
     setTimeout(function(){ window.location.href = waUrl; }, 1400);
   }
 }
+
+// Origem do clique (13/10/2026, preparação Google Ads): guarda gclid/UTM da 1ª página por 90 dias e manda junto do lead
+// do formulário → o ERP grava a campanha e marca origem "Google" quando vier de anúncio do Google.
+function origemAnuncio() {
+  try { var o = JSON.parse(localStorage.getItem('elloverde_origem') || 'null'); return o && (Date.now() - o.ts < 90 * 864e5) ? o : null; } catch (e) { return null; }
+}
+(function () {
+  try {
+    var q = new URLSearchParams(location.search), o = {};
+    ['gclid', 'gbraid', 'wbraid', 'fbclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(function (k) { if (q.get(k)) o[k] = q.get(k).slice(0, 200); });
+    if (Object.keys(o).length) { o.ts = Date.now(); o.landing = location.pathname; localStorage.setItem('elloverde_origem', JSON.stringify(o)); }
+  } catch (e) {}
+})();
+// Clique em qualquer botão de WhatsApp do site = conversão (GA4 `whatsapp_click` + Meta `Contact`). O envio do formulário
+// já conta como `generate_lead` e não passa por aqui (abre o WhatsApp via window.open).
+document.addEventListener('click', function (ev) {
+  var a = ev.target.closest && ev.target.closest('a[href*="wa.me/"]');
+  if (!a) return;
+  var onde = a.id || (a.className || '').toString().split(' ')[0] || 'link';
+  try { if (window.gtag) gtag('event', 'whatsapp_click', { link_location: onde, origem: (origemAnuncio() || {}).utm_source || (origemAnuncio() && origemAnuncio().gclid ? 'google' : '') }); } catch (e) {}
+  try { if (window.fbq) fbq('track', 'Contact'); } catch (e) {}
+}, true);
 </script>
 </body>
 </html>
