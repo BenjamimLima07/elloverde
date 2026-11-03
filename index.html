@@ -5,10 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- Consentimento LGPD + carregamento de GA4 (G-GJQD6MMGW7) e Meta Pixel (1222074994976228) -->
-<script src="/consent.js"></script>
+<script src="/consent.js" defer></script>
 
 <!-- Preload da imagem LCP (hero) — acelera o primeiro paint -->
-<link rel="preload" as="image" href="hero.webp" type="image/webp" fetchpriority="high" />
+<link rel="preload" as="image" href="hero-mobile.webp" type="image/webp" media="(max-width: 768px)" fetchpriority="high" />
+<link rel="preload" as="image" href="hero.webp" type="image/webp" media="(min-width: 769px)" fetchpriority="high" />
 
 <title>Elloverde Paisagismo & Flora | Fortaleza, Ceará</title>
 <meta name="description" content="Paisagismo sofisticado criado para o clima e a estética do Ceará. Elegância natural, com raízes no território." />
@@ -85,7 +86,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" /></noscript>
 
 <style>
 /* ── RESET & BASE ── */
@@ -925,6 +927,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     background-repeat: no-repeat;
     background-color: #1a2e1a;
   }
+  .hero-bg { background-image: url('hero-mobile.webp'); }
+  .divider { background-image: url('divider-mobile.webp'); }
   .hero-rule { display: none; }
   .hero-cta { flex-wrap: wrap; gap: 14px; }
   .hero-scroll { right: 20px; }
@@ -966,7 +970,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   <a href="#" class="nav-logo" aria-label="Elloverde Paisagismo & Flora">
     <picture>
       <source srcset="elloverde_logo_transparent.webp" type="image/webp" />
-      <img src="elloverde_logo_transparent.png" alt="Elloverde Paisagismo & Flora" class="nav-logo-img" />
+      <img src="elloverde_logo_transparent.png" alt="Elloverde Paisagismo & Flora" class="nav-logo-img" width="96" height="96" />
     </picture>
   </a>
   <ul class="nav-links">
@@ -1361,7 +1365,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   <div class="footer-logo">
     <picture>
       <source srcset="elloverde_logo_transparent.webp" type="image/webp" />
-      <img src="elloverde_logo_transparent.png" alt="Elloverde Paisagismo & Flora" class="footer-logo-img" />
+      <img src="elloverde_logo_transparent.png" alt="Elloverde Paisagismo & Flora" class="footer-logo-img" width="96" height="96" />
     </picture>
   </div>
   <p class="footer-copy" data-i18n="footer.copy">© 2026 Elloverde Paisagismo &amp; Flora. Todos os direitos reservados.</p>
