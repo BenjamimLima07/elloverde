@@ -1781,11 +1781,27 @@ function origemAnuncio() {
     if (Object.keys(o).length) { o.ts = Date.now(); o.landing = location.pathname; localStorage.setItem('elloverde_origem', JSON.stringify(o)); }
   } catch (e) {}
 })();
+// wa.me não leva gclid/UTM: um código na mensagem liga a conversa à origem no ERP (lib/whatsapp_ref.js). Falha aqui nunca
+// impede abrir o WhatsApp.
+function marcarOrigemWhatsapp(a) {
+  try {
+    if (a.dataset.ref) return;
+    var letras = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789', cod = '', rnd = crypto.getRandomValues(new Uint8Array(6));
+    for (var i = 0; i < 6; i++) cod += letras[rnd[i] % letras.length];
+    var corpo = new Blob([JSON.stringify({ ref: cod, origem_anuncio: origemAnuncio() })], { type: 'application/json' });
+    navigator.sendBeacon('/api/public/whatsapp-ref', corpo);
+    var u = new URL(a.href);
+    u.searchParams.set('text', (u.searchParams.get('text') || 'Olá! Vim pelo site e gostaria de solicitar um orçamento.') + ' (ref. ' + cod + ')');
+    a.href = u.toString();
+    a.dataset.ref = cod;
+  } catch (e) {}
+}
 // Clique em qualquer botão de WhatsApp do site = conversão (GA4 `whatsapp_click` + Meta `Contact`). O envio do formulário
 // já conta como `generate_lead` e não passa por aqui (abre o WhatsApp via window.open).
 document.addEventListener('click', function (ev) {
   var a = ev.target.closest && ev.target.closest('a[href*="wa.me/"]');
   if (!a) return;
+  marcarOrigemWhatsapp(a);
   var onde = a.id || (a.className || '').toString().split(' ')[0] || 'link';
   try { if (window.gtag) gtag('event', 'whatsapp_click', { link_location: onde, origem: (origemAnuncio() || {}).utm_source || (origemAnuncio() && origemAnuncio().gclid ? 'google' : '') }); } catch (e) {}
   try { if (window.fbq) fbq('track', 'Contact'); } catch (e) {}
