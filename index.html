@@ -1759,6 +1759,12 @@ function submitForm(e) {
     }).catch(function(){});
   } catch (e) {}
   // Conversão: pixel do navegador com o MESMO event_id (deduplica com a Conversions API)
+  // Correspondência avançada (10/11/2026): o pixel envia e-mail/telefone (o próprio fbq aplica hash SHA-256) para o Meta
+  // casar o Lead com a pessoa — a qualidade de correspondência estava em 6,1/10 sem isso. Só roda com consentimento (fbq).
+  try { if (window.fbq) {
+    var tel55 = String(tel || '').replace(/\D/g, ''); if (tel55 && tel55.indexOf('55') !== 0) tel55 = '55' + tel55;
+    fbq('init', '1222074994976228', { em: String(email || '').trim().toLowerCase(), ph: tel55, fn: String(nome || '').trim().split(' ')[0].toLowerCase(), ct: 'fortaleza', st: 'ce', country: 'br' });
+  } } catch (e) {}
   try { if (window.fbq) fbq('track', 'Lead', {}, { eventID: leadEventId }); } catch (e) {}
   try { if (window.gtag) gtag('event', 'generate_lead'); } catch (e) {}
   document.getElementById('orcamentoForm').style.display = 'none';
