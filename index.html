@@ -1692,6 +1692,9 @@ window.addEventListener('load', function() {
         + '</a>';
     }).join('');
     sec.hidden = false;
+    // Anúncio de tráfego aponta para /#obras (10/11/2026): a seção nasce oculta, então o navegador não rola até ela
+    // sozinho — rola depois que as fotos entram.
+    if (location.hash === '#obras') { setTimeout(function(){ sec.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50); }
   }).catch(function(){ /* silencioso: a seção permanece oculta */ });
 })();
 
